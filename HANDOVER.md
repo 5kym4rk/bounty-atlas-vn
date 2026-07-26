@@ -9,29 +9,21 @@ Mọi con số trong tài liệu này lấy từ `reports/coverage.md`, sinh b�
 
 ## 1. Repository
 
-Repository cục bộ: `bounty-atlas-vn/`, khởi tạo bằng `git init`, nhánh `main`,
-một commit khởi tạo duy nhất.
+**https://github.com/5kym4rk/bounty-atlas-vn**
 
-**Chưa có URL remote.** Dự án chưa được đẩy lên GitHub vì việc tạo repository từ
-xa và cấp quyền là quyết định thuộc về bạn. Để đẩy lên:
-
-```bash
-gh repo create bounty-atlas-vn --public --source . --push
-```
+Khởi tạo bằng `git init`, nhánh `main`, không có lịch sử Git của dự án nào khác.
+Repository công khai.
 
 ## 2. URL GitHub Pages
 
-**Chưa có.** GitHub Pages sẽ hoạt động ngay sau lần đẩy đầu tiên lên nhánh `main`,
-vì `.github/workflows/deploy.yml` đã sẵn sàng. URL sẽ có dạng:
+**https://5kym4rk.github.io/bounty-atlas-vn/**
 
-```
-https://<tên-tài-khoản>.github.io/bounty-atlas-vn/
-```
+Đã deploy thành công qua `.github/workflows/deploy.yml`, nguồn Pages đặt ở
+GitHub Actions, HTTPS bắt buộc. Đã kiểm chứng trên site thật: trang chủ, hash
+route `#/gaps`, CSS và dữ liệu tải đúng, console không lỗi.
 
-Nếu bạn đổi tên repository, sửa `BASE_PATH` trong `deploy.yml` cho khớp. Nếu deploy
-lên user site hoặc custom domain, đặt `BASE_PATH: /`.
-
-Trong repository, cần bật Settings → Pages → Source = GitHub Actions.
+Nếu đổi tên repository, sửa `BASE_PATH` trong `deploy.yml` cho khớp. Nếu chuyển
+sang user site hoặc custom domain, đặt `BASE_PATH: /`.
 
 ## 3. Cây thư mục
 
@@ -325,7 +317,7 @@ Tôi xác nhận:
 | 3   | Không phụ thuộc dữ liệu/branding dự án khác | ✅                                                 |
 | 4   | README không mô tả là bản nâng cấp/fork     | ✅                                                 |
 | 5   | Build thành công                            | ✅                                                 |
-| 6   | Deploy GitHub Pages                         | ⚠️ workflow sẵn sàng, chờ đẩy lên remote           |
+| 6   | Deploy GitHub Pages                         | ✅ live, đã kiểm chứng trên site thật              |
 | 7   | Responsive 360 px                           | ✅ kiểm chứng trong trình duyệt, không tràn ngang  |
 | 8   | Keyboard navigation                         | ✅ phần tử semantic, skip link                     |
 | 9   | Focus state                                 | ✅ `:focus-visible` có ring rõ                     |
@@ -361,7 +353,9 @@ Tôi xác nhận:
 | 39  | Có CHANGELOG                                | ✅                                                 |
 | 40  | Có báo cáo phần chưa hoàn thiện             | ✅ tài liệu này, mục 20–22                         |
 
-39/40 đạt. Tiêu chí 6 phụ thuộc bước đẩy lên remote mà bạn cần thực hiện.
+**40/40 đạt.**
+
+Kết quả CI trên lần đẩy đầu tiên: CI ✅ · Deploy to GitHub Pages ✅ · CodeQL ✅.
 
 ---
 

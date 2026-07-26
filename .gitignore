@@ -12,3 +12,6 @@ coverage/
 # Báo cáo có dấu thời gian: giữ bản Markdown trong repo, bỏ bản JSON.
 reports/coverage.json
 reports/link-check.json
+
+# Cau hinh chay server local (khong dung nua - du an chay tren GitHub Pages)
+.claude/

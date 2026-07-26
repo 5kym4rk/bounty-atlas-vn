@@ -1,5 +1,7 @@
 # BountyAtlas VN
 
+**→ Dùng ngay: https://5kym4rk.github.io/bounty-atlas-vn/**
+
 Bản đồ kiến thức Bug Bounty đa lĩnh vực bằng tiếng Việt.
 
 Một ứng dụng web học tập chạy hoàn toàn phía trình duyệt, giúp người học trả lời
@@ -65,11 +67,22 @@ request nào tới hạ tầng bên thứ ba khi chạy.
 
 Xem `SAFETY.md` để có chín quy tắc dừng kiểm thử và ràng buộc riêng theo lĩnh vực.
 
-## Bắt đầu
+## Cách dùng
+
+Mở **https://5kym4rk.github.io/bounty-atlas-vn/** trong trình duyệt. Không cần cài
+đặt, không cần tài khoản, không cần chạy server.
+
+Ứng dụng chạy hoàn toàn phía trình duyệt và được triển khai trên GitHub Pages.
+Tiến trình học của bạn lưu trong IndexedDB của chính trình duyệt đó.
+
+## Phát triển
+
+Phần dưới đây chỉ dành cho người muốn **đóng góp nội dung hoặc mã nguồn**. Người
+học bình thường không cần tới nó.
 
 ```bash
 npm install
-npm run dev
+npm run dev     # server phát triển, chỉ dùng khi sửa mã
 ```
 
 Yêu cầu Node 20 trở lên.
