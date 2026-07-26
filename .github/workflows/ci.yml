@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  qa:
+    name: Lint, test, validate, build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Cai dat phu thuoc theo lockfile
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Kiem tra dinh dang
+        run: npm run format:check
+
+      - name: Test
+        run: npm run test
+
+      - name: Kiem tra du lieu kien thuc
+        run: npm run validate:data
+
+      - name: Build
+        run: npm run build
+
+      - name: Sinh bao cao do bao phu
+        run: npm run coverage:report
+
+      # Bao cao do bao phu duoc commit cung thay doi du lieu. Neu no lech,
+      # nghia la nguoi dong gop quen chay lai script.
+      - name: Kiem tra bao cao do bao phu da duoc commit lai
+        run: |
+          if ! git diff --quiet -- reports/coverage.md; then
+            echo "reports/coverage.md khong khop voi du lieu hien tai."
+            echo "Hay chay 'npm run coverage:report' va commit ket qua."
+            git --no-pager diff -- reports/coverage.md | head -40
+            exit 1
+          fi

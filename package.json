@@ -1,0 +1,57 @@
+{
+  "name": "bounty-atlas-vn",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Ban do kien thuc Bug Bounty da linh vuc bang tieng Viet",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "validate:data": "tsx --tsconfig tsconfig.scripts.json scripts/validate-data/index.ts",
+    "check:links": "tsx --tsconfig tsconfig.scripts.json scripts/check-links/index.ts",
+    "build:index": "tsx --tsconfig tsconfig.scripts.json scripts/build-index/index.ts",
+    "coverage:report": "tsx --tsconfig tsconfig.scripts.json scripts/coverage-report/index.ts",
+    "qa": "npm run lint && npm run test && npm run validate:data && npm run build"
+  },
+  "dependencies": {
+    "fuse.js": "7.0.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-router-dom": "6.26.2",
+    "zod": "3.23.8",
+    "zustand": "4.5.5"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "6.5.0",
+    "@testing-library/react": "16.0.1",
+    "@testing-library/user-event": "14.5.2",
+    "@types/node": "22.7.4",
+    "@types/react": "18.3.11",
+    "@types/react-dom": "18.3.0",
+    "@typescript-eslint/eslint-plugin": "8.8.0",
+    "@typescript-eslint/parser": "8.8.0",
+    "@vitejs/plugin-react": "4.3.2",
+    "autoprefixer": "10.4.20",
+    "eslint": "8.57.1",
+    "eslint-plugin-react-hooks": "4.6.2",
+    "eslint-plugin-react-refresh": "0.4.12",
+    "jsdom": "25.0.1",
+    "postcss": "8.4.47",
+    "prettier": "3.3.3",
+    "tailwindcss": "3.4.13",
+    "tsx": "4.19.1",
+    "typescript": "5.6.2",
+    "vite": "5.4.8",
+    "vitest": "2.1.2"
+  }
+}

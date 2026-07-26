@@ -1,0 +1,39 @@
+name: Link check
+
+on:
+  schedule:
+    # Kiem tra lien ket hang thang.
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Kiem tra lien ket nguon
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - run: npm ci
+
+      # Script KHONG lam fail job khi site chan bot hoac gioi han toc do.
+      # Chi trang thai 'unavailable' moi dang de xu ly, va ke ca vay job van
+      # xanh — ket qua duoc dua len artifact de nguoi bien tap xem xet.
+      - name: Chay link checker
+        run: npm run check:links
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: link-check-report
+          path: |
+            reports/link-check.md
+            reports/link-check.json
+            src/data/resources/link-status.generated.ts
+          retention-days: 30

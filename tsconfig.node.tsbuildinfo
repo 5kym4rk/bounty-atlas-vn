@@ -1,0 +1,1 @@
+{"root":["./vite.config.ts","./vitest.config.ts","./scripts/build-index/index.ts","./scripts/check-links/index.ts","./scripts/coverage-report/index.ts","./scripts/validate-data/index.ts"],"version":"5.6.2"}

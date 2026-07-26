@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ba-surface: 255 255 255;
+    --ba-surface-raised: 248 250 252;
+    --ba-surface-sunken: 241 245 249;
+    --ba-ink: 15 23 42;
+    --ba-ink-muted: 71 85 105;
+    --ba-ink-faint: 100 116 139;
+    --ba-line: 203 213 225;
+    --ba-brand: 29 78 216;
+    --ba-brand-soft: 219 234 254;
+    --ba-danger: 185 28 28;
+    --ba-warn: 161 98 7;
+    --ba-ok: 21 128 61;
+    color-scheme: light;
+  }
+
+  html.dark {
+    --ba-surface: 12 17 28;
+    --ba-surface-raised: 21 28 43;
+    --ba-surface-sunken: 8 12 20;
+    --ba-ink: 236 241 248;
+    --ba-ink-muted: 176 189 208;
+    --ba-ink-faint: 138 153 175;
+    --ba-line: 51 65 85;
+    --ba-brand: 129 178 255;
+    --ba-brand-soft: 30 47 82;
+    --ba-danger: 252 165 165;
+    --ba-warn: 253 224 71;
+    --ba-ok: 134 239 172;
+    color-scheme: dark;
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-surface text-ink antialiased;
+    font-family: theme('fontFamily.sans');
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-brand ring-offset-2;
+    --tw-ring-offset-color: rgb(var(--ba-surface));
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-semibold tracking-tight text-ink;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: rgb(var(--ba-brand-soft));
+    color: rgb(var(--ba-ink));
+  }
+}
+
+@layer components {
+  .ba-card {
+    @apply rounded-lg border border-line bg-surface-raised p-4;
+  }
+
+  .ba-chip {
+    @apply inline-flex items-center gap-1 rounded-full border border-line px-2 py-0.5 text-xs font-medium text-ink-muted;
+  }
+
+  .ba-btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md border border-line bg-surface-raised px-3 py-2 text-sm font-medium text-ink transition-colors hover:border-brand hover:text-brand disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .ba-btn-primary {
+    @apply border-transparent bg-brand text-surface hover:bg-brand hover:text-surface hover:opacity-90;
+  }
+
+  .ba-input {
+    @apply w-full rounded-md border border-line bg-surface px-3 py-2 text-sm text-ink placeholder:text-ink-faint;
+  }
+
+  .ba-label {
+    @apply mb-1 block text-sm font-medium text-ink-muted;
+  }
+
+  .ba-prose p {
+    @apply mb-3 leading-relaxed text-ink-muted;
+  }
+
+  .ba-link {
+    @apply text-brand underline underline-offset-2 hover:opacity-80;
+  }
+
+  .ba-scroll-x {
+    @apply overflow-x-auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
