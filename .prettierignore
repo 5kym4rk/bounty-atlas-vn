@@ -3,3 +3,7 @@ dist
 coverage
 reports
 package-lock.json
+
+# Tep sinh tu dong, co dinh dang rieng do script quyet dinh.
+public/data/search-index.json
+src/data/resources/link-status.generated.ts
