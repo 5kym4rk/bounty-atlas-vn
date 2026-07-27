@@ -18,6 +18,48 @@ export const CONTENT_REVIEW_DATE = '2026-07-27';
 
 /** `resourceId` → điều cụ thể đã quan sát được khi mở nguồn. */
 export const CONTENT_REVIEWED: Record<string, string> = {
+  'res-etsi-en-303-645':
+    'Bản V3.1.3 (2024-09) do Uỷ ban Kỹ thuật CYBER của ETSI soạn. Mục 5 gồm 13 điều khoản: 5.1 không dùng mật khẩu mặc định chung, 5.2 có cơ chế tiếp nhận báo cáo lỗ hổng, 5.3 giữ phần mềm được cập nhật, 5.4 lưu tham số bảo mật nhạy cảm an toàn, 5.5 truyền tin an toàn, 5.6 thu hẹp bề mặt tấn công, 5.7 bảo đảm toàn vẹn phần mềm, 5.8 bảo vệ dữ liệu cá nhân, 5.9 chịu được gián đoạn, 5.10 xem xét dữ liệu telemetry, 5.11 cho người dùng xoá dữ liệu dễ dàng, 5.12 cài đặt và bảo trì dễ, 5.13 kiểm tra dữ liệu đầu vào. Mục 6 nói riêng về bảo vệ dữ liệu. Tài liệu tự nêu là mức nền, hướng theo kết quả chứ không quy định cách làm, và không nhằm chống tấn công kéo dài hay cần tiếp cận vật lý lâu dài.',
+  'res-solidity-docs':
+    'Trang chủ tài liệu Solidity: ngôn ngữ hướng đối tượng, bậc cao, nhắm tới EVM, chịu ảnh hưởng của C++, Python và JavaScript; có kiểu tĩnh, kế thừa, thư viện và kiểu do người dùng định nghĩa. Có khuyến nghị đáng chú ý: khi triển khai hợp đồng nên dùng bản Solidity mới nhất, vì trừ trường hợp ngoại lệ thì chỉ bản mới nhất được nhận bản vá bảo mật.',
+  'res-fcc-part15':
+    'Toàn văn 47 CFR Part 15 — Radio Frequency Devices, bản ngày 01/10/2023, thuộc Title 47 Chapter I (FCC) Subchapter A. Subpart A gồm các mục 15.1 phạm vi, 15.3 định nghĩa, 15.5 điều kiện vận hành chung, 15.9 cấm nghe lén, 15.13 thiết bị phát xạ ngẫu nhiên, 15.19 yêu cầu nhãn và 15.23 thiết bị tự lắp. Đọc trên GovInfo vì eCFR chặn truy cập từ môi trường này.',
+  'res-vn-pdpd':
+    'Toàn văn Nghị định 13/2023/NĐ-CP ngày 17/4/2023 trên Báo điện tử Chính phủ. Điều 1 nêu phạm vi áp dụng với: cơ quan, tổ chức, cá nhân Việt Nam; tổ chức và cá nhân nước ngoài tại Việt Nam; người Việt Nam hoạt động ở nước ngoài; và tổ chức, cá nhân nước ngoài trực tiếp tham gia hoặc liên quan tới hoạt động xử lý dữ liệu cá nhân tại Việt Nam.',
+  'res-cisa-ics-advisories':
+    'Trang tra cứu cảnh báo, đã lọc sẵn theo loại ICS Advisory. Trang định nghĩa rõ từng loại: Alert (thông tin ngắn gọn về mối đe doạ đang diễn ra hoặc tác động lớn, kèm biện pháp giảm thiểu), Cybersecurity Advisory (chi tiết về chiến thuật, kỹ thuật, quy trình của tác nhân đe doạ kèm chỉ dấu), Analysis Report và ICS Advisory. Lọc và sắp xếp được theo ngày phát hành, ngày sửa đổi, độ liên quan và nhà cung cấp.',
+  'res-gcp-vrp':
+    'Nguyên tắc: mọi sản phẩm hoặc dịch vụ web của Google Cloud có xử lý dữ liệu người dùng nhạy cảm đều thuộc phạm vi, kèm một danh sách loại trừ quan trọng. Trang có mục riêng cho phạm vi, lỗ hổng đủ điều kiện, lỗ hổng không đủ điều kiện, mức thưởng, cách điều tra và báo cáo, quy tắc ứng xử và các điểm pháp lý. Thời điểm rà soát có ghi chú Wiz đã gia nhập Google Cloud và được miễn thời gian chờ 6 tháng áp dụng cho công ty mới mua lại. Lưu ý URL dạng ID số đã lỗi thời, đường dẫn đúng là dạng slug.',
+  'res-damn-vulnerable-defi':
+    'Bộ bài tập bảo mật hợp đồng thông minh, thời điểm rà soát có 18 thử thách được đánh số, từ Unstoppable, Naive receiver, Truster tới ABI Smuggling, Curvy Puppet và Withdrawal. Chủ đề gồm flashloan, oracle giá, quản trị, NFT, DEX, lending pool, ví hợp đồng, timelock, vault, meta-transaction, phân phối token và khả năng nâng cấp. Hướng dẫn cài và chơi nằm trong kho mã.',
+  'res-gdpr-text':
+    'Trang EUR-Lex cho Document 32016R0679 — Regulation (EU) 2016/679 của Nghị viện và Hội đồng châu Âu ngày 27/04/2016. Trang cung cấp toàn văn kèm thông tin văn bản, thủ tục ban hành, bản tóm tắt, liên kết tới bản hợp nhất mới nhất và các định dạng tải về.',
+  'res-unece-r155':
+    'Trang tài liệu chính thức của UNECE cho UN Regulation No. 155 về an ninh mạng và hệ thống quản lý an ninh mạng. Ký hiệu văn bản E/ECE/TRANS/505/Rev.3/Add.154, công bố 04/03/2021, thuộc bộ Addenda của Hiệp định 1958 (Regulations 141–160). Có bản tải về dạng DOCX và PDF bằng tiếng Anh, Pháp và Nga.',
+  'res-iec-62443':
+    'Bài giới thiệu của IEC (26/02/2021). Bộ IEC 62443 xây để bảo vệ hệ thống tự động hoá và điều khiển công nghiệp (IACS) suốt vòng đời, hiện gồm chín tiêu chuẩn, báo cáo kỹ thuật và đặc tả kỹ thuật. Nêu rõ vì sao không dùng được tiêu chuẩn IT cho môi trường OT: khác nhau về yêu cầu hiệu năng, khả dụng và tuổi thọ thiết bị; và vì tấn công vào IT chủ yếu gây hậu quả kinh tế, còn tấn công vào hạ tầng trọng yếu có thể ảnh hưởng môi trường, sức khoẻ cộng đồng và tính mạng.',
+  'res-apple-data-protection':
+    'Trang "Protecting the User’s Privacy" của UIKit. Nguyên tắc: chỉ truy cập dữ liệu người dùng hoặc thiết bị khi có sự đồng ý đã được thông báo đầy đủ và phù hợp luật hiện hành, bảo vệ dữ liệu đó, và minh bạch về cách dùng. Dẫn chiếu tới báo cáo của FTC về quyền riêng tư di động, Opinion 02/2013 của các cơ quan bảo vệ dữ liệu EU, và khuyến nghị của Tổng chưởng lý bang California.',
+  'res-google-bughunters-rules':
+    'Trang tổng quan các chương trình VRP của Google, chia năm nhóm: Android & Friends, Chrome & Friends, Google & Friends, Open Source và Other. Mỗi chương trình có bảng ghi tên, phạm vi và nơi nộp báo cáo — ví dụ Android and Google Devices Security Reward Program phủ Pixel, Smart Home, Nest, Home API, Pixel Watch và Fitbit. Có gợi ý: nếu không chắc nộp đâu thì nộp về Google and Alphabet VRP.',
+  'res-h1-hacktivity':
+    'Kho báo cáo lỗ hổng công khai, lọc và sắp xếp được, phân biệt báo cáo đã công bố (Disclosed) với chưa công bố. Mỗi mục hiện chương trình, mức độ, trạng thái, người báo cáo, phân loại điểm yếu và tóm tắt — ví dụ một báo cáo CRLF Injection trên Monero và một báo cáo mức High cho AWS VDP.',
+  'res-apple-keychain':
+    'Keychain là cơ sở dữ liệu đã mã hoá để ứng dụng lưu những mẩu bí mật nhỏ thay người dùng. Không giới hạn ở mật khẩu: lưu được cả thông tin thẻ thanh toán, ghi chú ngắn, và cả những mục người dùng cần nhưng không tự biết. Lập luận mở đầu: nếu ứng dụng nhớ hộ mật khẩu phức tạp thì người dùng không phải dùng lại mật khẩu đơn giản cho nhiều tài khoản.',
+  'res-apple-universal-links':
+    'Khi người dùng mở universal link, hệ thống khởi chạy ứng dụng và gửi kèm một đối tượng NSUserActivity. Cần tạo liên kết hai chiều giữa ứng dụng và website qua associated domains. Trang có cảnh báo rõ: universal link là một vector tấn công tiềm tàng, phải kiểm tra mọi tham số URL, loại bỏ URL dị dạng, và giới hạn hành động cho phép — ví dụ không cho universal link xoá nội dung hay chạm tới thông tin nhạy cảm.',
+  'res-cloudflare-learning-dns':
+    'Định nghĩa DNS là "danh bạ của Internet", dịch tên miền người đọc được sang địa chỉ IP máy hiểu được. Trang nằm trong Learning Center với mục lục dày về DNS: đầu độc cache, DNS over TLS và over HTTPS, từng loại bản ghi (A, AAAA, CNAME, MX, TXT, SPF, DKIM, DMARC, PTR, SOA, SRV, NS), DNSSEC, DNS zone và reverse DNS.',
+  'res-mitre-atlas':
+    'Cơ sở tri thức sống về chiến thuật và kỹ thuật tấn công nhắm vào hệ thống có AI, dựng từ quan sát tấn công thật và diễn tập của đội red team. Thời điểm rà soát: 16 chiến thuật, 173 kỹ thuật, 35 biện pháp giảm thiểu và 63 case study. Ma trận lọc được theo nền tảng Predictive AI, Generative AI, Agentic AI và Enterprise.',
+  'res-graphql-security-docs':
+    'Nêu rõ phần lớn vector tấn công vào GraphQL là dạng từ chối dịch vụ, và đề xuất phòng thủ theo lớp. Bắt đầu từ tầng giao vận: đặc tả GraphQL không bắt buộc giao thức nào, HTTP phổ biến cho query và mutation còn WebSocket hoặc server-sent events dùng cho subscription; với HTTP thì phải có HTTPS, đặt timeout hợp lý và cẩn thận khi cache.',
+  'res-cisa-vdp-guidance':
+    'Bản web của mẫu VDP theo Binding Operational Directive 20-01, kèm bản Word tải về và ví dụ biểu mẫu tiếp nhận. Hướng dẫn ghi rõ: có thể sửa mẫu cho phù hợp nhưng chính sách phải xử lý mọi hành động mà Directive yêu cầu, nên giữ nguyên ngôn ngữ của mục Authorization, và phải đăng tại đường dẫn /vulnerability-disclosure-policy trên website .gov chính của cơ quan.',
+  'res-cisa-ics':
+    'Trang chuyên đề nêu thách thức đặc thù của ICS: môi trường chạy công nghệ cũ và giao thức độc quyền vốn được thiết kế ưu tiên khả năng vận hành và độ tin cậy chứ không phải bảo mật; trước đây chạy trong mạng cô lập nên ít nhu cầu bảo vệ, nay nhiều thiết bị vẫn dùng hệ điều hành lỗi thời và giao thức không có mã hoá hay xác thực.',
+  'res-solidity-security':
+    'Mở đầu bằng lập luận vì sao hợp đồng thông minh cần cẩn trọng hơn phần mềm thường: mọi lần thực thi đều công khai, mã nguồn thường công khai, và thứ được quản lý có thể là tài sản. Nói thẳng rằng danh sách cạm bẫy trong chương không bao giờ đầy đủ, và ngay cả khi mã không lỗi thì trình biên dịch hoặc nền tảng vẫn có thể có lỗi — có kèm danh sách lỗi đã biết của trình biên dịch ở dạng máy đọc được.',
   'res-unicode-tr36':
     'Hai nhóm vấn đề: giả mạo thị giác (ký tự nhìn giống nhau, cùng hoặc khác hệ chữ, khiến người dùng vào nhầm trang), và khai thác ở tầng mã hoá không nhìn thấy được (lỗ hổng UTF-8, tràn bộ đệm, tấn công qua chuyển đổi bảng mã để vượt bộ lọc). Đọc ở bản sửa đổi tr36-15; trang /tr36/ hiện chỉ thông báo báo cáo đã ổn định.',
   'res-google-workspace-security':

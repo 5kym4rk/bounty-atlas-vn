@@ -2,6 +2,30 @@
 
 Định dạng theo tinh thần Keep a Changelog. Phiên bản theo Semantic Versioning.
 
+## [1.0.0] — 2026-07-27
+
+### 144/144 module hết trạng thái nháp
+
+Nhóm 21 nguồn còn lại ở bản 0.5.0 từng bị xếp là "không đọc được từ môi trường
+này". Kết luận đó sai ở chỗ quy vấn đề cho nguồn, trong khi vấn đề nằm ở công cụ:
+phần lớn các trang đó chặn bot hoặc dựng nội dung bằng JavaScript. Mở bằng
+**trình duyệt thật** thì đọc được hết; riêng tiêu chuẩn ETSI ở dạng PDF thì tải
+về rồi đọc.
+
+Toàn bộ 21 nguồn nay đã được mở và đọc, nên **mọi module đều hết nháp**.
+
+Đợt này bắt thêm hai vấn đề về URL mà kiểm tra HTTP không thấy được, vì cả hai
+đều trả mã 200:
+
+- **Google Cloud VRP**: URL dạng ID số đã lỗi thời và âm thầm rơi về trang
+  Google & Alphabet VRP — tức là link "sống" nhưng dẫn sai nội dung. Đã đổi sang
+  đường dẫn dạng slug.
+- **eCFR Part 15**: chuyển hướng sang trang chặn truy cập. Đã đổi sang bản toàn
+  văn của cùng văn bản trên GovInfo.
+
+70 nguồn còn lại ở trạng thái `draft` đều là nguồn **mở rộng**, không phải nguồn
+`core` của module nào, nên không chặn ai học. Chúng sẽ được rà soát ở các đợt sau.
+
 ## [0.5.0] — 2026-07-27
 
 ### Rà soát nốt phần đọc được: 276/367 nguồn, 122/144 module hết nháp

@@ -72,7 +72,27 @@ Việc đọc thật đã bắt được các sai sót mà kiểm tra link khôn
 | Semgrep, GitHub Security Lab | Đã đổi host tài liệu                                                                                        |
 | PortSwigger business logic   | Đường dẫn thật là `/logic-flaws`                                                                            |
 
-### Nguồn không đọc được từ môi trường này
+### Đợt 3: dùng trình duyệt thật (2026-07-27)
+
+Nhóm nguồn ở bảng dưới từng bị xếp là "không đọc được" khi chỉ dùng công cụ lấy
+trang tự động. Thực ra vấn đề nằm ở công cụ, không ở nguồn: phần lớn chặn bot
+hoặc dựng nội dung bằng JavaScript. Mở bằng **trình duyệt thật** thì đọc được
+hết, và tài liệu PDF thì tải về rồi đọc.
+
+Kết quả: **144/144 module** hết trạng thái nháp.
+
+Đợt này bắt thêm hai vấn đề về URL:
+
+- **Google Cloud VRP**: URL dạng ID số (`.../6625378258649088/...`) đã lỗi thời
+  và rơi về trang Google & Alphabet VRP. Đường dẫn đúng là dạng slug
+  `/about/rules/google-friends/cloud-vulnerability-reward-program-rules`.
+- **eCFR Part 15**: chuyển hướng sang trang chặn truy cập ngay cả trong trình
+  duyệt thật. Đã đổi sang bản toàn văn trên GovInfo của cùng văn bản.
+
+Bài học cho quy trình: **"công cụ không lấy được" không phải là "nguồn có vấn
+đề"**. Trước khi kết luận, phải thử tới công cụ mạnh nhất hiện có.
+
+### Nguồn không đọc được từ môi trường này (đã giải quyết ở đợt 3)
 
 Sau khi rà soát hết phần đọc được, còn đúng **21 nguồn** chặn 122/144 module
 không ra khỏi nháp. Tất cả đều thuộc một nhóm: trả HTTP 403 cho công cụ tự động,

@@ -242,8 +242,8 @@ export const advancedStudyResources: LearningResource[] = [
   doc({
     id: 'res-fcc-part15',
     title: 'FCC Rules — Part 15 Radio Frequency Devices',
-    url: 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15',
-    provider: 'U.S. Federal Register',
+    url: 'https://www.govinfo.gov/content/pkg/CFR-2023-title47-vol1/xml/CFR-2023-title47-vol1-part15.xml',
+    provider: 'U.S. Government Publishing Office',
     descriptionVi:
       'Quy định phát xạ vô tuyến của Hoa Kỳ. Đọc để hiểu vì sao phát sóng gần như luôn ngoài phạm vi bug bounty; luật Việt Nam là văn bản riêng.',
     resourceType: 'standard',

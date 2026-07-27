@@ -3,7 +3,7 @@
 > Tệp này được sinh tự động bởi `npm run coverage:report`. Đừng sửa tay.
 > Mọi con số đều tính trực tiếp từ dữ liệu trong `src/data/`.
 
-Phiên bản sản phẩm: 0.5.0
+Phiên bản sản phẩm: 1.0.0
 Ngày rà soát nội dung ở mức sản phẩm: 2026-07-26
 
 *Tệp này cố ý không chứa dấu thời gian sinh, để CI có thể phát hiện khi nội dung
@@ -37,7 +37,7 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | learningPath | 9 |
 | officialResource | 309 |
 | communityResource | 10 |
-| verifiedResource | 276 |
+| verifiedResource | 297 |
 
 ## 3. Tỷ lệ bao phủ
 
@@ -48,7 +48,7 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | moduleWithQuizPercent | 23.6% |
 | moduleWithRemediationPercent | 100% |
 | officialResourcePercent | 84.2% |
-| verifiedResourcePercent | 75.2% |
+| verifiedResourcePercent | 80.9% |
 
 ## 4. Ma trận theo lĩnh vực
 
@@ -88,7 +88,7 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | MODULE_NO_REPORT_EXERCISE | 58 |
 | TRACK_NO_PREREQ | 9 |
 
-## 6. Nguồn chưa xác minh nội dung (91)
+## 6. Nguồn chưa xác minh nội dung (70)
 
 Những nguồn dưới đây **chưa** được người biên tập mở và đối chiếu. Chúng không mang
 nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện tại.
@@ -96,7 +96,6 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-h1-scope-best-practices` — Scope Best Practices
 - `res-hacker101` — Hacker101
 - `res-hacker101-ctf` — Hacker101 CTF
-- `res-h1-hacktivity` — Hacktivity
 - `res-bugcrowd-university` — Bugcrowd University
 - `res-bugcrowd-university-repo` — bugcrowd_university (repository)
 - `res-intigriti-hackademy` — Intigriti Hackademy
@@ -139,19 +138,13 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-owasp-iot-project` — OWASP Internet of Things Project
 - `res-iotgoat` — OWASP IoTGoat
 - `res-attack-ics` — MITRE ATT&CK for ICS
-- `res-cisa-ics` — CISA — Industrial Control Systems
 - `res-owasp-scsvs` — OWASP Smart Contract Security Verification Standard
-- `res-solidity-docs` — Solidity Documentation
 - `res-ethernaut` — Ethernaut
-- `res-damn-vulnerable-defi` — Damn Vulnerable DeFi
 - `res-owasp-llmsvs` — OWASP LLM Verification Standard
 - `res-owasp-aisvs` — OWASP AI Security Verification Standard
 - `res-mozilla-secure-extension` — Build a Secure Extension
-- `res-cloudflare-learning-dns` — What is DNS?
 - `res-cryptopals` — The Cryptopals Crypto Challenges
-- `res-cisa-vdp-guidance` — CISA — Vulnerability Disclosure Policy template
 - `res-iso-29147` — ISO/IEC 29147 — Vulnerability disclosure
-- `res-google-bughunters-rules` — Google Bug Hunters — Program rules
 - `res-cs-credential-stuffing` — Credential Stuffing Prevention Cheat Sheet
 - `res-cs-injection` — Injection Prevention Cheat Sheet
 - `res-cs-clickjacking` — Clickjacking Defense Cheat Sheet
@@ -159,31 +152,17 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-trusted-types` — Trusted Types
 - `res-cs-redirects` — Unvalidated Redirects and Forwards Cheat Sheet
 - `res-grpc-web` — gRPC-Web
-- `res-graphql-security-docs` — GraphQL — Security
 - `res-oauth-security-topics` — OAuth 2.0 Security Best Current Practice
 - `res-cs-saml` — SAML Security Cheat Sheet
-- `res-apple-keychain` — Keychain services
-- `res-apple-universal-links` — Supporting universal links in your app
-- `res-apple-data-protection` — Data Protection
 - `res-cs-mobile-app-security` — Mobile Application Security Cheat Sheet
-- `res-gcp-vrp` — Google Cloud VRP
 - `res-nightmare-fuzzing` — Nightmare — Intro to binary exploitation
 - `res-llvm-sanitizers` — UndefinedBehaviorSanitizer
 - `res-cve-program` — CVE Program — Reporting a vulnerability
 - `res-spdx-spec` — SPDX Specification
 - `res-npm-provenance` — npm — Generating provenance statements
-- `res-etsi-en-303-645` — ETSI EN 303 645 — Cyber Security for Consumer IoT
-- `res-fcc-part15` — FCC Rules — Part 15 Radio Frequency Devices
 - `res-iso-21434` — ISO/SAE 21434 — Road vehicles: cybersecurity engineering
-- `res-unece-r155` — UN Regulation No. 155 — Cyber security management system
-- `res-iec-62443` — IEC 62443 — Industrial communication networks security
-- `res-cisa-ics-advisories` — CISA — ICS Advisories
-- `res-solidity-security` — Solidity — Security Considerations
 - `res-immunefi-severity` — Immunefi Vulnerability Severity Classification System
-- `res-mitre-atlas` — MITRE ATLAS
 - `res-nist-ai-600-1` — NIST AI 600-1 — Generative AI Profile
-- `res-gdpr-text` — General Data Protection Regulation — full text
-- `res-vn-pdpd` — Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân
 
 ## 7. Nguồn quá hạn rà soát (0)
 
@@ -195,14 +174,13 @@ Chạy `npm run check:links` để cập nhật.
 
 (không có)
 
-## 9. Nội dung còn ở trạng thái bản nháp (199)
+## 9. Nội dung còn ở trạng thái bản nháp (156)
 
 | Thực thể | Số mục |
 | --- | --- |
 | domain | 24 |
-| module | 22 |
 | weakness | 62 |
-| resource | 91 |
+| resource | 70 |
 
 ## 10. Lĩnh vực còn thiếu nội dung
 

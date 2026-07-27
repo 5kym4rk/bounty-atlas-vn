@@ -535,7 +535,7 @@ export const platformsStudyResources: LearningResource[] = [
   doc({
     id: 'res-gcp-vrp',
     title: 'Google Cloud VRP',
-    url: 'https://bughunters.google.com/about/rules/google-friends/6625378258649088/google-cloud-vulnerability-reward-program-rules',
+    url: 'https://bughunters.google.com/about/rules/google-friends/cloud-vulnerability-reward-program-rules',
     provider: 'Google',
     descriptionVi:
       'Quy tắc chương trình thưởng lỗi cho Google Cloud, gồm ranh giới với cấu hình của khách hàng.',

@@ -9,14 +9,14 @@ Tổng số liên kết: 462
 
 | Trạng thái | Số lượng | Ý nghĩa |
 | --- | --- | --- |
-| active | 399 | Truy cập được bình thường |
-| redirected | 44 | Có chuyển hướng, URL đích khác URL khai báo |
+| active | 401 | Truy cập được bình thường |
+| redirected | 41 | Có chuyển hướng, URL đích khác URL khai báo |
 | login-required | 0 | Cần đăng nhập |
 | blocked | 7 | Bị chặn tự động, nhiều khả năng do chống bot |
-| rate-limited | 0 | Bị giới hạn tốc độ |
+| rate-limited | 2 | Bị giới hạn tốc độ |
 | timeout | 0 | Hết thời gian chờ |
 | unavailable | 0 | **Cần xử lý** |
-| unknown | 12 | Chưa phân loại được |
+| unknown | 11 | Chưa phân loại được |
 
 ## Liên kết cần xử lý
 
@@ -47,7 +47,7 @@ Tổng số liên kết: 462
 | lab | `lab-k8s-local-rbac` | active | 200 | https://kubernetes.io/docs/concepts/security/security-checklist/ |
 | lab | `lab-mastg-apps` | active | 200 | https://mas.owasp.org/MASTG/apps/ |
 | lab | `lab-mobile-android-storage` | active | 200 | https://mas.owasp.org/MASTG/tests/ |
-| lab | `lab-network-local` | unknown | - | https://nmap.org/book/ |
+| lab | `lab-network-local` | active | 200 | https://nmap.org/book/ |
 | lab | `lab-policy-reading` | active | 200 | https://docs.hackerone.com/en/articles/8494552-defining-scope |
 | lab | `lab-privacy-evidence` | active | 200 | https://owasp.org/www-project-application-security-verification-standard/ |
 | lab | `lab-proxy-setup` | active | 200 | https://portswigger.net/burp/documentation |
@@ -228,14 +228,14 @@ Tổng số liên kết: 462
 | resource | `res-ethernaut` | active | 200 | https://ethernaut.openzeppelin.com/ |
 | resource | `res-etsi-en-303-645` | active | 200 | https://www.etsi.org/deliver/etsi_en/303600_303699/303645/03.01.03_60/en_303645v030103p.pdf |
 | resource | `res-exercism` | active | 200 | https://exercism.org/tracks |
-| resource | `res-fcc-part15` | redirected | 200 | https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15 |
+| resource | `res-fcc-part15` | active | 200 | https://www.govinfo.gov/content/pkg/CFR-2023-title47-vol1/xml/CFR-2023-title47-vol1-part15.xml |
 | resource | `res-firmware-analysis-toolkit` | active | 200 | https://github.com/scriptingxss/owasp-fstm |
 | resource | `res-first-psirt-framework` | active | 200 | https://www.first.org/standards/frameworks/psirts/psirt_services_framework_v1.1 |
 | resource | `res-foundry-book` | redirected | 200 | https://getfoundry.sh/ |
 | resource | `res-foundry-fuzz` | redirected | 200 | https://getfoundry.sh/forge/fuzz-testing |
 | resource | `res-frida-docs` | active | 200 | https://frida.re/docs/home/ |
 | resource | `res-gcp-iam-overview` | active | 200 | https://docs.cloud.google.com/iam/docs/overview |
-| resource | `res-gcp-vrp` | redirected | 200 | https://bughunters.google.com/about/rules/google-friends/6625378258649088/google-cloud-vulnerability-reward-program-rules |
+| resource | `res-gcp-vrp` | active | 200 | https://bughunters.google.com/about/rules/google-friends/cloud-vulnerability-reward-program-rules |
 | resource | `res-gcp-well-architected-security` | redirected | 200 | https://cloud.google.com/architecture/framework/security |
 | resource | `res-gcp-workload-identity` | active | 200 | https://docs.cloud.google.com/iam/docs/workload-identity-federation |
 | resource | `res-gdpr-text` | active | 202 | https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng |
@@ -317,8 +317,8 @@ Tổng số liên kết: 462
 | resource | `res-nist-ssdf` | active | 200 | https://csrc.nist.gov/pubs/sp/800/218/final |
 | resource | `res-nmap-book` | active | 200 | https://nmap.org/book/ |
 | resource | `res-nmap-host-discovery` | unknown | - | https://nmap.org/book/man-host-discovery.html |
-| resource | `res-nmap-reference` | unknown | - | https://nmap.org/book/man.html |
-| resource | `res-nmap-service-detection` | active | 200 | https://nmap.org/book/vscan.html |
+| resource | `res-nmap-reference` | active | 200 | https://nmap.org/book/man.html |
+| resource | `res-nmap-service-detection` | unknown | - | https://nmap.org/book/vscan.html |
 | resource | `res-nordic-ble-gatt` | blocked | 403 | https://nrfconnectdocs.nordicsemi.com/ncs/latest/nrf/protocols/bt/index.html |
 | resource | `res-npm-provenance` | redirected | 200 | https://docs.npmjs.com/generating-provenance-statements |
 | resource | `res-oauth-security-topics` | active | 200 | https://oauth.net/2/oauth-best-practice/ |
@@ -427,8 +427,8 @@ Tổng số liên kết: 462
 | resource | `res-slack-app-security` | redirected | 200 | https://docs.slack.dev/authentication/best-practices-for-security |
 | resource | `res-slsa` | active | 200 | https://slsa.dev/ |
 | resource | `res-slsa-levels` | active | 200 | https://slsa.dev/spec/v1.0/levels |
-| resource | `res-solidity-docs` | redirected | 200 | https://docs.soliditylang.org/ |
-| resource | `res-solidity-security` | active | 200 | https://docs.soliditylang.org/en/latest/security-considerations.html |
+| resource | `res-solidity-docs` | rate-limited | 429 | https://docs.soliditylang.org/ |
+| resource | `res-solidity-security` | rate-limited | 429 | https://docs.soliditylang.org/en/latest/security-considerations.html |
 | resource | `res-spdx-spec` | active | 200 | https://spdx.dev/use/specifications/ |
 | resource | `res-sysinternals` | active | 200 | https://learn.microsoft.com/en-us/sysinternals/ |
 | resource | `res-testssl` | active | 200 | https://testssl.sh/ |
