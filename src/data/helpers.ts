@@ -21,6 +21,7 @@ const emptyModule: Omit<
   LearningModule,
   'id' | 'trackId' | 'titleVi' | 'summaryVi' | 'learningObjectives' | 'safetyNoteVi' | 'difficulty'
 > = {
+  lessonVi: [],
   estimatedHours: null,
   prerequisiteModuleIds: [],
   conceptIds: [],

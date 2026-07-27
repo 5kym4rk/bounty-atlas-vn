@@ -30,6 +30,7 @@ import {
 } from '@/components/ui';
 
 const TABS = [
+  'Bài học',
   'Mục tiêu',
   'Khái niệm',
   'Kiến trúc',
@@ -60,7 +61,7 @@ const PROGRESS_OPTIONS: ProgressState[] = [
 export function ModuleDetailPage() {
   const { moduleId } = useParams();
   const module = moduleId ? moduleById.get(moduleId) : undefined;
-  const [tab, setTab] = useState<(typeof TABS)[number]>('Mục tiêu');
+  const [tab, setTab] = useState<(typeof TABS)[number]>('Bài học');
 
   const progress = useAppStore((s) => (moduleId ? s.progress[moduleId] : undefined));
   const setProgress = useAppStore((s) => s.setProgress);
@@ -184,6 +185,38 @@ export function ModuleDetailPage() {
       </div>
 
       <div role="tabpanel">
+        {tab === 'Bài học' ? (
+          <article className="max-w-3xl">
+            {module.lessonVi.map((section, index) => (
+              <section key={`${module.id}-lesson-${index}`} className="mb-8">
+                <h2 className="mb-2 text-lg font-semibold">{section.headingVi}</h2>
+                {section.paragraphsVi.map((paragraph, pIndex) => (
+                  <p
+                    key={`${module.id}-lesson-${index}-p-${pIndex}`}
+                    className="mb-3 leading-relaxed text-ink-muted"
+                  >
+                    {paragraph}
+                  </p>
+                ))}
+                {section.bulletsVi && section.bulletsVi.length > 0 ? (
+                  <BulletList items={section.bulletsVi} />
+                ) : null}
+                {section.example ? (
+                  <figure className="mt-3">
+                    <CodeBlock
+                      content={section.example.content}
+                      language={section.example.language}
+                    />
+                    <figcaption className="mt-1 text-xs text-ink-faint">
+                      {section.example.captionVi}
+                    </figcaption>
+                  </figure>
+                ) : null}
+              </section>
+            ))}
+          </article>
+        ) : null}
+
         {tab === 'Mục tiêu' ? (
           <>
             <BulletList items={module.learningObjectives} />

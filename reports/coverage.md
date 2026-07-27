@@ -3,7 +3,7 @@
 > Tệp này được sinh tự động bởi `npm run coverage:report`. Đừng sửa tay.
 > Mọi con số đều tính trực tiếp từ dữ liệu trong `src/data/`.
 
-Phiên bản sản phẩm: 0.1.0
+Phiên bản sản phẩm: 0.2.0
 Ngày rà soát nội dung ở mức sản phẩm: 2026-07-26
 
 *Tệp này cố ý không chứa dấu thời gian sinh, để CI có thể phát hiện khi nội dung

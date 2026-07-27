@@ -41,7 +41,24 @@ Sai: "Gửi chuỗi X vào tham số Y để lấy toàn bộ bảng người d�
 Đúng: "Ưu tiên phép thử logic đúng/sai chỉ đọc; chứng minh bằng một giá trị vô hại
 như phiên bản cơ sở dữ liệu; không trích xuất dữ liệu người dùng."
 
-### 3.2 Checklist
+### 3.2 Thân bài học (`lessonVi`)
+
+Mỗi module phải có thân bài học thật, không phải danh sách link. Yêu cầu:
+
+- Mỗi phần có tiêu đề và ít nhất một đoạn văn.
+- Nội dung viết bằng lời của dự án, sau khi đối chiếu với nguồn chính thức.
+  **Không dịch máy nguyên văn và không sao chép từ nguồn nào.**
+- Giải thích **vì sao** chứ không chỉ **là gì**. Người học phải hiểu nguyên nhân
+  gốc, không phải thuộc danh sách.
+- Ví dụ mã, request hay log phải do dự án tự soạn, dùng dữ liệu giả.
+- Phần nói về kiểm thử phải nêu ranh giới an toàn ngay trong đó, không tách rời.
+- Không chứa payload khai thác sẵn dùng.
+
+Test trong `tests/dataset.test.ts` thực thi các ràng buộc định lượng: mỗi phần
+phải đủ dài, mỗi module phải đủ nội dung, và không module nào dùng chung cấu
+trúc bài học với module khác.
+
+### 3.3 Checklist
 
 Mỗi mục là một **câu hỏi** hoặc một **quan sát**, kèm lý do vì sao câu hỏi đó quan
 trọng. Mục có rủi ro cao phải có `stopConditionVi`.
@@ -49,13 +66,13 @@ trọng. Mục có rủi ro cao phải có `stopConditionVi`.
 Sai: "Thử payload A, B, C ở ô tìm kiếm."
 Đúng: "Dữ liệu bạn nhập xuất hiện ở những ngữ cảnh đầu ra nào?"
 
-### 3.3 Lab
+### 3.4 Lab
 
 Mỗi lab phải có `allowedTargetsNoteVi` nêu chính xác mục tiêu nào được phép đụng
 vào. Lab chạy trên tài khoản cloud của người học phải có đầy đủ metadata chi phí,
 tài khoản riêng, cảnh báo môi trường sản xuất và hướng dẫn dọn dẹp.
 
-### 3.4 Bài tập báo cáo
+### 3.5 Bài tập báo cáo
 
 Kịch bản phải đặt trong lab hoặc trong phạm vi được phép, và phải thể hiện được
 nguyên tắc PoC tối thiểu. Rubric bắt buộc có.

@@ -12,6 +12,7 @@ import type {
   Concept,
   KnowledgeDomain,
   Lab,
+  LessonSection,
   LearningModule,
   LearningPath,
   LearningResource,
@@ -177,6 +178,19 @@ export const skillSchema: z.ZodType<Skill> = z.object({
   difficulty: difficultySchema,
 });
 
+export const lessonSectionSchema: z.ZodType<LessonSection> = z.object({
+  headingVi: nonEmptyText,
+  paragraphsVi: z.array(nonEmptyText).min(1, 'Mỗi phần bài học phải có ít nhất một đoạn'),
+  bulletsVi: z.array(nonEmptyText).optional(),
+  example: z
+    .object({
+      language: z.string().min(1),
+      content: z.string().min(1),
+      captionVi: nonEmptyText,
+    })
+    .optional(),
+});
+
 export const completionCriterionSchema: z.ZodType<CompletionCriterion> = z.object({
   id: z.string().min(1),
   labelVi: nonEmptyText,
@@ -224,6 +238,7 @@ export const learningModuleSchema: z.ZodType<LearningModule> = z.object({
   difficulty: difficultySchema,
   estimatedHours: z.number().positive().nullable(),
   learningObjectives: z.array(nonEmptyText).min(1, 'Module phải có ít nhất một mục tiêu học'),
+  lessonVi: z.array(lessonSectionSchema).min(1, 'Module phải có thân bài học'),
   prerequisiteModuleIds: z.array(refId),
   conceptIds: z.array(refId),
   weaknessIds: z.array(refId),

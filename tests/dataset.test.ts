@@ -53,6 +53,48 @@ describe('dataset', () => {
     }
   });
 
+  it('mọi module có thân bài học thật', () => {
+    for (const module of dataset.modules) {
+      expect(module.lessonVi.length, module.id).toBeGreaterThan(0);
+      for (const section of module.lessonVi) {
+        const where = `${module.id}: ${section.headingVi}`;
+        expect(section.headingVi.trim().length, module.id).toBeGreaterThan(0);
+        expect(section.paragraphsVi.length, module.id).toBeGreaterThan(0);
+
+        // Khong doan nao duoc la chuoi giu cho.
+        for (const paragraph of section.paragraphsVi) {
+          expect(paragraph.trim().length, where).toBeGreaterThan(30);
+        }
+
+        // Moi phan phai co du noi dung. Doan dan ngan truoc mot danh sach gach
+        // dau dong la loi viet hop le, nen nguong tinh tren toan bo phan chu
+        // khong tinh tren tung doan.
+        const sectionText = [...section.paragraphsVi, ...(section.bulletsVi ?? [])].join(' ');
+        expect(sectionText.trim().length, where).toBeGreaterThan(200);
+      }
+    }
+  });
+
+  it('bài học đủ dày để dạy được, không phải khung rỗng', () => {
+    for (const module of dataset.modules) {
+      const words = module.lessonVi
+        .flatMap((s) => [...s.paragraphsVi, ...(s.bulletsVi ?? [])])
+        .join(' ')
+        .split(/\s+/).length;
+      expect(words, module.id).toBeGreaterThan(120);
+    }
+  });
+
+  it('không có hai module nào dùng chung nguyên văn bài học', () => {
+    const seen = new Map<string, string>();
+    for (const module of dataset.modules) {
+      const key = module.lessonVi.map((s) => s.headingVi).join('|');
+      const previous = seen.get(key);
+      expect(previous, `${module.id} trùng bài học với ${previous}`).toBeUndefined();
+      seen.set(key, module.id);
+    }
+  });
+
   it('mọi lab có ghi chú mục tiêu được phép', () => {
     for (const lab of dataset.labs) {
       expect(lab.allowedTargetsNoteVi.trim().length).toBeGreaterThan(0);

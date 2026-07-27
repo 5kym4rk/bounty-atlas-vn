@@ -21,6 +21,7 @@ import { triageScenarios } from './triage';
 import { standards } from './standards';
 import { assessments, skills } from './skills';
 import { MODULE_LINKS } from './links';
+import { LESSONS_BY_MODULE } from './lessons';
 
 function unique(values: string[]): string[] {
   return [...new Set(values)];
@@ -65,6 +66,7 @@ function linkModules(): LearningModule[] {
 
     return {
       ...module,
+      lessonVi: LESSONS_BY_MODULE[module.id] ?? module.lessonVi,
       conceptIds: unique([...module.conceptIds, ...(links.conceptIds ?? [])]),
       weaknessIds: unique([...module.weaknessIds, ...(links.weaknessIds ?? [])]),
       checklistIds: unique([...module.checklistIds, ...(links.checklistIds ?? [])]),

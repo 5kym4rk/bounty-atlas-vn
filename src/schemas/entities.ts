@@ -112,6 +112,21 @@ export interface Skill {
   difficulty: Difficulty;
 }
 
+/**
+ * Một phần của thân bài học.
+ *
+ * Nội dung do dự án tự biên soạn bằng tiếng Việt, viết dựa trên hiểu biết đối
+ * chiếu với nguồn chính thức. KHÔNG sao chép nguyên văn từ nguồn nào.
+ */
+export interface LessonSection {
+  headingVi: string;
+  paragraphsVi: string[];
+  /** Danh sách gạch đầu dòng đi kèm, nếu phần này cần liệt kê. */
+  bulletsVi?: string[];
+  /** Đoạn mã, request hoặc log minh hoạ do dự án tự soạn. */
+  example?: { language: string; content: string; captionVi: string };
+}
+
 export interface CompletionCriterion {
   id: string;
   labelVi: string;
@@ -163,6 +178,11 @@ export interface LearningModule {
   difficulty: Difficulty;
   estimatedHours: number | null;
   learningObjectives: string[];
+  /**
+   * Thân bài học. Đây là nội dung người học đọc, không phải danh sách link.
+   * Bắt buộc có ít nhất một phần với nội dung thật.
+   */
+  lessonVi: LessonSection[];
   prerequisiteModuleIds: string[];
   conceptIds: string[];
   weaknessIds: string[];

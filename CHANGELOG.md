@@ -2,6 +2,33 @@
 
 Định dạng theo tinh thần Keep a Changelog. Phiên bản theo Semantic Versioning.
 
+## [0.2.0] — 2026-07-26
+
+### Thêm nội dung bài học cho toàn bộ module
+
+Trước bản này, module chỉ có metadata: tiêu đề, tóm tắt, mục tiêu học, phương pháp
+và cảnh báo an toàn. Người học mở một module ra thì không có gì để đọc.
+
+Bản này bổ sung **thân bài học** cho tất cả 144 module.
+
+- Thêm kiểu `LessonSection` và trường bắt buộc `lessonVi` trong `LearningModule`.
+  Validator từ chối module không có thân bài học, nên khoảng trống này không thể
+  tái diễn mà không bị phát hiện.
+- Nội dung nằm ở `src/data/lessons/`, tách khỏi file định nghĩa module để metadata
+  và nội dung dài không lẫn vào nhau.
+- Trang module có thêm tab **Bài học** và mở mặc định ở tab đó.
+- Ba test mới trong `tests/dataset.test.ts` kiểm tra nội dung là thật: mỗi phần đủ
+  dài, mỗi module đủ nội dung, và không module nào dùng chung cấu trúc bài học.
+- `CONTENT_POLICY.md` bổ sung mục 3.2 quy định cách viết thân bài học.
+
+Nội dung được viết sau khi đối chiếu với tài liệu chính thức của OWASP, NIST,
+MITRE, FIRST, IETF, Kubernetes, GitHub, Electron và các nền tảng bug bounty. Toàn
+bộ do dự án tự biên soạn bằng tiếng Việt; không sao chép nguyên văn từ nguồn nào.
+Mọi ví dụ mã trong bài học đều tự soạn với dữ liệu giả.
+
+Nội dung vẫn mang `contentStatus: 'draft'` vì chưa qua vòng rà soát biên tập độc
+lập. Số lượng thực tế xem `reports/coverage.md`.
+
 ## [0.1.0] — 2026-07-26
 
 Bản phát hành đầu tiên. Repository được khởi tạo mới hoàn toàn bằng `git init`,
