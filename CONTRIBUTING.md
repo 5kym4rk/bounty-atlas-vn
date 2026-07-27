@@ -14,10 +14,12 @@
 
 ```bash
 npm install
-npm run dev
 ```
 
 Yêu cầu Node 20 trở lên.
+
+Dự án không chạy server local. Xác minh thay đổi bằng các lệnh ở mục 3; bản
+chạy được là bản trên GitHub Pages, tự cập nhật khi `main` thay đổi.
 
 ## 3. Lệnh bắt buộc trước khi gửi thay đổi
 

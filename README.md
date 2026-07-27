@@ -82,10 +82,15 @@ học bình thường không cần tới nó.
 
 ```bash
 npm install
-npm run dev     # server phát triển, chỉ dùng khi sửa mã
 ```
 
 Yêu cầu Node 20 trở lên.
+
+Dự án **không có server chạy local**. Không có `npm run dev`, không có
+`npm run preview`. Bản duy nhất để xem là bản triển khai trên GitHub Pages ở
+đường dẫn phía trên; đẩy thay đổi lên nhánh `main` là nó tự cập nhật.
+
+Kiểm tra thay đổi bằng test, validator và build — xem phần dưới.
 
 ### Lệnh chính
 
