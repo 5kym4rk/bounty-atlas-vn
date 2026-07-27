@@ -117,7 +117,7 @@ interface LearningModule {
   difficulty: Difficulty;
   estimatedHours: number | null;
   learningObjectives: string[]; // bắt buộc >= 1
-  lessonVi: LessonSection[]; // thân bài học, bắt buộc >= 1 phần
+  studyPlan: StudyStep[]; // lộ trình nguồn học, bắt buộc >= 1 bước
   prerequisiteModuleIds: string[];
   conceptIds: string[];
   weaknessIds: string[];
@@ -165,7 +165,7 @@ Validator bắt buộc mọi lab có `environment === 'cloud-owned-account'` ph�
 | `DANGLING_REF`              | Tham chiếu tới ID không tồn tại                                |
 | `PREREQ_CYCLE`              | Chu trình prerequisite ở domain/track/module                   |
 | `MODULE_NO_OBJECTIVE`       | Module không có learning objective                             |
-| `MODULE_NO_LESSON`          | Module không có thân bài học                                   |
+| `MODULE_NO_STUDY_PLAN`      | Module không có lộ trình nguồn học                             |
 | `MODULE_NO_SAFETY`          | Module không có safety note                                    |
 | `DOMAIN_NO_SAFETY`          | Domain không có safety note                                    |
 | `LAB_NO_ALLOWED_TARGETS`    | Lab thiếu `allowedTargetsNoteVi`                               |

@@ -27,16 +27,16 @@ import {
   EmptyState,
   ExternalLink,
   PageHeader,
+  ResourceMetaChips,
 } from '@/components/ui';
 
 const TABS = [
-  'Bài học',
+  'Lộ trình học',
   'Mục tiêu',
   'Khái niệm',
   'Kiến trúc',
   'Nhóm điểm yếu',
   'Phương pháp',
-  'Nguồn học',
   'Lab',
   'Checklist',
   'Khắc phục',
@@ -61,7 +61,7 @@ const PROGRESS_OPTIONS: ProgressState[] = [
 export function ModuleDetailPage() {
   const { moduleId } = useParams();
   const module = moduleId ? moduleById.get(moduleId) : undefined;
-  const [tab, setTab] = useState<(typeof TABS)[number]>('Bài học');
+  const [tab, setTab] = useState<(typeof TABS)[number]>('Lộ trình học');
 
   const progress = useAppStore((s) => (moduleId ? s.progress[moduleId] : undefined));
   const setProgress = useAppStore((s) => s.setProgress);
@@ -89,8 +89,11 @@ export function ModuleDetailPage() {
   const domain = domainOfModule(module.id);
   const concepts = pick(conceptById, module.conceptIds);
   const weaknesses = pick(weaknessById, module.weaknessIds);
-  const requiredResources = pick(resourceById, module.requiredResourceIds);
-  const optionalResources = pick(resourceById, module.optionalResourceIds);
+  // Giữ nguyên thứ tự trong lộ trình: đây chính là thứ tự nên học.
+  const studySteps = module.studyPlan.flatMap((step) => {
+    const resource = resourceById.get(step.resourceId);
+    return resource ? [{ step, resource }] : [];
+  });
   const labs = pick(labById, module.labIds);
   const checklists = pick(checklistById, module.checklistIds);
   const quizzes = pick(quizById, module.quizIds);
@@ -185,36 +188,53 @@ export function ModuleDetailPage() {
       </div>
 
       <div role="tabpanel">
-        {tab === 'Bài học' ? (
-          <article className="max-w-3xl">
-            {module.lessonVi.map((section, index) => (
-              <section key={`${module.id}-lesson-${index}`} className="mb-8">
-                <h2 className="mb-2 text-lg font-semibold">{section.headingVi}</h2>
-                {section.paragraphsVi.map((paragraph, pIndex) => (
-                  <p
-                    key={`${module.id}-lesson-${index}-p-${pIndex}`}
-                    className="mb-3 leading-relaxed text-ink-muted"
-                  >
-                    {paragraph}
-                  </p>
+        {tab === 'Lộ trình học' ? (
+          <div className="max-w-3xl">
+            <Callout tone="info" title="Cách dùng lộ trình này">
+              Nội dung của module nằm ở các nguồn bên ngoài, xếp theo thứ tự nên học. Bấm vào từng
+              mục để mở và học ngay tại nguồn gốc. Dự án không sao chép nội dung của họ về đây.
+            </Callout>
+            {studySteps.length === 0 ? (
+              <EmptyState message="Module này chưa có lộ trình nguồn học." />
+            ) : (
+              <ol className="mt-4 space-y-3">
+                {studySteps.map(({ step, resource }, index) => (
+                  <li key={`${module.id}-${step.resourceId}`} className="ba-card">
+                    <div className="flex items-start gap-3">
+                      <span
+                        aria-hidden="true"
+                        className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border text-xs font-semibold"
+                      >
+                        {index + 1}
+                      </span>
+                      <div className="min-w-0">
+                        <div className="flex flex-wrap items-center gap-2">
+                          <ExternalLink href={resource.url} showHost>
+                            {resource.title}
+                          </ExternalLink>
+                          {step.necessity === 'core' ? (
+                            <Chip tone="ok">Cần học</Chip>
+                          ) : (
+                            <Chip>Mở rộng</Chip>
+                          )}
+                        </div>
+                        <p className="mt-1 text-sm">{step.roleVi}</p>
+                        <p className="mt-1 text-sm text-ink-muted">{resource.descriptionVi}</p>
+                        <ResourceMetaChips resource={resource} />
+                      </div>
+                    </div>
+                  </li>
                 ))}
-                {section.bulletsVi && section.bulletsVi.length > 0 ? (
-                  <BulletList items={section.bulletsVi} />
-                ) : null}
-                {section.example ? (
-                  <figure className="mt-3">
-                    <CodeBlock
-                      content={section.example.content}
-                      language={section.example.language}
-                    />
-                    <figcaption className="mt-1 text-xs text-ink-faint">
-                      {section.example.captionVi}
-                    </figcaption>
-                  </figure>
-                ) : null}
-              </section>
-            ))}
-          </article>
+              </ol>
+            )}
+            <p className="mt-4 text-xs text-ink-faint">
+              Bước đánh dấu <strong>Cần học</strong> là phần tối thiểu để nắm được module. Bước{' '}
+              <strong>Mở rộng</strong> dành cho khi bạn muốn đi sâu hơn.
+            </p>
+            <Link to="/resources" className="ba-btn mt-3 inline-block text-xs">
+              Mở thư viện nguồn để lọc theo tiêu chí khác
+            </Link>
+          </div>
         ) : null}
 
         {tab === 'Mục tiêu' ? (
@@ -325,36 +345,6 @@ export function ModuleDetailPage() {
             <BulletList items={module.methodologyVi} />
             <h3 className="mb-2 mt-6 font-semibold">Chứng minh tác động một cách an toàn</h3>
             <BulletList items={module.safeImpactProofVi} />
-          </>
-        ) : null}
-
-        {tab === 'Nguồn học' ? (
-          <>
-            <h3 className="mb-2 font-semibold">Nguồn bắt buộc</h3>
-            {requiredResources.length === 0 ? (
-              <EmptyState message="Module này chưa gắn nguồn bắt buộc." />
-            ) : (
-              <ul className="space-y-2">
-                {requiredResources.map((resource) => (
-                  <li key={resource.id} className="ba-card">
-                    <ExternalLink href={resource.url} showHost>
-                      {resource.title}
-                    </ExternalLink>
-                    <p className="mt-1 text-sm text-ink-muted">{resource.descriptionVi}</p>
-                    <div className="mt-2 flex flex-wrap gap-2">
-                      <Chip>{resource.provider}</Chip>
-                      <ContentStatusChip value={resource.contentStatus} />
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
-            <h3 className="mb-2 mt-6 font-semibold">
-              Nguồn bổ sung của lĩnh vực ({optionalResources.length})
-            </h3>
-            <Link to="/resources" className="ba-btn text-xs">
-              Mở thư viện nguồn để lọc chi tiết
-            </Link>
           </>
         ) : null}
 

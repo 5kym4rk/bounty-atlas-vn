@@ -1,0 +1,645 @@
+import type { LearningResource } from '@/schemas/entities';
+import { defineResource } from '../helpers';
+
+/**
+ * Nguồn học cho các lĩnh vực chuyên sâu: rà soát mã, chuỗi cung ứng, IoT,
+ * vô tuyến, ô tô, ICS/OT, Web3, AI, tiện ích trình duyệt, SaaS, quyền riêng tư
+ * và bề mặt mới nổi.
+ *
+ * Chỉ liên kết tới nguồn gốc. Không sao chép nội dung về dự án.
+ */
+
+/** Mặc định là tài liệu ở mức nâng cao; mọi trường đều ghi đè được. */
+type DocInput = Omit<Parameters<typeof defineResource>[0], 'resourceType'> &
+  Partial<Pick<LearningResource, 'resourceType'>>;
+
+function doc(input: DocInput): LearningResource {
+  return defineResource({ resourceType: 'documentation', difficulty: 'advanced', ...input });
+}
+
+export const advancedStudyResources: LearningResource[] = [
+  // ── Rà soát mã ───────────────────────────────────────────────────────────
+  doc({
+    id: 'res-codeql-query-help',
+    title: 'CodeQL — Writing queries',
+    url: 'https://codeql.github.com/docs/writing-codeql-queries/',
+    provider: 'GitHub',
+    descriptionVi:
+      'Cách viết truy vấn phân tích mã theo luồng dữ liệu. Đây là công cụ chính cho phân tích biến thể.',
+    domainIds: ['dom-code-review'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của công cụ.',
+    handsOn: true,
+  }),
+  doc({
+    id: 'res-semgrep-docs',
+    title: 'Semgrep — Writing rules',
+    url: 'https://semgrep.dev/docs/writing-rules/overview',
+    provider: 'Semgrep',
+    descriptionVi:
+      'Viết luật tìm mẫu mã theo cú pháp, nhẹ hơn CodeQL và đủ cho phần lớn việc tìm mẫu lặp lại.',
+    domainIds: ['dom-code-review'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của công cụ.',
+    handsOn: true,
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-gh-security-lab-research',
+    title: 'GitHub Security Lab — Research',
+    url: 'https://securitylab.github.com/research/',
+    provider: 'GitHub',
+    descriptionVi:
+      'Các bài phân tích lỗ hổng nguồn mở có ghi rõ cách tìm ra. Đọc để học cách lập luận, không phải để sao chép truy vấn.',
+    resourceType: 'article',
+    domainIds: ['dom-code-review'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Blog nghiên cứu chính thức của GitHub Security Lab.',
+  }),
+  doc({
+    id: 'res-gh-coordinated-disclosure',
+    title: 'GitHub — Coordinated disclosure of security vulnerabilities',
+    url: 'https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/about-coordinated-disclosure-of-security-vulnerabilities',
+    provider: 'GitHub',
+    descriptionVi:
+      'Một chính sách công bố có phối hợp cụ thể, gồm mốc thời gian và cách xử lý khi không có phản hồi.',
+    domainIds: ['dom-code-review', 'dom-policy'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Chính sách chính thức.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-cve-program',
+    title: 'CVE Program — Reporting a vulnerability',
+    url: 'https://www.cve.org/ReportRequest/ReportRequestForNonCNAs',
+    provider: 'CVE Program',
+    descriptionVi: 'Quy trình xin mã CVE khi dự án không có CNA riêng.',
+    domainIds: ['dom-code-review', 'dom-policy'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Hướng dẫn chính thức của chương trình CVE.',
+    difficulty: 'intermediate',
+  }),
+
+  // ── Chuỗi cung ứng ───────────────────────────────────────────────────────
+  doc({
+    id: 'res-slsa-levels',
+    title: 'SLSA — Security levels',
+    url: 'https://slsa.dev/spec/v1.0/levels',
+    provider: 'OpenSSF',
+    descriptionVi: 'Bốn mức bảo đảm cho quy trình dựng phần mềm, mỗi mức yêu cầu gì cụ thể.',
+    resourceType: 'standard',
+    domainIds: ['dom-supply-chain'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Neo vào chương mức bảo đảm trong đặc tả SLSA v1.0.',
+  }),
+  doc({
+    id: 'res-cyclonedx-spec',
+    title: 'CycloneDX Specification',
+    url: 'https://cyclonedx.org/specification/overview/',
+    provider: 'OWASP',
+    descriptionVi:
+      'Một trong hai định dạng SBOM phổ biến; mô tả thành phần, phụ thuộc và nguồn gốc.',
+    resourceType: 'specification',
+    domainIds: ['dom-supply-chain'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Đặc tả chính thức của dự án OWASP CycloneDX.',
+  }),
+  doc({
+    id: 'res-spdx-spec',
+    title: 'SPDX Specification',
+    url: 'https://spdx.dev/use/specifications/',
+    provider: 'Linux Foundation',
+    descriptionVi: 'Định dạng SBOM còn lại, đồng thời là chuẩn ISO/IEC 5962.',
+    resourceType: 'specification',
+    domainIds: ['dom-supply-chain'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Đặc tả chính thức của dự án SPDX.',
+  }),
+  doc({
+    id: 'res-gh-actions-hardening',
+    title: 'GitHub Actions — Security hardening',
+    url: 'https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments',
+    provider: 'GitHub',
+    descriptionVi:
+      'Siết bảo mật pipeline: quyền của token, action bên thứ ba ghim theo commit, và ranh giới của workflow chạy từ pull request.',
+    domainIds: ['dom-supply-chain'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của nền tảng CI.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-gh-oidc',
+    title: 'GitHub Actions — OpenID Connect',
+    url: 'https://docs.github.com/en/actions/concepts/security/openid-connect',
+    provider: 'GitHub',
+    descriptionVi:
+      'Cấp quyền cloud cho pipeline mà không lưu khoá dài hạn — và điều kiện tin cậy phải viết chặt tới mức nào.',
+    domainIds: ['dom-supply-chain', 'dom-cloud'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của nền tảng CI.',
+  }),
+  doc({
+    id: 'res-osv-dev',
+    title: 'OSV — Open Source Vulnerabilities',
+    url: 'https://osv.dev/',
+    provider: 'OpenSSF',
+    descriptionVi:
+      'Cơ sở dữ liệu lỗ hổng nguồn mở có định dạng máy đọc được, tra theo đúng phiên bản gói chứ không theo tên sản phẩm.',
+    resourceType: 'documentation',
+    domainIds: ['dom-supply-chain'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Dịch vụ chính thức của OpenSSF.',
+    handsOn: true,
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-npm-provenance',
+    title: 'npm — Generating provenance statements',
+    url: 'https://docs.npmjs.com/generating-provenance-statements',
+    provider: 'npm',
+    descriptionVi:
+      'Gắn bằng chứng nguồn gốc vào gói đã xuất bản, để người dùng kiểm được gói dựng từ commit nào.',
+    domainIds: ['dom-supply-chain'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của registry.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-gitleaks',
+    title: 'Gitleaks',
+    url: 'https://github.com/gitleaks/gitleaks',
+    provider: 'Gitleaks',
+    descriptionVi:
+      'Công cụ quét bí mật trong lịch sử Git. Dùng trên repo của chính bạn để hiểu vì sao xoá commit không đủ.',
+    resourceType: 'repository',
+    domainIds: ['dom-supply-chain'],
+    sourceClass: 'community',
+    sourceOriginNoteVi: 'Công cụ mã nguồn mở được dùng rộng rãi.',
+    handsOn: true,
+    difficulty: 'intermediate',
+  }),
+
+  // ── IoT, phần cứng, vô tuyến ─────────────────────────────────────────────
+  doc({
+    id: 'res-etsi-en-303-645',
+    title: 'ETSI EN 303 645 — Cyber Security for Consumer IoT',
+    url: 'https://www.etsi.org/deliver/etsi_en/303600_303699/303645/03.01.03_60/en_303645v030103p.pdf',
+    provider: 'ETSI',
+    descriptionVi:
+      'Tiêu chuẩn châu Âu về bảo mật thiết bị IoT tiêu dùng: mật khẩu mặc định, cập nhật, lưu trữ và giao diện.',
+    resourceType: 'standard',
+    domainIds: ['dom-iot'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Bản PDF chính thức trên máy chủ của ETSI.',
+  }),
+  doc({
+    id: 'res-binwalk',
+    title: 'Binwalk',
+    url: 'https://github.com/ReFirmLabs/binwalk',
+    provider: 'ReFirm Labs',
+    descriptionVi:
+      'Công cụ phân tích và tách ảnh firmware — bước đầu tiên khi đọc một bản firmware.',
+    resourceType: 'repository',
+    domainIds: ['dom-iot'],
+    sourceClass: 'community',
+    sourceOriginNoteVi: 'Công cụ mã nguồn mở tiêu chuẩn trong phân tích firmware.',
+    handsOn: true,
+  }),
+  doc({
+    id: 'res-firmware-analysis-toolkit',
+    title: 'OWASP Firmware Security Testing Methodology',
+    url: 'https://github.com/scriptingxss/owasp-fstm',
+    provider: 'OWASP',
+    descriptionVi: 'Phương pháp kiểm thử firmware theo chín giai đoạn, từ thu thập tới báo cáo.',
+    resourceType: 'testing-guide',
+    domainIds: ['dom-iot'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Dự án OWASP, bản gốc trên GitHub.',
+    handsOn: true,
+  }),
+  doc({
+    id: 'res-bluetooth-specs',
+    title: 'Bluetooth Core Specification',
+    url: 'https://www.bluetooth.com/specifications/specs/core-specification/',
+    provider: 'Bluetooth SIG',
+    descriptionVi: 'Đặc tả gốc của Bluetooth, gồm phần ghép nối và mô hình bảo mật của BLE.',
+    resourceType: 'specification',
+    domainIds: ['dom-wireless'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Đặc tả chính thức của tổ chức chuẩn hoá Bluetooth.',
+  }),
+  doc({
+    id: 'res-nordic-ble-gatt',
+    title: 'Bluetooth Low Energy — GATT',
+    url: 'https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/bt/index.html',
+    provider: 'Nordic Semiconductor',
+    descriptionVi:
+      'Tài liệu của một nhà sản xuất chip BLE, giải thích quảng bá, kết nối và cấu trúc dịch vụ GATT bằng ngôn ngữ thực hành.',
+    domainIds: ['dom-wireless'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu kỹ thuật chính thức của nhà sản xuất.',
+  }),
+  doc({
+    id: 'res-fcc-part15',
+    title: 'FCC Rules — Part 15 Radio Frequency Devices',
+    url: 'https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15',
+    provider: 'U.S. Federal Register',
+    descriptionVi:
+      'Quy định phát xạ vô tuyến của Hoa Kỳ. Đọc để hiểu vì sao phát sóng gần như luôn ngoài phạm vi bug bounty; luật Việt Nam là văn bản riêng.',
+    resourceType: 'standard',
+    domainIds: ['dom-wireless'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi:
+      'Văn bản quy phạm gốc. Dự án dẫn nguồn này làm ví dụ về ràng buộc pháp lý, không phải làm căn cứ pháp lý tại Việt Nam.',
+  }),
+
+  // ── Ô tô ─────────────────────────────────────────────────────────────────
+  doc({
+    id: 'res-iso-21434',
+    title: 'ISO/SAE 21434 — Road vehicles: cybersecurity engineering',
+    url: 'https://www.iso.org/standard/70918.html',
+    provider: 'ISO',
+    descriptionVi:
+      'Tiêu chuẩn kỹ thuật an ninh mạng cho xe. Trang mô tả phạm vi; bản đầy đủ trả phí.',
+    resourceType: 'standard',
+    domainIds: ['dom-automotive'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Trang chính thức của ISO.',
+    accessType: 'paid',
+  }),
+  doc({
+    id: 'res-unece-r155',
+    title: 'UN Regulation No. 155 — Cyber security management system',
+    url: 'https://unece.org/transport/documents/2021/03/standards/un-regulation-no-155-cyber-security-and-cyber-security',
+    provider: 'UNECE',
+    descriptionVi: 'Quy định quốc tế buộc nhà sản xuất xe phải có hệ thống quản lý an ninh mạng.',
+    resourceType: 'standard',
+    domainIds: ['dom-automotive'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Văn bản chính thức của UNECE.',
+  }),
+  doc({
+    id: 'res-auto-isac',
+    title: 'Auto-ISAC — Best practices',
+    url: 'https://automotiveisac.com/best-practice-guides',
+    provider: 'Auto-ISAC',
+    descriptionVi:
+      'Thực hành tốt của ngành ô tô, gồm cả quy trình tiếp nhận báo cáo lỗ hổng từ bên ngoài.',
+    resourceType: 'article',
+    domainIds: ['dom-automotive'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Tổ chức chia sẻ thông tin an ninh của ngành ô tô.',
+  }),
+
+  // ── ICS/OT ───────────────────────────────────────────────────────────────
+  doc({
+    id: 'res-iec-62443',
+    title: 'IEC 62443 — Industrial communication networks security',
+    url: 'https://www.iec.ch/blog/understanding-iec-62443',
+    provider: 'IEC',
+    descriptionVi:
+      'Giới thiệu bộ tiêu chuẩn an ninh cho hệ thống điều khiển công nghiệp và cách nó chia vùng.',
+    resourceType: 'standard',
+    domainIds: ['dom-ics-ot'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Bài giới thiệu chính thức trên trang của IEC.',
+  }),
+  doc({
+    id: 'res-cisa-ics-advisories',
+    title: 'CISA — ICS Advisories',
+    url: 'https://www.cisa.gov/news-events/cybersecurity-advisories?f%5B0%5D=advisory_type%3A95',
+    provider: 'CISA',
+    descriptionVi:
+      'Cảnh báo lỗ hổng ICS đã công bố. Đọc để thấy loại lỗi thật trong OT và cách chúng được mô tả.',
+    resourceType: 'article',
+    domainIds: ['dom-ics-ot'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Nguồn cảnh báo chính thức của cơ quan an ninh mạng Hoa Kỳ.',
+    difficulty: 'intermediate',
+  }),
+
+  // ── Web3 ─────────────────────────────────────────────────────────────────
+  doc({
+    id: 'res-solidity-security',
+    title: 'Solidity — Security Considerations',
+    url: 'https://docs.soliditylang.org/en/latest/security-considerations.html',
+    provider: 'Solidity',
+    descriptionVi:
+      'Chương an toàn trong tài liệu ngôn ngữ: reentrancy, thứ tự giao dịch, giới hạn gas và những giả định sai phổ biến.',
+    domainIds: ['dom-web3'],
+    sourceClass: 'project-primary',
+    sourceOriginNoteVi: 'Chương cụ thể trong tài liệu chính thức của ngôn ngữ.',
+  }),
+  doc({
+    id: 'res-openzeppelin-upgrades',
+    title: 'OpenZeppelin — Proxy Upgrade Pattern',
+    url: 'https://docs.openzeppelin.com/upgrades-plugins/proxies',
+    provider: 'OpenZeppelin',
+    descriptionVi:
+      'Cơ chế proxy nâng cấp được, xung đột vị trí lưu trữ và vì sao hàm khởi tạo thay cho constructor.',
+    domainIds: ['dom-web3'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của thư viện hợp đồng được dùng nhiều nhất.',
+  }),
+  doc({
+    id: 'res-foundry-fuzz',
+    title: 'Foundry Book — Fuzz Testing',
+    url: 'https://getfoundry.sh/forge/fuzz-testing',
+    provider: 'Foundry',
+    descriptionVi: 'Viết test fuzz cho hợp đồng: sinh đầu vào ngẫu nhiên và kiểm tra bất biến.',
+    domainIds: ['dom-web3'],
+    sourceClass: 'project-primary',
+    sourceOriginNoteVi: 'Chương cụ thể trong sách hướng dẫn chính thức của Foundry.',
+    handsOn: true,
+  }),
+  doc({
+    id: 'res-ethereum-evm',
+    title: 'Ethereum — Ethereum Virtual Machine',
+    url: 'https://ethereum.org/en/developers/docs/evm/',
+    provider: 'Ethereum Foundation',
+    descriptionVi: 'Mô hình thực thi của EVM: trạng thái, gas và cách một giao dịch được xử lý.',
+    domainIds: ['dom-web3'],
+    sourceClass: 'project-primary',
+    sourceOriginNoteVi: 'Tài liệu chính thức của Ethereum Foundation.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-chainlink-oracle-security',
+    title: 'Chainlink — Data Feeds API Reference',
+    url: 'https://docs.chain.link/data-feeds/api-reference',
+    provider: 'Chainlink',
+    descriptionVi:
+      'Cách đọc dữ liệu giá từ oracle đúng cách, gồm kiểm tra độ tươi — chỗ nhiều hợp đồng bỏ qua.',
+    domainIds: ['dom-web3'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của nhà cung cấp oracle phổ biến nhất.',
+  }),
+  doc({
+    id: 'res-immunefi-severity',
+    title: 'Immunefi Vulnerability Severity Classification System',
+    url: 'https://immunefi.com/immunefi-vulnerability-severity-classification-system-v2-3/',
+    provider: 'Immunefi',
+    descriptionVi:
+      'Thang phân loại mức độ dành riêng cho Web3, khác hẳn CVSS vì tính theo thiệt hại tài sản.',
+    resourceType: 'taxonomy',
+    domainIds: ['dom-web3', 'dom-policy'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Thang phân loại chính thức của nền tảng bug bounty Web3 lớn nhất.',
+    difficulty: 'intermediate',
+  }),
+
+  // ── AI ───────────────────────────────────────────────────────────────────
+  doc({
+    id: 'res-owasp-llm01',
+    title: 'OWASP LLM01:2025 — Prompt Injection',
+    url: 'https://genai.owasp.org/llmrisk/llm01-prompt-injection/',
+    provider: 'OWASP',
+    descriptionVi:
+      'Mục cụ thể về prompt injection: dạng trực tiếp, dạng gián tiếp qua nội dung được nạp, và giới hạn của các biện pháp giảm thiểu.',
+    resourceType: 'standard',
+    domainIds: ['dom-ai'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Mục trong OWASP Top 10 for LLM Applications.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-owasp-llm06',
+    title: 'OWASP LLM06:2025 — Excessive Agency',
+    url: 'https://genai.owasp.org/llmrisk/llm062025-excessive-agency/',
+    provider: 'OWASP',
+    descriptionVi: 'Quyền hạn quá mức của agent: công cụ, quyền và mức tự chủ vượt nhu cầu thật.',
+    resourceType: 'standard',
+    domainIds: ['dom-ai'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Mục trong OWASP Top 10 for LLM Applications.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-owasp-llm08',
+    title: 'OWASP LLM08:2025 — Vector and Embedding Weaknesses',
+    url: 'https://genai.owasp.org/llmrisk/llm082025-vector-and-embedding-weaknesses/',
+    provider: 'OWASP',
+    descriptionVi: 'Điểm yếu của RAG và vector store: rò dữ liệu giữa người thuê, đầu độc chỉ mục.',
+    resourceType: 'standard',
+    domainIds: ['dom-ai'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Mục trong OWASP Top 10 for LLM Applications.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-mitre-atlas',
+    title: 'MITRE ATLAS',
+    url: 'https://atlas.mitre.org/',
+    provider: 'MITRE',
+    descriptionVi:
+      'Ma trận chiến thuật và kỹ thuật tấn công nhắm vào hệ thống học máy, xây theo cùng cấu trúc với ATT&CK.',
+    resourceType: 'taxonomy',
+    domainIds: ['dom-ai'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Cơ sở tri thức chính thức của MITRE.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-nist-ai-600-1',
+    title: 'NIST AI 600-1 — Generative AI Profile',
+    url: 'https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf',
+    provider: 'NIST',
+    descriptionVi: 'Hồ sơ rủi ro cho AI sinh nội dung, đi kèm khung quản trị rủi ro AI của NIST.',
+    resourceType: 'standard',
+    domainIds: ['dom-ai'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Ấn phẩm chính thức của NIST.',
+  }),
+  doc({
+    id: 'res-mcp-security',
+    title: 'Model Context Protocol — Security Best Practices',
+    url: 'https://modelcontextprotocol.io/specification/draft/basic/security_best_practices',
+    provider: 'Model Context Protocol',
+    descriptionVi:
+      'Khuyến nghị bảo mật cho giao thức kết nối mô hình với công cụ ngoài — một bề mặt phân quyền mới.',
+    resourceType: 'specification',
+    domainIds: ['dom-ai'],
+    sourceClass: 'project-primary',
+    sourceOriginNoteVi: 'Đặc tả chính thức của giao thức.',
+  }),
+
+  // ── Tiện ích trình duyệt ─────────────────────────────────────────────────
+  doc({
+    id: 'res-chrome-mv3-overview',
+    title: 'Chrome Extensions — Manifest V3 overview',
+    url: 'https://developer.chrome.com/docs/extensions/develop/migrate/what-is-mv3',
+    provider: 'Google',
+    descriptionVi:
+      'Mô hình tiện ích hiện hành: service worker thay trang nền, và những gì MV3 siết lại so với MV2.',
+    domainIds: ['dom-browser-ext'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của nền tảng.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-chrome-permissions',
+    title: 'Chrome Extensions — Declare permissions',
+    url: 'https://developer.chrome.com/docs/extensions/reference/permissions-list',
+    provider: 'Google',
+    descriptionVi: 'Danh sách quyền của tiện ích và ý nghĩa thật của từng quyền khi bị lạm dụng.',
+    domainIds: ['dom-browser-ext'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu tham chiếu chính thức.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-chrome-message-passing',
+    title: 'Chrome Extensions — Message passing',
+    url: 'https://developer.chrome.com/docs/extensions/develop/concepts/messaging',
+    provider: 'Google',
+    descriptionVi:
+      'Kênh thông điệp giữa content script, service worker và trang web. Đây chính là ranh giới tin cậy hay bị làm sai.',
+    domainIds: ['dom-browser-ext'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của nền tảng.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-chrome-content-scripts',
+    title: 'Chrome Extensions — Content scripts',
+    url: 'https://developer.chrome.com/docs/extensions/develop/concepts/content-scripts',
+    provider: 'Google',
+    descriptionVi: 'Thế giới cô lập của content script và những gì vẫn dùng chung với trang.',
+    domainIds: ['dom-browser-ext'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu chính thức của nền tảng.',
+    difficulty: 'intermediate',
+  }),
+
+  // ── SaaS ─────────────────────────────────────────────────────────────────
+  doc({
+    id: 'res-google-workspace-security',
+    title: 'Google Workspace — Security best practices',
+    url: 'https://support.google.com/a/answer/7587183',
+    provider: 'Google',
+    descriptionVi:
+      'Cấu hình bảo mật cho tổ chức trên một nền tảng SaaS lớn: chia sẻ ngoài, ứng dụng bên thứ ba, thiết bị.',
+    resourceType: 'article',
+    domainIds: ['dom-saas'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu quản trị chính thức.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-slack-app-security',
+    title: 'Slack — App security best practices',
+    url: 'https://docs.slack.dev/authentication/best-practices-for-security',
+    provider: 'Slack',
+    descriptionVi:
+      'Bảo mật ứng dụng tích hợp: xác minh chữ ký request, phạm vi token và xử lý webhook.',
+    domainIds: ['dom-saas'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu dành cho nhà phát triển chính thức.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-atlassian-domain-verification',
+    title: 'Atlassian — Verify a domain',
+    url: 'https://support.atlassian.com/user-management/docs/verify-a-domain-to-manage-accounts/',
+    provider: 'Atlassian',
+    descriptionVi:
+      'Quy trình xác nhận quyền sở hữu tên miền để quản lý tài khoản — chỗ then chốt của việc chiếm tổ chức.',
+    resourceType: 'article',
+    domainIds: ['dom-saas', 'dom-identity'],
+    sourceClass: 'official-vendor',
+    sourceOriginNoteVi: 'Tài liệu quản trị chính thức.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-scim-rfc7644',
+    title: 'RFC 7644 — SCIM Protocol',
+    url: 'https://www.rfc-editor.org/rfc/rfc7644',
+    provider: 'IETF',
+    descriptionVi:
+      'Giao thức cấp phát và thu hồi tài khoản tự động giữa nhà cung cấp danh tính và ứng dụng.',
+    resourceType: 'specification',
+    domainIds: ['dom-saas', 'dom-identity'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Tiêu chuẩn IETF.',
+  }),
+
+  // ── Quyền riêng tư ───────────────────────────────────────────────────────
+  doc({
+    id: 'res-gdpr-text',
+    title: 'General Data Protection Regulation — full text',
+    url: 'https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng',
+    provider: 'EUR-Lex',
+    descriptionVi:
+      'Văn bản gốc GDPR. Đọc các điều về dữ liệu cá nhân và tối thiểu hoá để hiểu vì sao không được thu thập thêm dữ liệu nạn nhân.',
+    resourceType: 'standard',
+    domainIds: ['dom-privacy'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Bản chính thức trên cổng pháp luật của Liên minh châu Âu.',
+  }),
+  doc({
+    id: 'res-nist-privacy-framework',
+    title: 'NIST Privacy Framework',
+    url: 'https://www.nist.gov/privacy-framework',
+    provider: 'NIST',
+    descriptionVi:
+      'Khung quản trị rủi ro quyền riêng tư, dùng để phân loại dữ liệu và xác định mức nhạy cảm.',
+    resourceType: 'standard',
+    domainIds: ['dom-privacy'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Khung chính thức của NIST.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-cs-user-privacy',
+    title: 'User Privacy Protection Cheat Sheet',
+    url: 'https://cheatsheetseries.owasp.org/cheatsheets/User_Privacy_Protection_Cheat_Sheet.html',
+    provider: 'OWASP',
+    descriptionVi: 'Nguyên tắc kỹ thuật bảo vệ quyền riêng tư người dùng trong ứng dụng.',
+    domainIds: ['dom-privacy'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'OWASP Cheat Sheet Series.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-vn-pdpd',
+    title: 'Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân',
+    url: 'https://xaydungchinhsach.chinhphu.vn/toan-van-nghi-dinh-13-2023-nd-cp-bao-ve-du-lieu-ca-nhan-119230516104357809.htm',
+    provider: 'Chính phủ Việt Nam',
+    descriptionVi:
+      'Văn bản pháp luật Việt Nam về bảo vệ dữ liệu cá nhân. Đây là ràng buộc trực tiếp với người nghiên cứu ở Việt Nam.',
+    resourceType: 'standard',
+    domainIds: ['dom-privacy', 'dom-policy'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Toàn văn đăng trên cổng thông tin xây dựng chính sách của Chính phủ.',
+    language: 'vi',
+    difficulty: 'intermediate',
+  }),
+
+  // ── Bề mặt mới nổi ───────────────────────────────────────────────────────
+  doc({
+    id: 'res-attack-enterprise',
+    title: 'MITRE ATT&CK — Enterprise Matrix',
+    url: 'https://attack.mitre.org/matrices/enterprise/',
+    provider: 'MITRE',
+    descriptionVi:
+      'Ma trận chiến thuật và kỹ thuật. Dùng như bộ khung câu hỏi khi đánh giá một bề mặt chưa quen.',
+    resourceType: 'taxonomy',
+    domainIds: ['dom-emerging', 'dom-methodology'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Cơ sở tri thức chính thức của MITRE.',
+    difficulty: 'intermediate',
+  }),
+  doc({
+    id: 'res-first-psirt-framework',
+    title: 'FIRST — PSIRT Services Framework',
+    url: 'https://www.first.org/standards/frameworks/psirts/psirt_services_framework_v1.1',
+    provider: 'FIRST',
+    descriptionVi:
+      'Khung dịch vụ của đội xử lý sự cố sản phẩm. Đọc để hiểu phía nhận báo cáo làm gì với báo cáo của bạn.',
+    resourceType: 'standard',
+    domainIds: ['dom-emerging', 'dom-policy'],
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Khung chính thức của FIRST.',
+    difficulty: 'intermediate',
+  }),
+];

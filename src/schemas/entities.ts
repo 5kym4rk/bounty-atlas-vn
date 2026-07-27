@@ -113,18 +113,21 @@ export interface Skill {
 }
 
 /**
- * Một phần của thân bài học.
+ * Một bước trong lộ trình học của module.
  *
- * Nội dung do dự án tự biên soạn bằng tiếng Việt, viết dựa trên hiểu biết đối
- * chiếu với nguồn chính thức. KHÔNG sao chép nguyên văn từ nguồn nào.
+ * Dự án KHÔNG tự viết bài giảng và KHÔNG sao chép nội dung của nguồn. Nội dung
+ * chính của mỗi module là danh sách nguồn học uy tín, xếp theo thứ tự nên học;
+ * người học bấm vào để mở và học tại chính nguồn gốc.
+ *
+ * Thứ tự học là vị trí trong mảng, không phải một trường riêng — như vậy thứ tự
+ * hiển thị không thể mâu thuẫn với thứ tự lưu trữ.
  */
-export interface LessonSection {
-  headingVi: string;
-  paragraphsVi: string[];
-  /** Danh sách gạch đầu dòng đi kèm, nếu phần này cần liệt kê. */
-  bulletsVi?: string[];
-  /** Đoạn mã, request hoặc log minh hoạ do dự án tự soạn. */
-  example?: { language: string; content: string; captionVi: string };
+export interface StudyStep {
+  resourceId: string;
+  /** `core`: cần học để nắm module. `optional`: mở rộng khi muốn đi sâu. */
+  necessity: 'core' | 'optional';
+  /** Vì sao học nguồn này, ở đúng bước này. Một câu, do dự án tự viết. */
+  roleVi: string;
 }
 
 export interface CompletionCriterion {
@@ -179,10 +182,10 @@ export interface LearningModule {
   estimatedHours: number | null;
   learningObjectives: string[];
   /**
-   * Thân bài học. Đây là nội dung người học đọc, không phải danh sách link.
-   * Bắt buộc có ít nhất một phần với nội dung thật.
+   * Lộ trình học của module: các nguồn ngoài, xếp theo thứ tự nên học.
+   * Đây là nội dung chính của module. Bắt buộc có ít nhất một bước.
    */
-  lessonVi: LessonSection[];
+  studyPlan: StudyStep[];
   prerequisiteModuleIds: string[];
   conceptIds: string[];
   weaknessIds: string[];
@@ -190,8 +193,6 @@ export interface LearningModule {
   methodologyVi: string[];
   /** Bước 9: cách chứng minh tác động một cách an toàn. */
   safeImpactProofVi: string[];
-  requiredResourceIds: string[];
-  optionalResourceIds: string[];
   labIds: string[];
   checklistIds: string[];
   quizIds: string[];

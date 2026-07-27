@@ -41,22 +41,39 @@ Sai: "Gửi chuỗi X vào tham số Y để lấy toàn bộ bảng người d�
 Đúng: "Ưu tiên phép thử logic đúng/sai chỉ đọc; chứng minh bằng một giá trị vô hại
 như phiên bản cơ sở dữ liệu; không trích xuất dữ liệu người dùng."
 
-### 3.2 Thân bài học (`lessonVi`)
+### 3.2 Lộ trình học của module (`studyPlan`)
 
-Mỗi module phải có thân bài học thật, không phải danh sách link. Yêu cầu:
+**Dự án không tự viết bài giảng và không sao chép nội dung của nguồn.** Nội dung
+chính của mỗi module là danh sách nguồn học uy tín, xếp theo thứ tự nên học;
+người học bấm vào để mở và học tại chính nguồn gốc.
 
-- Mỗi phần có tiêu đề và ít nhất một đoạn văn.
-- Nội dung viết bằng lời của dự án, sau khi đối chiếu với nguồn chính thức.
-  **Không dịch máy nguyên văn và không sao chép từ nguồn nào.**
-- Giải thích **vì sao** chứ không chỉ **là gì**. Người học phải hiểu nguyên nhân
-  gốc, không phải thuộc danh sách.
-- Ví dụ mã, request hay log phải do dự án tự soạn, dùng dữ liệu giả.
-- Phần nói về kiểm thử phải nêu ranh giới an toàn ngay trong đó, không tách rời.
-- Không chứa payload khai thác sẵn dùng.
+Đây là lựa chọn có chủ đích. Một bài giảng tự viết sẽ lạc hậu ngay khi tiêu chuẩn
+đổi, và không bao giờ tốt bằng tài liệu gốc của OWASP, IETF hay chính nhà cung cấp.
+Việc dự án làm được tốt hơn là **chọn đúng nguồn, xếp đúng thứ tự, và nói rõ vì
+sao học nguồn đó ở bước đó**.
 
-Test trong `tests/dataset.test.ts` thực thi các ràng buộc định lượng: mỗi phần
-phải đủ dài, mỗi module phải đủ nội dung, và không module nào dùng chung cấu
-trúc bài học với module khác.
+Yêu cầu với mỗi bước:
+
+- `resourceId` trỏ tới một nguồn có thật trong danh mục.
+- `roleVi` nói vì sao học nguồn này, **ở đúng bước này** — không phải nhãn chung
+  chung như "tài liệu tham khảo". Đây là phần dự án tự viết.
+- `necessity` phân biệt `core` (cần để nắm module) với `optional` (mở rộng).
+- Thứ tự học là vị trí trong mảng, không có trường thứ tự riêng.
+
+Yêu cầu với URL:
+
+- **Trỏ thẳng tới đúng chương, đúng khoá học hoặc đúng nhóm lab**, không trỏ vào
+  trang chủ chung chung.
+- **Không được bịa URL.** Mọi URL phải qua `npm run check:links`, và link không
+  phản hồi thì gỡ hoặc sửa chứ không giữ lại.
+- Khi script không kết nối được tới một host (trạng thái `unknown`), người biên
+  tập phải tự mở link để xác minh trước khi giữ.
+
+Mỗi nguồn đưa vào lộ trình phải có đủ siêu dữ liệu để người học quyết định trước
+khi bấm: tên, nhà cung cấp, trình độ, ngôn ngữ, miễn phí hay trả phí, có thực hành
+hay không. `language` và `accessType` không được để `unknown`.
+
+Test trong `tests/dataset.test.ts` thực thi các ràng buộc này.
 
 ### 3.3 Checklist
 

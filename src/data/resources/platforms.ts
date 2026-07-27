@@ -101,8 +101,8 @@ export const platformResources: LearningResource[] = [
   }),
   defineResource({
     id: 'res-android-dev-security',
-    title: 'Android Developers — Privacy and Security',
-    url: 'https://developer.android.com/privacy-and-security/security',
+    title: 'Android — Improve your app’s security',
+    url: 'https://developer.android.com/privacy-and-security/security-best-practices',
     provider: 'Google',
     descriptionVi: 'Hướng dẫn cho nhà phát triển về lưu trữ an toàn, quyền và cấu hình mạng.',
     resourceType: 'documentation',

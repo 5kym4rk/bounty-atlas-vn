@@ -12,7 +12,7 @@ import type {
   Concept,
   KnowledgeDomain,
   Lab,
-  LessonSection,
+  StudyStep,
   LearningModule,
   LearningPath,
   LearningResource,
@@ -178,17 +178,10 @@ export const skillSchema: z.ZodType<Skill> = z.object({
   difficulty: difficultySchema,
 });
 
-export const lessonSectionSchema: z.ZodType<LessonSection> = z.object({
-  headingVi: nonEmptyText,
-  paragraphsVi: z.array(nonEmptyText).min(1, 'Mỗi phần bài học phải có ít nhất một đoạn'),
-  bulletsVi: z.array(nonEmptyText).optional(),
-  example: z
-    .object({
-      language: z.string().min(1),
-      content: z.string().min(1),
-      captionVi: nonEmptyText,
-    })
-    .optional(),
+export const studyStepSchema: z.ZodType<StudyStep> = z.object({
+  resourceId: refId,
+  necessity: z.enum(['core', 'optional']),
+  roleVi: nonEmptyText,
 });
 
 export const completionCriterionSchema: z.ZodType<CompletionCriterion> = z.object({
@@ -238,14 +231,12 @@ export const learningModuleSchema: z.ZodType<LearningModule> = z.object({
   difficulty: difficultySchema,
   estimatedHours: z.number().positive().nullable(),
   learningObjectives: z.array(nonEmptyText).min(1, 'Module phải có ít nhất một mục tiêu học'),
-  lessonVi: z.array(lessonSectionSchema).min(1, 'Module phải có thân bài học'),
+  studyPlan: z.array(studyStepSchema).min(1, 'Module phải có ít nhất một nguồn học'),
   prerequisiteModuleIds: z.array(refId),
   conceptIds: z.array(refId),
   weaknessIds: z.array(refId),
   methodologyVi: z.array(nonEmptyText),
   safeImpactProofVi: z.array(nonEmptyText),
-  requiredResourceIds: z.array(refId),
-  optionalResourceIds: z.array(refId),
   labIds: z.array(refId),
   checklistIds: z.array(refId),
   quizIds: z.array(refId),

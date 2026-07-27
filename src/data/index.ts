@@ -21,7 +21,7 @@ import { triageScenarios } from './triage';
 import { standards } from './standards';
 import { assessments, skills } from './skills';
 import { MODULE_LINKS } from './links';
-import { LESSONS_BY_MODULE } from './lessons';
+import { STUDY_PLANS } from './study-plans';
 
 function unique(values: string[]): string[] {
   return [...new Set(values)];
@@ -41,40 +41,18 @@ function linkModules(): LearningModule[] {
     }
   }
 
-  const resourcesByModule = new Map<string, string[]>();
-  for (const resource of resources) {
-    for (const moduleId of resource.moduleIds) {
-      resourcesByModule.set(moduleId, [...(resourcesByModule.get(moduleId) ?? []), resource.id]);
-    }
-  }
-
-  const trackById = new Map(tracks.map((t) => [t.id, t]));
-  const resourcesByDomain = new Map<string, string[]>();
-  for (const resource of resources) {
-    for (const domainId of resource.domainIds) {
-      resourcesByDomain.set(domainId, [...(resourcesByDomain.get(domainId) ?? []), resource.id]);
-    }
-  }
-
   return rawModules.map((module) => {
     const links = MODULE_LINKS[module.id] ?? {};
-    const domainId = trackById.get(module.trackId)?.domainId;
-    const required = resourcesByModule.get(module.id) ?? [];
-    const optional = (domainId ? (resourcesByDomain.get(domainId) ?? []) : []).filter(
-      (id) => !required.includes(id),
-    );
 
     return {
       ...module,
-      lessonVi: LESSONS_BY_MODULE[module.id] ?? module.lessonVi,
+      studyPlan: STUDY_PLANS[module.id] ?? module.studyPlan,
       conceptIds: unique([...module.conceptIds, ...(links.conceptIds ?? [])]),
       weaknessIds: unique([...module.weaknessIds, ...(links.weaknessIds ?? [])]),
       checklistIds: unique([...module.checklistIds, ...(links.checklistIds ?? [])]),
       reportExerciseIds: unique([...module.reportExerciseIds, ...(links.reportExerciseIds ?? [])]),
       quizIds: unique([...module.quizIds, ...(quizByModule.get(module.id) ?? [])]),
       labIds: unique([...module.labIds, ...(labsByModule.get(module.id) ?? [])]),
-      requiredResourceIds: unique([...module.requiredResourceIds, ...required]),
-      optionalResourceIds: unique([...module.optionalResourceIds, ...optional]),
     } satisfies LearningModule;
   });
 }

@@ -2,6 +2,38 @@
 
 Định dạng theo tinh thần Keep a Changelog. Phiên bản theo Semantic Versioning.
 
+## [0.3.0] — 2026-07-27
+
+### Chuyển sang mô hình lộ trình nguồn học
+
+Bản 0.2.0 tự viết bài giảng cho từng module. Bản này bỏ hẳn cách đó.
+
+Nội dung chính của mỗi module giờ là **danh sách nguồn học uy tín, xếp theo thứ
+tự nên học**. Người học bấm vào để mở và học tại chính nguồn gốc; dự án không sao
+chép nội dung của họ về đây.
+
+Lý do: tài liệu gốc của OWASP, IETF, MITRE và các nhà cung cấp luôn cập nhật và
+chính xác hơn bất cứ thứ gì dự án tự viết. Việc dự án làm được tốt hơn là chọn
+đúng nguồn, xếp đúng thứ tự, và nói rõ vì sao học nguồn đó ở bước đó.
+
+- Bỏ `LessonSection`/`lessonVi`, thêm `StudyStep`/`studyPlan`. Thứ tự học là vị
+  trí trong mảng nên không thể mâu thuẫn với thứ tự lưu trữ.
+- Bỏ `requiredResourceIds` và `optionalResourceIds`; `studyPlan.necessity` thay
+  cả hai, nên không còn hai nguồn sự thật về cùng một việc.
+- Danh mục nguồn tăng từ 115 lên hơn 350, phần thêm mới đều **trỏ thẳng tới đúng
+  chương, khoá học hoặc nhóm lab** thay vì trang chủ.
+- Trang module: tab **Lộ trình học** thay tab Bài học, và gộp luôn tab Nguồn học
+  cũ để không còn hai danh sách của cùng một thứ. Mỗi bước hiển thị tên, nhà cung
+  cấp, trình độ, ngôn ngữ, miễn phí/trả phí, có thực hành hay không.
+- Test mới kiểm tra: mọi module có ít nhất một nguồn `core`, mọi `roleVi` nói
+  được vì sao học ở bước đó, mọi nguồn trong lộ trình có đủ siêu dữ liệu, và
+  không hai module nào dùng chung một lộ trình.
+
+Toàn bộ URL đã chạy qua `npm run check:links`: 0 link chết. 13 link mà script
+không kết nối được tới host đã được mở tay để xác minh; một link trong số đó
+(`developer.android.com/privacy-and-security/security`) đúng là đã chết và đã
+được sửa. Không URL nào được giữ lại mà chưa xác minh.
+
 ## [0.2.0] — 2026-07-26
 
 ### Thêm nội dung bài học cho toàn bộ module

@@ -284,8 +284,12 @@ function checkReferences(dataset: KnowledgeDataset): ValidationIssue[] {
     ref('module', m.id, 'conceptIds', m.conceptIds);
     ref('module', m.id, 'weaknessIds', m.weaknessIds);
     ref('module', m.id, 'prerequisiteModuleIds', m.prerequisiteModuleIds);
-    ref('module', m.id, 'requiredResourceIds', m.requiredResourceIds);
-    ref('module', m.id, 'optionalResourceIds', m.optionalResourceIds);
+    ref(
+      'module',
+      m.id,
+      'studyPlan',
+      m.studyPlan.map((step) => step.resourceId),
+    );
     ref('module', m.id, 'labIds', m.labIds);
     ref('module', m.id, 'checklistIds', m.checklistIds);
     ref('module', m.id, 'quizIds', m.quizIds);

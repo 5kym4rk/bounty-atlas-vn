@@ -6,7 +6,7 @@
  */
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import type { ContentStatus, Difficulty, LinkStatus } from '@/schemas/entities';
+import type { ContentStatus, Difficulty, LearningResource, LinkStatus } from '@/schemas/entities';
 import { displayHost, safeExternalUrl } from '@/utils/url';
 
 export function Card({ children, className = '' }: { children: ReactNode; className?: string }) {
@@ -51,6 +51,41 @@ const DIFFICULTY_LABEL: Record<Difficulty | 'mixed', string> = {
 
 export function DifficultyChip({ value }: { value: Difficulty | 'mixed' }) {
   return <Chip title="Mức độ">{DIFFICULTY_LABEL[value]}</Chip>;
+}
+
+const LANGUAGE_LABEL: Record<LearningResource['language'], string> = {
+  vi: 'Tiếng Việt',
+  en: 'Tiếng Anh',
+  mixed: 'Nhiều ngôn ngữ',
+  unknown: 'Chưa rõ ngôn ngữ',
+};
+
+const ACCESS_LABEL: Record<LearningResource['accessType'], string> = {
+  free: 'Miễn phí',
+  paid: 'Trả phí',
+  mixed: 'Có phần trả phí',
+  unknown: 'Chưa rõ chi phí',
+};
+
+/**
+ * Siêu dữ liệu của một nguồn học, hiển thị thống nhất ở mọi nơi.
+ *
+ * Người học cần biết trước khi bấm: ai xuất bản, mức nào, tiếng gì, có mất tiền
+ * không, có thực hành không và có phải tạo tài khoản không.
+ */
+export function ResourceMetaChips({ resource }: { resource: LearningResource }) {
+  return (
+    <div className="mt-2 flex flex-wrap gap-2">
+      <Chip title="Nhà cung cấp">{resource.provider}</Chip>
+      <DifficultyChip value={resource.difficulty} />
+      <Chip title="Ngôn ngữ">{LANGUAGE_LABEL[resource.language]}</Chip>
+      <Chip title="Chi phí" tone={resource.accessType === 'free' ? 'ok' : undefined}>
+        {ACCESS_LABEL[resource.accessType]}
+      </Chip>
+      {resource.handsOn ? <Chip tone="ok">Có thực hành</Chip> : <Chip>Chỉ đọc</Chip>}
+      {resource.accountRequired === true ? <Chip title="Truy cập">Cần tài khoản</Chip> : null}
+    </div>
+  );
 }
 
 const STATUS_LABEL: Record<ContentStatus, string> = {

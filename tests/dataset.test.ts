@@ -53,44 +53,60 @@ describe('dataset', () => {
     }
   });
 
-  it('mọi module có thân bài học thật', () => {
+  it('mọi module có lộ trình nguồn học, và có ít nhất một bước cần học', () => {
+    const resourceIds = new Set(dataset.resources.map((r) => r.id));
     for (const module of dataset.modules) {
-      expect(module.lessonVi.length, module.id).toBeGreaterThan(0);
-      for (const section of module.lessonVi) {
-        const where = `${module.id}: ${section.headingVi}`;
-        expect(section.headingVi.trim().length, module.id).toBeGreaterThan(0);
-        expect(section.paragraphsVi.length, module.id).toBeGreaterThan(0);
+      expect(module.studyPlan.length, module.id).toBeGreaterThan(0);
+      expect(
+        module.studyPlan.some((step) => step.necessity === 'core'),
+        `${module.id} chỉ có nguồn mở rộng`,
+      ).toBe(true);
 
-        // Khong doan nao duoc la chuoi giu cho.
-        for (const paragraph of section.paragraphsVi) {
-          expect(paragraph.trim().length, where).toBeGreaterThan(30);
-        }
+      for (const step of module.studyPlan) {
+        const where = `${module.id} → ${step.resourceId}`;
+        expect(resourceIds.has(step.resourceId), where).toBe(true);
+        // roleVi phai noi duoc vi sao hoc nguon nay o buoc nay, khong phai nhan chung chung.
+        expect(step.roleVi.trim().length, where).toBeGreaterThan(25);
+      }
 
-        // Moi phan phai co du noi dung. Doan dan ngan truoc mot danh sach gach
-        // dau dong la loi viet hop le, nen nguong tinh tren toan bo phan chu
-        // khong tinh tren tung doan.
-        const sectionText = [...section.paragraphsVi, ...(section.bulletsVi ?? [])].join(' ');
-        expect(sectionText.trim().length, where).toBeGreaterThan(200);
+      // Mot module khong duoc liet ke cung mot nguon hai lan.
+      const ids = module.studyPlan.map((step) => step.resourceId);
+      expect(new Set(ids).size, `${module.id} có nguồn trùng`).toBe(ids.length);
+    }
+  });
+
+  it('mọi nguồn trong lộ trình đều có đủ siêu dữ liệu để người học quyết định', () => {
+    const used = new Set(dataset.modules.flatMap((m) => m.studyPlan.map((s) => s.resourceId)));
+    for (const resource of dataset.resources.filter((r) => used.has(r.id))) {
+      expect(resource.provider.trim().length, resource.id).toBeGreaterThan(0);
+      expect(resource.descriptionVi.trim().length, resource.id).toBeGreaterThan(20);
+      expect(resource.url.startsWith('https://'), resource.id).toBe(true);
+      // 'unknown' la gia tri hop le o schema, nhung nguon da dua vao lo trinh
+      // thi phai biet ro de nguoi hoc khong phai bam vao moi biet.
+      expect(resource.language, resource.id).not.toBe('unknown');
+      expect(resource.accessType, resource.id).not.toBe('unknown');
+    }
+  });
+
+  it('vai trò của bước không lặp lại nguyên văn mô tả nguồn', () => {
+    // Hai dong nay hien thi lien tiep nhau tren giao dien. Neu trung nguyen van
+    // thi nguoi doc phai doc hai lan cung mot cau ma khong biet them gi.
+    const descriptions = new Map(dataset.resources.map((r) => [r.id, r.descriptionVi.trim()]));
+    for (const module of dataset.modules) {
+      for (const step of module.studyPlan) {
+        expect(step.roleVi.trim(), `${module.id} → ${step.resourceId}`).not.toBe(
+          descriptions.get(step.resourceId),
+        );
       }
     }
   });
 
-  it('bài học đủ dày để dạy được, không phải khung rỗng', () => {
-    for (const module of dataset.modules) {
-      const words = module.lessonVi
-        .flatMap((s) => [...s.paragraphsVi, ...(s.bulletsVi ?? [])])
-        .join(' ')
-        .split(/\s+/).length;
-      expect(words, module.id).toBeGreaterThan(120);
-    }
-  });
-
-  it('không có hai module nào dùng chung nguyên văn bài học', () => {
+  it('lộ trình không phải một danh sách rập khuôn dùng lại giữa các module', () => {
     const seen = new Map<string, string>();
     for (const module of dataset.modules) {
-      const key = module.lessonVi.map((s) => s.headingVi).join('|');
+      const key = module.studyPlan.map((step) => step.resourceId).join('|');
       const previous = seen.get(key);
-      expect(previous, `${module.id} trùng bài học với ${previous}`).toBeUndefined();
+      expect(previous, `${module.id} trùng lộ trình với ${previous}`).toBeUndefined();
       seen.set(key, module.id);
     }
   });
