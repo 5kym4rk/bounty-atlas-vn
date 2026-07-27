@@ -65,7 +65,8 @@ export const platformResources: LearningResource[] = [
     title: 'MASTG Tools',
     url: 'https://mas.owasp.org/MASTG/tools/',
     provider: 'OWASP',
-    descriptionVi: 'Danh mục công cụ được MASTG tham chiếu, kèm mục đích sử dụng.',
+    descriptionVi:
+      'Phần MASTG dẫn tới nội dung chia theo nhóm MASVS và theo nền tảng, gồm bài kiểm thử, bài kiến thức, demo và best practice. Công cụ như Frida và semgrep xuất hiện trong các demo.',
     resourceType: 'documentation',
     domainIds: ['dom-mobile'],
     moduleIds: ['mod-mobile-test-env'],
@@ -78,13 +79,13 @@ export const platformResources: LearningResource[] = [
     title: 'MASTG Apps',
     url: 'https://mas.owasp.org/MASTG/apps/',
     provider: 'OWASP',
-    descriptionVi: 'Ứng dụng lab cố ý dễ tổn thương dùng để thực hành các test của MASTG.',
-    resourceType: 'lab-platform',
+    descriptionVi:
+      'Trang điều hướng của bộ tài liệu OWASP MAS, dẫn tới MASVS, MASWE, MASTG và các demo cho Android và iOS.',
+    resourceType: 'documentation',
     domainIds: ['dom-mobile'],
-    sourceClass: 'project-primary',
-    sourceOriginNoteVi: 'Ứng dụng lab chính thức đi kèm MASTG.',
+    sourceClass: 'official-standard',
+    sourceOriginNoteVi: 'Trang điều hướng chính thức của bộ tài liệu OWASP MAS.',
     difficulty: 'advanced',
-    handsOn: true,
   }),
   defineResource({
     id: 'res-android-security',
@@ -129,7 +130,7 @@ export const platformResources: LearningResource[] = [
   defineResource({
     id: 'res-frida-docs',
     title: 'Frida Documentation',
-    url: 'https://frida.re/docs/',
+    url: 'https://frida.re/docs/home/',
     provider: 'Frida',
     descriptionVi:
       'Tài liệu chính thức của công cụ đo lường động, dùng trong lab ứng dụng di động.',
@@ -454,7 +455,7 @@ export const platformResources: LearningResource[] = [
   defineResource({
     id: 'res-ghidra',
     title: 'Ghidra',
-    url: 'https://ghidra-sre.org/',
+    url: 'https://github.com/NationalSecurityAgency/ghidra',
     provider: 'NSA / Ghidra Project',
     descriptionVi: 'Bộ công cụ dịch ngược mã nguồn mở, dùng cho phân tích binary trong lab.',
     resourceType: 'documentation',

@@ -39,7 +39,10 @@ export const platformPlans: PlanMap = {
   ],
   'mod-mobile-test-env': [
     core('res-mastg-tools', 'Danh sách công cụ chính thức của MASTG, có hướng dẫn cài.'),
-    core('res-mastg-apps', 'Ứng dụng cố tình có lỗi để luyện tập hợp pháp.'),
+    core(
+      'res-mastg-apps',
+      'Trang điều hướng của bộ tài liệu MAS, dùng để tìm đúng phần cần đọc khi dựng môi trường.',
+    ),
     core('res-frida-docs', 'Công cụ phân tích động, dùng trên thiết bị của chính bạn.'),
   ],
 
