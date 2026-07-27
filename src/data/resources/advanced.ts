@@ -318,7 +318,7 @@ export const advancedResources: LearningResource[] = [
   defineResource({
     id: 'res-foundry-book',
     title: 'Foundry Book',
-    url: 'https://book.getfoundry.sh/',
+    url: 'https://getfoundry.sh/',
     provider: 'Foundry',
     descriptionVi:
       'Tài liệu bộ công cụ phát triển và kiểm thử hợp đồng, gồm unit test, fuzzing và invariant test.',

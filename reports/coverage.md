@@ -3,7 +3,7 @@
 > Tệp này được sinh tự động bởi `npm run coverage:report`. Đừng sửa tay.
 > Mọi con số đều tính trực tiếp từ dữ liệu trong `src/data/`.
 
-Phiên bản sản phẩm: 0.4.0
+Phiên bản sản phẩm: 0.5.0
 Ngày rà soát nội dung ở mức sản phẩm: 2026-07-26
 
 *Tệp này cố ý không chứa dấu thời gian sinh, để CI có thể phát hiện khi nội dung
@@ -37,7 +37,7 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | learningPath | 9 |
 | officialResource | 309 |
 | communityResource | 10 |
-| verifiedResource | 228 |
+| verifiedResource | 276 |
 
 ## 3. Tỷ lệ bao phủ
 
@@ -48,7 +48,7 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | moduleWithQuizPercent | 23.6% |
 | moduleWithRemediationPercent | 100% |
 | officialResourcePercent | 84.2% |
-| verifiedResourcePercent | 62.1% |
+| verifiedResourcePercent | 75.2% |
 
 ## 4. Ma trận theo lĩnh vực
 
@@ -88,7 +88,7 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | MODULE_NO_REPORT_EXERCISE | 58 |
 | TRACK_NO_PREREQ | 9 |
 
-## 6. Nguồn chưa xác minh nội dung (139)
+## 6. Nguồn chưa xác minh nội dung (91)
 
 Những nguồn dưới đây **chưa** được người biên tập mở và đối chiếu. Chúng không mang
 nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện tại.
@@ -107,7 +107,6 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-portswigger-academy` — Web Security Academy
 - `res-portswigger-all-labs` — Web Security Academy — All Labs
 - `res-burp-docs` — Burp Suite Documentation
-- `res-juice-shop` — OWASP Juice Shop
 - `res-juice-shop-repo` — juice-shop (repository)
 - `res-webgoat` — OWASP WebGoat
 - `res-webgoat-repo` — WebGoat (repository)
@@ -128,43 +127,28 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-wrongsecrets-repo` — wrongsecrets (repository)
 - `res-k8s-app-security-checklist` — Kubernetes Application Security Checklist
 - `res-k8s-disclosure` — Kubernetes Security and Disclosure Information
-- `res-nmap-book` — Nmap Network Scanning
 - `res-openssl-docs` — OpenSSL Documentation
 - `res-owasp-wifi-testing` — OWASP Wi-Fi Security Testing Guide
 - `res-microsoft-sdl` — Microsoft Security Development Lifecycle
 - `res-pwn-college` — pwn.college
-- `res-pwn-college-binary` — pwn.college — Binary Exploitation
 - `res-aflplusplus` — AFL++
 - `res-owasp-scvs` — OWASP Software Component Verification Standard
 - `res-scvs-site` — SCVS
 - `res-openssf-baseline` — OpenSSF Security Baseline
 - `res-codeql` — CodeQL Documentation
-- `res-gh-private-vuln-reporting` — Configuring Private Vulnerability Reporting
-- `res-owasp-iot-testing-guide` — OWASP IoT Security Testing Guide
 - `res-owasp-iot-project` — OWASP Internet of Things Project
 - `res-iotgoat` — OWASP IoTGoat
 - `res-attack-ics` — MITRE ATT&CK for ICS
 - `res-cisa-ics` — CISA — Industrial Control Systems
 - `res-owasp-scsvs` — OWASP Smart Contract Security Verification Standard
-- `res-owasp-scstg` — OWASP SCSTG
 - `res-solidity-docs` — Solidity Documentation
-- `res-foundry-book` — Foundry Book
-- `res-openzeppelin-docs` — OpenZeppelin Documentation
 - `res-ethernaut` — Ethernaut
 - `res-damn-vulnerable-defi` — Damn Vulnerable DeFi
-- `res-owasp-llm-top10` — OWASP Top 10 for Large Language Model Applications
 - `res-owasp-llmsvs` — OWASP LLM Verification Standard
 - `res-owasp-aisvs` — OWASP AI Security Verification Standard
-- `res-portswigger-llm-attacks` — Web LLM Attacks (Learning Path)
-- `res-h1-ai-safe-harbor` — AI Research Safe Harbor Statement
-- `res-nist-ai-rmf` — NIST AI Risk Management Framework
-- `res-chrome-extension-security` — Chrome Extensions — Stay Secure
 - `res-mozilla-secure-extension` — Build a Secure Extension
 - `res-cloudflare-learning-dns` — What is DNS?
-- `res-mozilla-tls-config` — Mozilla SSL Configuration Generator
-- `res-unicode-tr36` — Unicode Technical Report #36 — Security Considerations
 - `res-cryptopals` — The Cryptopals Crypto Challenges
-- `res-mitmproxy-docs` — mitmproxy documentation
 - `res-cisa-vdp-guidance` — CISA — Vulnerability Disclosure Policy template
 - `res-iso-29147` — ISO/IEC 29147 — Vulnerability disclosure
 - `res-google-bughunters-rules` — Google Bug Hunters — Program rules
@@ -182,56 +166,24 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-apple-universal-links` — Supporting universal links in your app
 - `res-apple-data-protection` — Data Protection
 - `res-cs-mobile-app-security` — Mobile Application Security Cheat Sheet
-- `res-msrc-cloud-bounty` — Microsoft Azure Bounty Program
-- `res-gcp-workload-identity` — Google Cloud — Workload Identity Federation
 - `res-gcp-vrp` — Google Cloud VRP
-- `res-oci-image-spec` — OCI Image Format Specification
-- `res-testssl` — testssl.sh
-- `res-electron-checklist` — Electron — Security checklist
-- `res-electron-context-isolation` — Electron — Context Isolation
-- `res-ms-dll-search-order` — Dynamic-link library search order
 - `res-nightmare-fuzzing` — Nightmare — Intro to binary exploitation
 - `res-llvm-sanitizers` — UndefinedBehaviorSanitizer
-- `res-libfuzzer` — libFuzzer — a library for coverage-guided fuzz testing
-- `res-oss-fuzz` — OSS-Fuzz documentation
-- `res-gh-coordinated-disclosure` — GitHub — Coordinated disclosure of security vulnerabilities
 - `res-cve-program` — CVE Program — Reporting a vulnerability
-- `res-slsa-levels` — SLSA — Security levels
-- `res-cyclonedx-spec` — CycloneDX Specification
 - `res-spdx-spec` — SPDX Specification
-- `res-gh-actions-hardening` — GitHub Actions — Security hardening
-- `res-gh-oidc` — GitHub Actions — OpenID Connect
 - `res-npm-provenance` — npm — Generating provenance statements
 - `res-etsi-en-303-645` — ETSI EN 303 645 — Cyber Security for Consumer IoT
-- `res-binwalk` — Binwalk
-- `res-firmware-analysis-toolkit` — OWASP Firmware Security Testing Methodology
-- `res-bluetooth-specs` — Bluetooth Core Specification
-- `res-nordic-ble-gatt` — Bluetooth Low Energy — GATT
 - `res-fcc-part15` — FCC Rules — Part 15 Radio Frequency Devices
 - `res-iso-21434` — ISO/SAE 21434 — Road vehicles: cybersecurity engineering
 - `res-unece-r155` — UN Regulation No. 155 — Cyber security management system
-- `res-auto-isac` — Auto-ISAC — Best practices
 - `res-iec-62443` — IEC 62443 — Industrial communication networks security
 - `res-cisa-ics-advisories` — CISA — ICS Advisories
 - `res-solidity-security` — Solidity — Security Considerations
-- `res-openzeppelin-upgrades` — OpenZeppelin — Proxy Upgrade Pattern
-- `res-foundry-fuzz` — Foundry Book — Fuzz Testing
-- `res-ethereum-evm` — Ethereum — Ethereum Virtual Machine
-- `res-chainlink-oracle-security` — Chainlink — Data Feeds API Reference
 - `res-immunefi-severity` — Immunefi Vulnerability Severity Classification System
-- `res-owasp-llm06` — OWASP LLM06:2025 — Excessive Agency
-- `res-owasp-llm08` — OWASP LLM08:2025 — Vector and Embedding Weaknesses
 - `res-mitre-atlas` — MITRE ATLAS
 - `res-nist-ai-600-1` — NIST AI 600-1 — Generative AI Profile
-- `res-mcp-security` — Model Context Protocol — Security Best Practices
-- `res-chrome-permissions` — Chrome Extensions — Declare permissions
-- `res-chrome-message-passing` — Chrome Extensions — Message passing
-- `res-chrome-content-scripts` — Chrome Extensions — Content scripts
-- `res-google-workspace-security` — Google Workspace — Security best practices
 - `res-gdpr-text` — General Data Protection Regulation — full text
-- `res-cs-user-privacy` — User Privacy Protection Cheat Sheet
 - `res-vn-pdpd` — Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân
-- `res-attack-enterprise` — MITRE ATT&CK — Enterprise Matrix
 
 ## 7. Nguồn quá hạn rà soát (0)
 
@@ -243,14 +195,14 @@ Chạy `npm run check:links` để cập nhật.
 
 (không có)
 
-## 9. Nội dung còn ở trạng thái bản nháp (275)
+## 9. Nội dung còn ở trạng thái bản nháp (199)
 
 | Thực thể | Số mục |
 | --- | --- |
 | domain | 24 |
-| module | 50 |
+| module | 22 |
 | weakness | 62 |
-| resource | 139 |
+| resource | 91 |
 
 ## 10. Lĩnh vực còn thiếu nội dung
 

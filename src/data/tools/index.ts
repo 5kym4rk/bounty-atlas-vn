@@ -479,7 +479,7 @@ export const tools: Tool[] = [
     purposeVi:
       'Bộ công cụ phát triển và kiểm thử hợp đồng thông minh, gồm unit test, fuzzing và invariant test.',
     domainIds: ['dom-web3'],
-    officialUrl: 'https://book.getfoundry.sh/',
+    officialUrl: 'https://getfoundry.sh/',
     operatingSystems: ['Windows', 'macOS', 'Linux'],
     license: 'Nguồn mở',
     difficulty: 'advanced',

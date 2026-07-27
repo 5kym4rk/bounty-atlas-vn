@@ -231,7 +231,7 @@ export const advancedStudyResources: LearningResource[] = [
   doc({
     id: 'res-nordic-ble-gatt',
     title: 'Bluetooth Low Energy — GATT',
-    url: 'https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/bt/index.html',
+    url: 'https://nrfconnectdocs.nordicsemi.com/ncs/latest/nrf/protocols/bt/index.html',
     provider: 'Nordic Semiconductor',
     descriptionVi:
       'Tài liệu của một nhà sản xuất chip BLE, giải thích quảng bá, kết nối và cấu trúc dịch vụ GATT bằng ngôn ngữ thực hành.',
@@ -515,7 +515,7 @@ export const advancedStudyResources: LearningResource[] = [
   doc({
     id: 'res-google-workspace-security',
     title: 'Google Workspace — Security best practices',
-    url: 'https://support.google.com/a/answer/7587183',
+    url: 'https://knowledge.workspace.google.com/admin/security/security-checklist-for-medium-and-large-businesses-100-users',
     provider: 'Google',
     descriptionVi:
       'Cấu hình bảo mật cho tổ chức trên một nền tảng SaaS lớn: chia sẻ ngoài, ứng dụng bên thứ ba, thiết bị.',

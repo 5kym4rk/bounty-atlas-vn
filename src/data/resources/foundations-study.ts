@@ -133,9 +133,9 @@ export const foundationsStudyResources: LearningResource[] = [
   }),
   doc({
     id: 'res-mozilla-tls-config',
-    title: 'Mozilla SSL Configuration Generator',
-    url: 'https://ssl-config.mozilla.org/',
-    provider: 'Mozilla',
+    title: 'TLS Configurator (TLSRef)',
+    url: 'https://configurator.tlsref.org/',
+    provider: 'TLSRef',
     descriptionVi:
       'Sinh cấu hình TLS theo ba mức tương thích. Dùng để đối chiếu khi báo cáo cấu hình TLS yếu.',
     resourceType: 'documentation',

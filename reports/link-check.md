@@ -9,14 +9,14 @@ Tổng số liên kết: 462
 
 | Trạng thái | Số lượng | Ý nghĩa |
 | --- | --- | --- |
-| active | 401 | Truy cập được bình thường |
-| redirected | 45 | Có chuyển hướng, URL đích khác URL khai báo |
+| active | 399 | Truy cập được bình thường |
+| redirected | 44 | Có chuyển hướng, URL đích khác URL khai báo |
 | login-required | 0 | Cần đăng nhập |
 | blocked | 7 | Bị chặn tự động, nhiều khả năng do chống bot |
 | rate-limited | 0 | Bị giới hạn tốc độ |
 | timeout | 0 | Hết thời gian chờ |
 | unavailable | 0 | **Cần xử lý** |
-| unknown | 9 | Chưa phân loại được |
+| unknown | 12 | Chưa phân loại được |
 
 ## Liên kết cần xử lý
 
@@ -38,7 +38,7 @@ Tổng số liên kết: 462
 | lab | `lab-ethernaut` | active | 200 | https://ethernaut.openzeppelin.com/ |
 | lab | `lab-extension-local` | active | 200 | https://developer.chrome.com/docs/extensions/develop/security-privacy/stay-secure |
 | lab | `lab-firmware-static` | active | 200 | https://owasp.org/owasp-istg/index.html |
-| lab | `lab-foundry-invariant` | redirected | 200 | https://book.getfoundry.sh/ |
+| lab | `lab-foundry-invariant` | redirected | 200 | https://getfoundry.sh/ |
 | lab | `lab-fuzzing-local` | active | 200 | https://aflplus.plus/ |
 | lab | `lab-hacker101-ctf` | active | 200 | https://ctf.hacker101.com/ |
 | lab | `lab-ics-simulator` | active | 200 | https://www.cisa.gov/topics/industrial-control-systems |
@@ -47,7 +47,7 @@ Tổng số liên kết: 462
 | lab | `lab-k8s-local-rbac` | active | 200 | https://kubernetes.io/docs/concepts/security/security-checklist/ |
 | lab | `lab-mastg-apps` | active | 200 | https://mas.owasp.org/MASTG/apps/ |
 | lab | `lab-mobile-android-storage` | active | 200 | https://mas.owasp.org/MASTG/tests/ |
-| lab | `lab-network-local` | active | 200 | https://nmap.org/book/ |
+| lab | `lab-network-local` | unknown | - | https://nmap.org/book/ |
 | lab | `lab-policy-reading` | active | 200 | https://docs.hackerone.com/en/articles/8494552-defining-scope |
 | lab | `lab-privacy-evidence` | active | 200 | https://owasp.org/www-project-application-security-verification-standard/ |
 | lab | `lab-proxy-setup` | active | 200 | https://portswigger.net/burp/documentation |
@@ -231,7 +231,7 @@ Tổng số liên kết: 462
 | resource | `res-fcc-part15` | redirected | 200 | https://www.ecfr.gov/current/title-47/chapter-I/subchapter-A/part-15 |
 | resource | `res-firmware-analysis-toolkit` | active | 200 | https://github.com/scriptingxss/owasp-fstm |
 | resource | `res-first-psirt-framework` | active | 200 | https://www.first.org/standards/frameworks/psirts/psirt_services_framework_v1.1 |
-| resource | `res-foundry-book` | redirected | 200 | https://book.getfoundry.sh/ |
+| resource | `res-foundry-book` | redirected | 200 | https://getfoundry.sh/ |
 | resource | `res-foundry-fuzz` | redirected | 200 | https://getfoundry.sh/forge/fuzz-testing |
 | resource | `res-frida-docs` | active | 200 | https://frida.re/docs/home/ |
 | resource | `res-gcp-iam-overview` | active | 200 | https://docs.cloud.google.com/iam/docs/overview |
@@ -248,7 +248,7 @@ Tổng số liên kết: 462
 | resource | `res-ghidra` | active | 200 | https://github.com/NationalSecurityAgency/ghidra |
 | resource | `res-gitleaks` | active | 200 | https://github.com/gitleaks/gitleaks |
 | resource | `res-google-bughunters-rules` | redirected | 200 | https://bughunters.google.com/about/rules |
-| resource | `res-google-workspace-security` | redirected | 200 | https://support.google.com/a/answer/7587183 |
+| resource | `res-google-workspace-security` | active | 200 | https://knowledge.workspace.google.com/admin/security/security-checklist-for-medium-and-large-businesses-100-users |
 | resource | `res-graphql-security-docs` | active | 200 | https://graphql.org/learn/security/ |
 | resource | `res-graphql-spec` | active | 200 | https://spec.graphql.org/ |
 | resource | `res-grpc-web` | active | 200 | https://grpc.io/docs/platforms/web/basics/ |
@@ -302,7 +302,7 @@ Tổng số liên kết: 462
 | resource | `res-mitmproxy-docs` | active | 200 | https://docs.mitmproxy.org/stable/ |
 | resource | `res-mitre-atlas` | active | 200 | https://atlas.mitre.org/ |
 | resource | `res-mozilla-secure-extension` | active | 200 | https://extensionworkshop.com/documentation/develop/build-a-secure-extension/ |
-| resource | `res-mozilla-tls-config` | active | 200 | https://ssl-config.mozilla.org/ |
+| resource | `res-mozilla-tls-config` | active | 200 | https://configurator.tlsref.org/ |
 | resource | `res-ms-access-tokens` | active | 200 | https://learn.microsoft.com/en-us/windows/win32/secauthz/access-tokens |
 | resource | `res-ms-dll-search-order` | active | 200 | https://learn.microsoft.com/en-us/windows/win32/dlls/dynamic-link-library-search-order |
 | resource | `res-ms-windows-security-docs` | active | 200 | https://learn.microsoft.com/en-us/windows/security/ |
@@ -315,11 +315,11 @@ Tổng số liên kết: 462
 | resource | `res-nist-ai-rmf` | active | 200 | https://www.nist.gov/itl/ai-risk-management-framework |
 | resource | `res-nist-privacy-framework` | active | 200 | https://www.nist.gov/privacy-framework |
 | resource | `res-nist-ssdf` | active | 200 | https://csrc.nist.gov/pubs/sp/800/218/final |
-| resource | `res-nmap-book` | unknown | - | https://nmap.org/book/ |
-| resource | `res-nmap-host-discovery` | active | 200 | https://nmap.org/book/man-host-discovery.html |
-| resource | `res-nmap-reference` | active | 200 | https://nmap.org/book/man.html |
+| resource | `res-nmap-book` | active | 200 | https://nmap.org/book/ |
+| resource | `res-nmap-host-discovery` | unknown | - | https://nmap.org/book/man-host-discovery.html |
+| resource | `res-nmap-reference` | unknown | - | https://nmap.org/book/man.html |
 | resource | `res-nmap-service-detection` | active | 200 | https://nmap.org/book/vscan.html |
-| resource | `res-nordic-ble-gatt` | blocked | 403 | https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/bt/index.html |
+| resource | `res-nordic-ble-gatt` | blocked | 403 | https://nrfconnectdocs.nordicsemi.com/ncs/latest/nrf/protocols/bt/index.html |
 | resource | `res-npm-provenance` | redirected | 200 | https://docs.npmjs.com/generating-provenance-statements |
 | resource | `res-oauth-security-topics` | active | 200 | https://oauth.net/2/oauth-best-practice/ |
 | resource | `res-oci-image-spec` | active | 200 | https://github.com/opencontainers/image-spec/blob/main/spec.md |
@@ -478,12 +478,12 @@ Tổng số liên kết: 462
 | tool | `tool-devtools` | active | 200 | https://developer.chrome.com/docs/devtools |
 | tool | `tool-dig` | active | 200 | https://www.isc.org/bind/ |
 | tool | `tool-docker` | active | 200 | https://docs.docker.com/engine/security/ |
-| tool | `tool-foundry` | redirected | 200 | https://book.getfoundry.sh/ |
+| tool | `tool-foundry` | redirected | 200 | https://getfoundry.sh/ |
 | tool | `tool-frida` | active | 200 | https://frida.re/docs/ |
 | tool | `tool-fuzzer` | active | 200 | https://aflplus.plus/ |
 | tool | `tool-ghidra` | redirected | 200 | https://ghidra-sre.org/ |
 | tool | `tool-git` | active | 200 | https://git-scm.com/doc |
-| tool | `tool-nmap` | active | 200 | https://nmap.org/book/ |
+| tool | `tool-nmap` | unknown | - | https://nmap.org/book/ |
 | tool | `tool-openssl` | active | 200 | https://docs.openssl.org/ |
 | tool | `tool-static-analyzer` | active | 200 | https://codeql.github.com/docs/ |
 | tool | `tool-vm` | active | 200 | https://www.virtualbox.org/wiki/Documentation |

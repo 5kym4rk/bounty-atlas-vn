@@ -339,8 +339,10 @@ export const platformResources: LearningResource[] = [
     title: 'Nmap Network Scanning',
     url: 'https://nmap.org/book/',
     provider: 'Nmap Project',
-    descriptionVi: 'Tài liệu chính thức về Nmap, gồm cả phần về ràng buộc pháp lý khi quét.',
+    descriptionVi:
+      'Sách chính thức về Nmap của Gordon "Fyodor" Lyon, từ quét cổng cơ bản tới kỹ thuật nâng cao. Khoảng một nửa nội dung đọc miễn phí trên web; một số chương chỉ có trong bản in.',
     resourceType: 'book',
+    accessType: 'mixed',
     domainIds: ['dom-network'],
     moduleIds: ['mod-net-tools'],
     sourceClass: 'project-primary',

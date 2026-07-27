@@ -2,6 +2,30 @@
 
 Định dạng theo tinh thần Keep a Changelog. Phiên bản theo Semantic Versioning.
 
+## [0.5.0] — 2026-07-27
+
+### Rà soát nốt phần đọc được: 276/367 nguồn, 122/144 module hết nháp
+
+Tiếp tục mở và đọc thật cho tới khi hết những nguồn mà môi trường này truy cập
+được. Còn đúng **21 nguồn** chưa rà soát, và tất cả đều nằm ở nhóm chặn công cụ
+tự động — danh sách đầy đủ kèm lý do từng nguồn nằm trong `SOURCE_REGISTRY.md`
+§5b. Không nguồn nào bị gắn nhãn "đã xác minh" cho đủ số.
+
+Đợt này bắt tiếp bốn link đã trôi và hai mô tả sai của chính dự án:
+
+- `ssl-config.mozilla.org` nay là dự án cộng đồng TLSRef tại
+  `configurator.tlsref.org`.
+- `book.getfoundry.sh` gộp về `getfoundry.sh` (sửa ở cả labs và tools).
+- Tài liệu Bluetooth của Nordic và trang bảo mật Google Workspace đều đã đổi host.
+- Mô tả OSS-Fuzz nói dự án công bố lỗi theo thời hạn cố định; tài liệu không nêu
+  điều đó nên đã sửa lại đúng những gì trang viết.
+- Sách Nmap được đánh dấu miễn phí, nhưng trang ghi rõ chỉ khoảng một nửa nội
+  dung đọc được trên web, phần còn lại chỉ có trong bản in. Đã đổi sang chi phí
+  hỗn hợp.
+
+Về GDPR: nội dung Điều 5 có đối chiếu được qua một trang gương, nhưng đọc trang
+gương không phải là xác minh URL trong dữ liệu, nên nguồn này vẫn để `draft`.
+
 ## [0.4.0] — 2026-07-27
 
 ### Rà soát nội dung nguồn: 228/367 nguồn, 94/144 module hết trạng thái nháp

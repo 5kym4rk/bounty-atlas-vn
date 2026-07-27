@@ -74,13 +74,37 @@ Việc đọc thật đã bắt được các sai sót mà kiểm tra link khôn
 
 ### Nguồn không đọc được từ môi trường này
 
-Một số nguồn trả HTTP 403 cho công cụ tự động, hoặc chỉ trả trang rỗng vì nội
-dung được dựng bằng JavaScript. Chúng **vẫn ở trạng thái `draft`** — đây là kết
-quả trung thực, không phải sơ suất. Ví dụ: CISA, Solidity docs, Damn Vulnerable
-DeFi, UNECE, EUR-Lex, tài liệu Apple Developer và trang Hacktivity của HackerOne.
+Sau khi rà soát hết phần đọc được, còn đúng **21 nguồn** chặn 122/144 module
+không ra khỏi nháp. Tất cả đều thuộc một nhóm: trả HTTP 403 cho công cụ tự động,
+hoặc trả trang rỗng vì nội dung dựng bằng JavaScript. Chúng **vẫn ở `draft`** —
+đây là kết quả trung thực, không phải sơ suất.
 
-Người biên tập có trình duyệt thật mở được các trang này nên rà soát tiếp được;
-quy trình ở §8 áp dụng nguyên vẹn.
+| Nguồn                                         | Vì sao chưa rà soát được              |
+| --------------------------------------------- | ------------------------------------- |
+| EUR-Lex (toàn văn GDPR)                       | Trả trang rỗng                        |
+| Google Bug Hunters — Rules                    | Nội dung dựng bằng JavaScript         |
+| Google Cloud VRP Rules                        | Nội dung dựng bằng JavaScript         |
+| UNECE R155                                    | HTTP 403                              |
+| Solidity docs (trang chủ và chương an toàn)   | HTTP 403                              |
+| CISA (mẫu VDP, chuyên đề ICS, ICS advisories) | HTTP 403                              |
+| HackerOne Hacktivity                          | Nội dung dựng bằng JavaScript         |
+| Cloudflare Learning — What is DNS             | HTTP 403                              |
+| graphql.org/learn/security                    | HTTP 403                              |
+| Apple Developer (3 trang)                     | Nội dung dựng bằng JavaScript         |
+| ETSI EN 303 645 (PDF)                         | HTTP 403                              |
+| eCFR Part 15                                  | Chuyển hướng sang trang chặn truy cập |
+| IEC — Understanding IEC 62443                 | HTTP 403                              |
+| Damn Vulnerable DeFi                          | HTTP 403                              |
+| MITRE ATLAS                                   | Nội dung dựng bằng JavaScript         |
+| Nghị định 13/2023/NĐ-CP                       | Nội dung dựng bằng JavaScript         |
+
+Lưu ý về GDPR: nội dung Điều 5 đã được đối chiếu qua một trang gương, nhưng
+**đọc trang gương không phải là xác minh URL trong dữ liệu**, nên nguồn này vẫn
+để `draft`.
+
+Người biên tập dùng trình duyệt thật mở được toàn bộ số này. Quy trình ở §8 áp
+dụng nguyên vẹn: mở, đọc, rồi thêm một dòng vào `src/data/resources/reviewed.ts`
+với ghi chú nêu điều cụ thể quan sát được.
 
 ## 5. Kết quả xác minh thủ công — đợt 1 (2026-07-26)
 

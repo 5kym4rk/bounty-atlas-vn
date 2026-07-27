@@ -813,7 +813,7 @@ export const platformsStudyResources: LearningResource[] = [
     url: 'https://google.github.io/oss-fuzz/',
     provider: 'Google',
     descriptionVi:
-      'Hạ tầng fuzzing liên tục cho dự án nguồn mở, gồm quy trình công bố lỗi tìm được theo thời hạn cố định.',
+      'Dịch vụ miễn phí chạy fuzzing liên tục ở quy mô phân tán cho dự án nguồn mở, kèm hướng dẫn tích hợp dự án của bạn vào hệ thống.',
     domainIds: ['dom-binary', 'dom-code-review'],
     sourceClass: 'official-vendor',
     sourceOriginNoteVi: 'Tài liệu chính thức của dự án.',

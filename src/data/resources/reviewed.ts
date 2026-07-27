@@ -18,6 +18,102 @@ export const CONTENT_REVIEW_DATE = '2026-07-27';
 
 /** `resourceId` → điều cụ thể đã quan sát được khi mở nguồn. */
 export const CONTENT_REVIEWED: Record<string, string> = {
+  'res-unicode-tr36':
+    'Hai nhóm vấn đề: giả mạo thị giác (ký tự nhìn giống nhau, cùng hoặc khác hệ chữ, khiến người dùng vào nhầm trang), và khai thác ở tầng mã hoá không nhìn thấy được (lỗ hổng UTF-8, tràn bộ đệm, tấn công qua chuyển đổi bảng mã để vượt bộ lọc). Đọc ở bản sửa đổi tr36-15; trang /tr36/ hiện chỉ thông báo báo cáo đã ổn định.',
+  'res-google-workspace-security':
+    'Danh mục kiểm tra bao phủ: tài khoản quản trị, xác thực đa yếu tố, kiểm soát truy cập ứng dụng, quản lý thiết bị, và thiết lập bảo vệ dữ liệu cho Gmail, Drive, Calendar, Chat và Chrome. Kèm phần giám sát bằng security center và log kiểm toán. Lưu ý trang đã chuyển từ support.google.com sang knowledge.workspace.google.com.',
+  'res-foundry-fuzz':
+    'Forge tự động fuzz các hàm test có tham số: sinh đầu vào ngẫu nhiên rồi chạy lại nhiều lần, mặc định 256 lần. Số lần chạy và các giới hạn khác chỉnh được trong foundry.toml.',
+  'res-portswigger-llm-attacks':
+    'Lộ trình dạy tấn công lợi dụng mô hình ngôn ngữ lớn: prompt injection, khai thác API mà mô hình gọi được, và injection gián tiếp. Có nhiều lab thực hành, gồm cả bài mức practitioner về lỗ hổng API và về scanner dùng AI.',
+  'res-owasp-llm-top10':
+    'Sáng kiến mã nguồn mở toàn cầu nhằm nhận diện, giảm thiểu và tài liệu hoá rủi ro bảo mật và an toàn của công nghệ AI sinh nội dung. Trang liệt kê mười rủi ro, từ prompt injection tới đánh cắp mô hình.',
+  'res-h1-ai-safe-harbor':
+    'Bảo vệ người thực hiện kiểm thử, đánh giá, điều tra hoặc sửa lỗi một cách thiện chí trên hệ thống AI của HackerOne, khỏi bị kiện và khỏi bị coi là vi phạm điều khoản dịch vụ. Bao gồm cả việc vượt qua biện pháp bảo vệ kỹ thuật, với điều kiện nghiên cứu không gây hại và nhằm cải thiện an toàn chứ không phải tạo sản phẩm cạnh tranh.',
+  'res-chainlink-oracle-security':
+    'Giao diện AggregatorV3Interface phơi năm hàm: decimals, description, getRoundData, latestRoundData và version. latestRoundData trả kèm mốc thời gian — đây chính là chỗ để kiểm tra độ tươi của dữ liệu giá.',
+  'res-openzeppelin-upgrades':
+    'Mô tả mẫu "unstructured storage": dùng vị trí lưu trữ ngẫu nhiên hoá để tránh va chạm biến giữa proxy và hợp đồng logic. Phải dùng hàm khởi tạo thay cho constructor vì mã trong constructor không nằm trong bytecode lúc chạy, nên không bao giờ được thực thi trong ngữ cảnh trạng thái của proxy.',
+  'res-chrome-message-passing':
+    'Hai nhóm API: gửi một lần bằng runtime.sendMessage() và tabs.sendMessage(), và kết nối lâu dài bằng runtime.connect() và tabs.connect(). Tài liệu cảnh báo thẳng rằng content script ít đáng tin hơn service worker, và phải kiểm tra cùng làm sạch mọi đầu vào đến từ trang web.',
+  'res-chrome-content-scripts':
+    'Isolated world là môi trường thực thi riêng mà trang và các tiện ích khác không chạm tới được — biến JavaScript của content script không lộ ra trang. Thứ dùng chung là DOM của trang, nên hai bên trao đổi qua cơ chế như window.postMessage().',
+  'res-chrome-permissions':
+    'Liệt kê toàn bộ quyền của tiện ích Chrome, mỗi quyền cho truy cập gì và cảnh báo nào hiện ra với người dùng lúc cài. Nêu rõ phải khai báo quyền trong manifest mới dùng được phần lớn API.',
+  'res-chrome-extension-security':
+    'Khuyến nghị: bảo vệ tài khoản nhà phát triển bằng xác thực hai yếu tố, chỉ dùng HTTPS, xin đúng mức quyền tối thiểu, khai báo content security policy tường minh, quản lý content script cẩn thận để không lộ đặc quyền, và kiểm tra cùng làm sạch mọi đầu vào từ bên ngoài.',
+  'res-nist-ai-rmf':
+    'Mục tiêu là đưa yếu tố đáng tin cậy vào thiết kế, phát triển, sử dụng và đánh giá sản phẩm cùng dịch vụ AI. Giúp tổ chức quản lý rủi ro với cá nhân, tổ chức và xã hội bằng cách nhận diện các thách thức riêng của AI và đề xuất hành động quản trị tương ứng.',
+  'res-attack-enterprise':
+    'Ma trận Enterprise chia theo 15 chiến thuật: Reconnaissance, Resource Development, Initial Access, Execution, Persistence, Privilege Escalation, Stealth, Defense Impairment, Credential Access, Discovery, Lateral Movement, Collection, Command and Control, Exfiltration và Impact.',
+  'res-owasp-llm06':
+    'Nguyên nhân gốc gồm ba thứ: chức năng quá mức, quyền quá mức và mức tự chủ quá mức. Giảm thiểu: chỉ gắn đúng extension cần thiết, giới hạn hàm mà mỗi extension phơi ra, tránh năng lực mở không giới hạn, bắt buộc người duyệt cho hành động tác động lớn, và vẫn kiểm tra quyền ở hệ thống phía sau.',
+  'res-owasp-llm08':
+    'Nói về rủi ro của hệ thống dùng RAG: điểm yếu trong cách sinh, lưu và truy xuất vector cùng embedding có thể bị lợi dụng để chèn nội dung độc, thao túng đầu ra hoặc chạm tới thông tin nhạy cảm. Giảm thiểu: phân quyền chi tiết trên vector database, kiểm tra chặt dữ liệu nạp vào, rà soát kỹ khi trộn dữ liệu từ nhiều nguồn, và ghi log toàn bộ hoạt động truy xuất.',
+  'res-mcp-security':
+    'Mô tả chi tiết từng lớp tấn công kèm biện pháp: confused deputy trên MCP proxy server, token passthrough (bị cấm — máy chủ MCP KHÔNG được nhận token không cấp cho chính nó), SSRF khi client đi lấy metadata OAuth, chiếm phiên, chiếm máy chủ MCP chạy cục bộ, kiểm tra URL uỷ quyền OAuth, và tối thiểu hoá scope.',
+  'res-cs-user-privacy':
+    'Tám biện pháp: mã hoá mạnh cho dữ liệu khi truyền và khi lưu, bật HSTS, ghim chứng chỉ, có chế độ khẩn cấp cho người dùng bị đe doạ, cho huỷ phiên từ xa, hỗ trợ mạng ẩn danh như Tor, chặn rò địa chỉ IP qua nội dung bên thứ ba, và minh bạch về cách xử lý dữ liệu.',
+  'res-msrc-cloud-bounty':
+    'Trong phạm vi: lỗ hổng mức Critical hoặc Important trên sản phẩm Azure, tái hiện được trên bản đã vá đầy đủ — thực thi mã từ xa, leo thang đặc quyền, lộ thông tin. Ngoài phạm vi: lỗi đã công bố, tấn công từ chối dịch vụ, lỗi cần truy cập vật lý, lỗi của bên thứ ba không ảnh hưởng Azure, thành phần nguồn mở, sản phẩm cài cục bộ, và cấu hình sai do người dùng đặt.',
+  'res-auto-isac':
+    'Bộ hướng dẫn đã gộp từ bảy xuống năm tài liệu trong năm 2024, gồm Executive Summary và Cybersecurity Management and Operations. Là khuyến nghị tự nguyện theo hướng chức năng, không phải yêu cầu bắt buộc.',
+  'res-pwn-college-binary':
+    'Ba mô-đun: Corrupting Memory (tràn bộ đệm trên stack và thao túng bộ nhớ), Writing Shellcode, và Using Shellcode (chiếm luồng điều khiển để chạy shellcode đã chèn). Mỗi mô-đun đi từ khái niệm nền tới bài tập khó dần.',
+  'res-electron-checklist':
+    'Danh sách kiểm tra gồm 20 mục. Mấy mục đầu: chỉ nạp nội dung an toàn, không bật tích hợp Node cho nội dung từ xa, bật context isolation ở mọi renderer, và bật sandbox tiến trình.',
+  'res-gcp-workload-identity':
+    'Cho workload bên ngoài truy cập tài nguyên Google Cloud bằng danh tính liên kết thay vì khoá service account. Hỗ trợ AWS, Azure, Active Directory, GitHub, GitLab, bất kỳ nhà cung cấp danh tính nào theo OIDC hoặc SAML 2.0, cùng chứng chỉ X.509 và cụm Kubernetes.',
+  'res-nordic-ble-gatt':
+    'Bao phủ các mảng giải pháp Bluetooth, kiến trúc stack, cấu hình Bluetooth Mesh và cập nhật firmware thiết bị, yêu cầu chứng nhận, cùng nhiều mẫu mã từ central và peripheral tới mesh, audio, định hướng và channel sounding.',
+  'res-owasp-scstg':
+    'Cẩm nang cho lập trình viên, kiểm toán viên và chuyên gia bảo mật đánh giá hợp đồng thông minh. Xếp theo khung SCSVS với mười một nhóm: kiến trúc, quản lý mã, logic nghiệp vụ, kiểm soát truy cập, giao tiếp, mật mã, an toàn số học, từ chối dịch vụ, dữ liệu blockchain, hiệu quả gas và các vấn đề theo thành phần.',
+  'res-foundry-book':
+    'Bốn công cụ: Forge (dựng, kiểm thử và triển khai hợp đồng Solidity), Cast (tiện ích dòng lệnh tương tác với blockchain), Anvil (node Ethereum cục bộ) và Chisel (môi trường Solidity tương tác để thử nhanh). Lưu ý địa chỉ book.getfoundry.sh nay chuyển về getfoundry.sh.',
+  'res-openzeppelin-docs':
+    'Tài liệu cho thư viện hợp đồng Solidity cho Ethereum và các chuỗi EVM, cùng bản cho Starknet và Sui. Kèm công cụ: plugin hợp đồng nâng cấp được, Contracts Wizard sinh mã, hạ tầng giám sát và relay, UI builder. Phần học tập gồm trò chơi Ethernaut.',
+  'res-juice-shop':
+    'Ứng dụng web cố ý không an toàn, dựng bằng Node.js, Express và Angular, có hơn 110 thử thách nhiều mức độ bao phủ OWASP Top Ten và các lỗi thực tế. Có bảng điểm theo dõi tiến trình; dùng cho đào tạo, đánh giá công cụ kiểm thử và thi CTF.',
+  'res-ethereum-evm':
+    'Mô tả EVM là môi trường ảo phi tập trung thực thi mã nhất quán trên mọi node Ethereum, hoạt động như một máy trạng thái phân tán đo chi phí tính toán bằng gas. So sánh với mô hình sổ cái đơn giản của Bitcoin; bao phủ hàm chuyển trạng thái, cơ chế lưu trữ, opcode và các bản hiện thực EVM.',
+  'res-binwalk':
+    'Nhận diện và tách các tệp cùng dữ liệu được nhúng bên trong tệp khác. Dự án đã được viết lại hoàn toàn bằng Rust để nhanh và chính xác hơn bản gốc.',
+  'res-firmware-analysis-toolkit':
+    'Chín giai đoạn tuần tự: thu thập thông tin và trinh sát, lấy firmware, phân tích firmware, tách hệ thống tệp, phân tích nội dung hệ thống tệp, giả lập firmware, phân tích động, phân tích lúc chạy, và khai thác nhị phân để chứng minh tác động thật.',
+  'res-owasp-iot-testing-guide':
+    'Phương pháp kiểm thử xâm nhập cho lĩnh vực IoT, đồng thời thống nhất thuật ngữ giữa nhà sản xuất thiết bị và đơn vị vận hành. Tổng hợp từ các dự án OWASP liên quan và tài liệu IoT đã công bố thành quy trình áp dụng được.',
+  'res-bluetooth-specs':
+    'Bản hiện hành là Core Specification 6.3. Đặc tả định nghĩa các công nghệ cần có để tạo thiết bị Bluetooth tương thích với nhau, kèm bộ kiểm thử và tài liệu hiện thực cho các tầng baseband, link layer, security, HCI, L2CAP và GATT.',
+  'res-gh-actions-hardening':
+    'Tập trung vào xác thực bằng OpenID Connect thay cho bí mật dài hạn, có hướng dẫn riêng cho AWS, Azure, Google Cloud, HashiCorp Vault, JFrog, Octopus Deploy và PyPI, cùng phần dùng OIDC với reusable workflow.',
+  'res-gh-oidc':
+    'Workflow xin token ngắn hạn thẳng từ nhà cung cấp cloud qua quan hệ tin cậy OIDC. Mỗi lần chạy, GitHub sinh một JWT chứa claim về danh tính workflow; nhà cung cấp đối chiếu claim (repository, environment, ref, và custom property có tiền tố repo_property_) với điều kiện tin cậy đã cấu hình trước khi cấp thông tin xác thực tạm.',
+  'res-gh-private-vuln-reporting':
+    'Cho người nghiên cứu gửi báo cáo qua biểu mẫu riêng của kho thay vì kênh công khai. Bật ở Settings > Advanced Security, mục "Private vulnerability reporting"; sau đó kho hiện nút "Report a vulnerability".',
+  'res-mitmproxy-docs':
+    'Gồm ba công cụ: mitmproxy (giao diện console), mitmweb (giao diện web) và mitmdump (dòng lệnh). Hỗ trợ nhiều chế độ: xem và sửa lưu lượng tương tác, reverse proxy, transparent proxy trên macOS và Linux, phát lại phía client, và viết script Python để biến đổi lưu lượng tự động.',
+  'res-mozilla-tls-config':
+    'Công cụ sinh cấu hình TLS cho web server, cơ sở dữ liệu và phần mềm thư: chọn phần mềm rồi nhận về tệp cấu hình vừa an toàn vừa tương thích. Lưu ý: bản của Mozilla tại ssl-config.mozilla.org nay đã chuyển sang dự án cộng đồng TLSRef tại configurator.tlsref.org.',
+  'res-testssl':
+    'Công cụ dòng lệnh mã nguồn mở kiểm tra dịch vụ trên bất kỳ cổng nào: bộ mã được hỗ trợ, phiên bản giao thức và các lỗi mật mã đã biết. Chạy đơn giản bằng testssl.sh <hostname>. Dùng bash socket và OpenSSL nên không cần cài thêm gem hay gói pip.',
+  'res-nmap-book':
+    'Sách chính thức của Gordon "Fyodor" Lyon, từ quét cổng cơ bản tới kỹ thuật né tường lửa. Khoảng một nửa nội dung đọc miễn phí trên web; một số chương như phát hiện tường lửa và tối ưu hiệu năng chỉ có trong bản in — nên nguồn này được đánh dấu chi phí hỗn hợp chứ không phải miễn phí hoàn toàn.',
+  'res-ms-dll-search-order':
+    'Trình bày thứ tự tìm DLL đầy đủ. Ở chế độ safe DLL search mode (mặc định bật), thư mục hiện hành bị đẩy xuống vị trí 11, sau thư mục ứng dụng, system, system 16-bit và Windows. Tắt chế độ này thì thư mục hiện hành nhảy lên vị trí 8. Trang cảnh báo rõ: nếu kẻ tấn công kiểm soát được một trong các thư mục được tìm, họ đặt được bản DLL độc vào đó.',
+  'res-oci-image-spec':
+    'Một image gồm: image manifest, image index (tuỳ chọn), tập các lớp hệ thống tệp, và phần cấu hình. Mục đích là để các công cụ container khác nhau dựng, vận chuyển và chuẩn bị image tương thích với nhau.',
+  'res-gh-coordinated-disclosure':
+    'Nêu nguyên tắc: chi tiết đầy đủ chỉ công bố sau khi người bảo trì đã ghi nhận vấn đề, lý tưởng là sau khi có bản vá. Người báo cáo không nên công bố trước khi có bản sửa, nhưng được phép công bố nếu đã cố liên hệ mà không có phản hồi hoặc bị yêu cầu hoãn quá lâu. Người bảo trì được khuyên xác nhận đã nhận báo cáo càng sớm càng tốt.',
+  'res-slsa-levels':
+    'Build L0 không yêu cầu gì, chỉ là mốc "chưa có SLSA". L1 yêu cầu có provenance mô tả cách dựng, để chống nhầm lẫn. L2 thêm provenance được ký bởi nền tảng dựng, để chống can thiệp sau khi dựng. L3 yêu cầu nền tảng dựng đã làm cứng, để chống can thiệp ngay trong lúc dựng.',
+  'res-cyclonedx-spec':
+    'Khung mô-đun mô tả thông tin chuỗi cung ứng cho phần mềm, phần cứng, tài sản mật mã và cấu hình vận hành. Hỗ trợ ba định dạng JSON, XML và Protocol Buffers, mỗi định dạng có media type đăng ký chính thức với IANA.',
+  'res-libfuzzer':
+    'Bộ fuzz chạy trong tiến trình, dẫn hướng theo độ phủ, liên kết trực tiếp với thư viện cần kiểm. Yêu cầu một hàm điểm vào tên LLVMFuzzerTestOneInput nhận mảng byte và dùng mảng đó gọi API cần kiểm.',
+  'res-oss-fuzz':
+    'Dịch vụ miễn phí kết hợp kỹ thuật fuzzing hiện đại với thực thi phân tán ở quy mô lớn, tìm lỗ hổng bảo mật và lỗi ổn định trong dự án nguồn mở. Tài liệu tập trung vào cách tích hợp dự án và sử dụng dịch vụ; không nêu một mốc thời hạn công bố cố định.',
+  'res-electron-context-isolation':
+    'Bảo đảm script preload và mã nội bộ của Electron chạy trong ngữ cảnh tách biệt với trang web được nạp. Mẫu khuyến nghị là dùng contextBridge để lộ ra đúng vài hàm đã lọc — ví dụ gói lời gọi IPC vào một hàm loadPreferences() riêng thay vì lộ thẳng ipcRenderer.send.',
   'res-h1-defining-scope':
     'Liệt kê các loại tài sản mà nền tảng hỗ trợ khai báo: CIDR, Domain, iOS (App Store/TestFlight/.ipa), Android (Play Store/.apk), Windows Store, Source Code, Executable, Hardware/IoT và Other.',
   'res-nist-ssdf':

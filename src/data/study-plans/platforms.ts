@@ -237,7 +237,7 @@ export const platformPlans: PlanMap = {
   'mod-binary-fuzzing': [
     core('res-libfuzzer', 'Fuzzing dẫn hướng theo độ phủ và cách viết hàm đầu vào.'),
     core('res-address-sanitizer', 'Sanitizer biến crash mơ hồ thành báo cáo lỗi cụ thể.'),
-    core('res-oss-fuzz', 'Quy trình fuzzing liên tục và công bố lỗi theo thời hạn cố định.'),
+    core('res-oss-fuzz', 'Cách đưa một dự án vào hệ thống fuzzing chạy liên tục ở quy mô lớn.'),
     extra('res-aflplusplus', 'Bộ fuzz phổ biến cho mục tiêu không biên dịch lại được.'),
   ],
 };

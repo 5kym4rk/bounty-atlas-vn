@@ -780,7 +780,7 @@ export const labs: Lab[] = [
     id: 'lab-foundry-invariant',
     titleVi: 'Lab viết invariant test cho hợp đồng',
     provider: 'Tự dựng theo Foundry Book',
-    url: 'https://book.getfoundry.sh/',
+    url: 'https://getfoundry.sh/',
     descriptionVi:
       'Bài thực hành tự dựng: viết một hợp đồng đơn giản, phát biểu bất biến kế toán của nó, rồi dùng fuzzing để tìm chuỗi thao tác phá vỡ bất biến đó.',
     domainIds: ['dom-web3'],
