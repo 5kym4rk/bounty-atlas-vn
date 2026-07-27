@@ -2,6 +2,32 @@
 
 Định dạng theo tinh thần Keep a Changelog. Phiên bản theo Semantic Versioning.
 
+## [0.4.0] — 2026-07-27
+
+### Rà soát nội dung nguồn: 228/367 nguồn, 94/144 module hết trạng thái nháp
+
+Thêm `src/data/resources/reviewed.ts` — sổ ghi nhận việc đã **mở và đọc thật**
+từng nguồn. Mỗi mục là một ghi chú nêu điều cụ thể quan sát được trên trang, và
+chính ghi chú đó là bằng chứng của việc đã đọc.
+
+Sổ này tách hoàn toàn khỏi `link-status.generated.ts` do script sinh. Một link
+`active` chỉ chứng minh máy chủ trả lời; nó không chứng minh có ai đọc nội dung.
+Không được suy ra cái này từ cái kia.
+
+Trạng thái module giờ được **suy ra**: module hết nháp khi mọi nguồn `core` của
+nó đã được rà soát. Thêm một nguồn chưa rà soát vào lộ trình thì module tự quay
+về nháp — một nhãn đặt tay không có tính chất đó.
+
+Việc đọc thật bắt được sáu sai sót mà kiểm tra link không thấy được: hai mô tả
+sai về MASTG, ba nguồn đã đổi địa chỉ (Frida, Ghidra, Semgrep, GitHub Security
+Lab), và Linux Journey đã đổi chủ sang một nền tảng thương mại nên được thay
+bằng LinuxCommand.org. Chi tiết trong `SOURCE_REGISTRY.md` §5b.
+
+**139 nguồn còn ở trạng thái nháp**, chia hai nhóm: nhóm trả HTTP 403 hoặc trang
+rỗng với công cụ tự động nên không đọc được từ môi trường này (CISA, Solidity,
+UNECE, EUR-Lex, tài liệu Apple…), và nhóm chưa tới lượt rà soát. Cả hai đều được
+ghi rõ chứ không gắn nhãn cho đủ số.
+
 ## [0.3.0] — 2026-07-27
 
 ### Chuyển sang mô hình lộ trình nguồn học

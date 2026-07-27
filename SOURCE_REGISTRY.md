@@ -50,6 +50,38 @@ Xem `ATTRIBUTION.md` và `CONTENT_POLICY.md`.
 `linkLastChecked` không bao giờ được dùng để khẳng định nội dung đã rà soát.
 Validator từ chối `contentStatus: 'verified'` khi thiếu `lastContentReviewed`.
 
+## 5b. Đợt rà soát 2 (2026-07-27)
+
+Đợt này mở và đọc thật thêm hơn 200 nguồn. Kết quả ghi trong
+`src/data/resources/reviewed.ts`: mỗi mục là một ghi chú nêu **điều cụ thể quan
+sát được trên trang**, không phải nhắc lại tiêu đề. Ghi chú đó chính là bằng
+chứng của việc đã đọc.
+
+Trạng thái module được **suy ra** từ đây: một module chỉ hết `draft` khi mọi
+nguồn `core` trong lộ trình của nó đã được rà soát. Suy ra thay vì đặt tay là có
+chủ đích — thêm một nguồn chưa rà soát vào lộ trình thì module tự quay về nháp.
+
+Việc đọc thật đã bắt được các sai sót mà kiểm tra link không thể phát hiện:
+
+| Nguồn                        | Vấn đề                                                                                                      |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| MASTG Tools / MASTG Apps     | Mô tả của dự án nói là danh mục công cụ và ứng dụng có lỗi để luyện tập; thực tế cả hai là trang điều hướng |
+| Frida docs                   | `/docs/` chỉ là trang chuyển hướng, địa chỉ thật là `/docs/home/`                                           |
+| Ghidra                       | `ghidra-sre.org` nay chuyển hướng về kho GitHub của NSA                                                     |
+| Linux Journey                | `linuxjourney.com` nay chuyển hướng sang một nền tảng thương mại; đã thay bằng LinuxCommand.org             |
+| Semgrep, GitHub Security Lab | Đã đổi host tài liệu                                                                                        |
+| PortSwigger business logic   | Đường dẫn thật là `/logic-flaws`                                                                            |
+
+### Nguồn không đọc được từ môi trường này
+
+Một số nguồn trả HTTP 403 cho công cụ tự động, hoặc chỉ trả trang rỗng vì nội
+dung được dựng bằng JavaScript. Chúng **vẫn ở trạng thái `draft`** — đây là kết
+quả trung thực, không phải sơ suất. Ví dụ: CISA, Solidity docs, Damn Vulnerable
+DeFi, UNECE, EUR-Lex, tài liệu Apple Developer và trang Hacktivity của HackerOne.
+
+Người biên tập có trình duyệt thật mở được các trang này nên rà soát tiếp được;
+quy trình ở §8 áp dụng nguyên vẹn.
+
 ## 5. Kết quả xác minh thủ công — đợt 1 (2026-07-26)
 
 Các nguồn dưới đây đã được **mở và đọc nội dung thực tế** trong đợt biên tập đầu tiên.

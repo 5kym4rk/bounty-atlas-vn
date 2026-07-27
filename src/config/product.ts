@@ -12,7 +12,7 @@ export const PRODUCT = {
   /** Slug dùng cho repository, IndexedDB và base path. */
   slug: 'bounty-atlas-vn',
   /** Phiên bản nội dung + phần mềm. */
-  version: '0.3.0',
+  version: '0.4.0',
   /** Ngày rà soát nội dung gần nhất ở mức sản phẩm (YYYY-MM-DD). */
   contentReviewDate: '2026-07-26',
   taglineVi: 'Bản đồ kiến thức Bug Bounty đa lĩnh vực bằng tiếng Việt',

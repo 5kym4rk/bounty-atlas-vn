@@ -58,6 +58,86 @@ export const CONTENT_REVIEWED: Record<string, string> = {
     'Sách hướng dẫn cho Wireshark 4.7.3, 13 chương từ giới thiệu, cài đặt, giao diện, bắt gói tin, lọc và phân tích, tới thống kê, telephony, wireless và MATE.',
   'res-owasp-tcasvs':
     'Tiêu chuẩn xác minh bảo mật cho ứng dụng thick client — phần mềm desktop và ứng dụng gốc chạy ngoài trình duyệt. Trang dự án cho tải bản đầy đủ ở các định dạng PDF, DOCX, CSV, JSON và CycloneDX.',
+  'res-aws-s3-block-public-access':
+    'Bốn thiết lập độc lập: BlockPublicAcls, IgnorePublicAcls, BlockPublicPolicy và RestrictPublicBuckets. Áp được ở mức tổ chức, tài khoản, bucket và access point; khi các mức khác nhau thì S3 lấy tổ hợp chặt nhất. Trang cũng định nghĩa rõ thế nào là "public" với ACL và với bucket policy.',
+  'res-aws-presigned-url':
+    'URL ký sẵn mang chính quyền của principal đã tạo ra nó, và dùng lại được nhiều lần cho tới khi hết hạn. Hạn tối đa 12 giờ nếu tạo từ console, tối đa 7 ngày nếu tạo bằng CLI hoặc SDK với SigV4; nhưng nếu tạo bằng thông tin xác thực tạm thời thì URL hết hạn cùng lúc với thông tin đó. Tài liệu gọi thẳng URL ký sẵn là bearer token.',
+  'res-azure-managed-identity':
+    'Hai loại: system-assigned (gắn liền vòng đời với tài nguyên Azure, xoá tài nguyên là xoá luôn, không chia sẻ được) và user-assigned (là tài nguyên độc lập, vòng đời riêng, dùng chung được cho nhiều tài nguyên). Microsoft khuyến nghị user-assigned.',
+  'res-k8s-security':
+    'Trang khái niệm bao phủ: bảo vệ control plane bằng TLS và kiểm soát truy cập API, Secret API, Pod Security Standards, network policy, admission controller và log kiểm toán.',
+  'res-k8s-admission-controllers':
+    'Admission controller là đoạn mã trong API server chặn request tạo, xoá hoặc sửa tài nguyên — sau xác thực và phân quyền, trước khi ghi xuống. Hai pha: mutating chạy trước và sửa được dữ liệu, validating chạy sau và chỉ kiểm tra. Bất kỳ controller nào từ chối là cả request bị từ chối.',
+  'res-k8s-service-accounts':
+    'Danh tính phi con người cho ứng dụng và thành phần hệ thống, phạm vi theo namespace. Từ v1.22, token gắn vào pod dưới dạng projected volume qua TokenRequest API nên ngắn hạn và tự xoay; bản cũ dùng token tĩnh dài hạn lưu trong Secret. Tắt việc gắn tự động bằng automountServiceAccountToken: false.',
+  'res-k8s-pod-security-standards':
+    'Ba mức luỹ tiến: Privileged (không hạn chế, cho workload hệ thống tin cậy), Baseline (chặn các đường leo thang đặc quyền đã biết nhưng vẫn cho cấu hình container thông thường) và Restricted (siết mạnh theo thực hành làm cứng pod hiện hành, đánh đổi bằng tính tương thích).',
+  'res-k8s-network-policies':
+    'Mặc định mọi pod ở trạng thái không cô lập: mọi kết nối vào và ra đều được phép cho tới khi có NetworkPolicy. Chính sách hoạt động ở tầng 3–4, cộng dồn với nhau, và một kết nối chỉ thành công khi cả chính sách egress của pod nguồn lẫn ingress của pod đích đều cho phép.',
+  'res-k8s-secrets':
+    'Tài liệu nói rõ Secret mặc định lưu KHÔNG mã hoá trong etcd, và base64 chỉ là mã hoá biểu diễn chứ không phải mã hoá bảo mật. Khuyến nghị: bật Encryption at Rest, đặt luật RBAC theo quyền tối thiểu, giới hạn Secret cho từng container, và cân nhắc dùng kho bí mật bên ngoài.',
+  'res-k8s-security-checklist':
+    'Các mục: xác thực và phân quyền, bảo mật mạng (CNI, network policy, phơi API, chặn metadata API), bảo mật pod (quyền RBAC, Pod Security Standards, giới hạn tài nguyên, Seccomp, AppArmor, SELinux), log và kiểm toán, vị trí đặt pod, secret, image, và admission controller.',
+  'res-msrc-bounty-terms':
+    'Bao phủ: tuân thủ nguyên tắc công bố có phối hợp (CVD), Rules of Engagement yêu cầu kiểm thử có trách nhiệm và không truy cập hay rút dữ liệu khách hàng, điều kiện để được xét thưởng, và phần safe harbor pháp lý.',
+  'res-k8s-rbac':
+    'API RBAC khai báo bốn loại đối tượng: Role (quyền trong một namespace), ClusterRole (quyền toàn cụm), RoleBinding (gán quyền của Role cho chủ thể trong một namespace) và ClusterRoleBinding (gán quyền của ClusterRole trên toàn cụm).',
+  'res-exercism':
+    'Trang tracks liệt kê 83 ngôn ngữ. Nền tảng ghi rõ hoàn toàn miễn phí, vĩnh viễn.',
+  'res-wstg-methodology':
+    'Liệt kê các khung phương pháp: chính WSTG cho ứng dụng web và cloud, PTES với bảy giai đoạn, PCI DSS Penetration Testing Guide, Penetration Testing Framework từ trinh sát tới báo cáo, NIST 800-115, và OSSTMM cho cả bảo mật vận hành lẫn vật lý.',
+  'res-cs-html5':
+    'Bao phủ API giao tiếp (web messaging, WebSocket), cơ chế lưu trữ (local storage, IndexedDB), định vị, web worker, tabnabbing, iframe sandbox, bảo vệ trường biểu mẫu nhạy cảm, service worker, và các header bảo mật HTTP nên đặt.',
+  'res-cloudflare-workers-security':
+    'Cô lập nhiều lớp: lõi là V8 isolate ngăn mã truy cập bộ nhớ ngoài isolate ngay cả trong cùng tiến trình; bổ sung sandbox ở mức tiến trình bằng namespace của Linux và seccomp; cộng thêm cordon tách workload ít tin cậy khỏi workload tin cậy cao.',
+  'res-webauthn-guide':
+    'Giải thích hai pha: khi đăng ký, người dùng tạo cặp khoá — khoá riêng nằm lại trên thiết bị, khoá công khai gửi lên máy chủ; khi xác thực, người dùng ký để chứng minh sở hữu khoá riêng, máy chủ dùng khoá công khai đã lưu để kiểm chữ ký trên authenticatorData và hash của clientDataJSON.',
+  'res-passkeys-dev':
+    'Hai mô hình khởi tạo: bắt đầu đăng nhập bằng cách hỏi tên người dùng rồi dùng conditional mediation để gợi ý passkey ngay trong ô tự điền, có đường lui về cách xác thực cũ nếu chưa có passkey; và sau khi xác thực thành công bằng bất kỳ cách nào thì mời người dùng tạo passkey bằng navigator.credentials.create().',
+  'res-linuxcommand':
+    'Dạy dòng lệnh Linux và shell script, đọc trực tuyến miễn phí, giấy phép cho phép sao chép nguyên văn. Có sách "The Linux Command Line" của William Shotts đi kèm mở rộng nội dung trang.',
+  'res-linux-man-pages':
+    'Ghi rõ dự án tài liệu hoá giao diện nhân Linux và thư viện C mà chương trình không gian người dùng sử dụng, đặc biệt là glibc. Có bản trực tuyến, bản phát hành theo phiên bản và bản sách.',
+  'res-ms-windows-security-docs':
+    'Trang đích chia theo: sách bảo mật Windows 11, bảo mật phần cứng (TPM, Pluton, VBS, Secured-core PC), bảo mật hệ điều hành (trusted boot, BitLocker, baseline, firewall), bảo vệ danh tính (Windows Hello, passkey, FIDO2), bảo mật ứng dụng (App Control, UAC, Windows Sandbox), nền tảng bảo mật và bảo mật cloud.',
+  'res-ms-access-tokens':
+    'Liệt kê nội dung của một access token: SID của tài khoản người dùng, SID các nhóm, logon SID, danh sách đặc quyền, owner SID, SID nhóm chính, DACL mặc định, nguồn token, token là primary hay impersonation, và danh sách SID hạn chế. Kèm bảng API thao tác token.',
+  'res-owasp-threat-model-project':
+    'Định nghĩa mô hình hoá mối đe doạ là việc nhận diện, truyền đạt và hiểu các mối đe doạ cùng biện pháp giảm thiểu trong bối cảnh bảo vệ một thứ có giá trị. Trình bày khung bốn câu hỏi và cách áp dụng xuyên suốt vòng đời phát triển.',
+  'res-burp-getting-started':
+    'Bảy bước: tải và cài Burp Suite, chặn lưu lượng HTTP bằng proxy, sửa request, đặt phạm vi mục tiêu, gửi lại request thủ công bằng Repeater, chạy lần quét đầu tiên (bản Professional), và phần học tiếp theo.',
+  'res-chrome-devtools':
+    'Tài liệu cho các panel Elements, Console, Network, Sources, Performance, Memory, Application, Security, Lighthouse, Recorder, Coverage, Issues, Layers, Media, Sensors và WebAuthn.',
+  'res-cs-abuse-case':
+    'Định nghĩa abuse case là cách dùng một tính năng theo hướng người hiện thực không lường trước. Quy trình năm bước: chuẩn bị workshop có mặt cả nghiệp vụ, kỹ thuật và bảo mật; cùng nhau liệt kê tấn công lên tính năng dự kiến; ghi vào bảng; đưa abuse case vào đặc tả hoặc user story; và theo dõi việc hiện thực biện pháp đối phó.',
+  'res-cvss31-calculator':
+    'Nhận đầu vào theo ba nhóm chỉ số Base, Temporal và Environmental, rồi sinh ra chuỗi vector cùng điểm số tương ứng.',
+  'res-disclose-io':
+    'Chứa các mẫu chính sách công bố lỗ hổng dạng CC0. Bốn mẫu cốt lõi: VDP, VDP kèm CVD, Safe Harbor và Simple Safe Harbor; cộng mẫu cho chương trình bug bounty, biến thể theo vùng và hướng dẫn vận hành.',
+  'res-owasp-llm01':
+    'Định nghĩa prompt injection là khi đầu vào của người dùng làm mô hình đổi hành vi ngoài dự kiến, dẫn tới vi phạm quy tắc, sinh nội dung có hại, mở đường truy cập trái phép hoặc ảnh hưởng quyết định quan trọng. Bảy biện pháp giảm thiểu: ràng buộc hành vi bằng system prompt, định nghĩa và kiểm tra định dạng đầu ra, lọc đầu vào và đầu ra, áp quyền tối thiểu, bắt buộc người duyệt cho hành động rủi ro cao, tách và đánh dấu nội dung ngoài, và kiểm thử đối kháng.',
+  'res-scstg-tests':
+    'Ca kiểm thử xếp theo mười một nhóm control của SCSVS: ARCH, CODE, GOV, AUTH, COMM, CRYPTO, ORACLE, BLOCK, BRIDGE, DEFI và COMP. Mỗi ca có mã riêng dạng SCSTG-TEST-####; hiện tập trung vào Solidity.',
+  'res-cvss31-spec':
+    'CVSS v3.1 gồm ba nhóm chỉ số: Base (đặc tính nội tại, không đổi theo thời gian), Temporal (đặc tính thay đổi theo thời gian) và Environmental (đặc tính riêng của môi trường người dùng).',
+  'res-h1-report-states':
+    'Hai nhóm trạng thái. Đang mở: New, Pending Program Review, Triaged, Retesting và Needs More Info. Đã đóng: Resolved, Informative, Duplicate, Not Applicable và Spam. Mỗi trạng thái ảnh hưởng khác nhau tới uy tín của người báo cáo.',
+  'res-android-app-components':
+    'Trang "App manifest overview". Nêu manifest khai báo thành phần ứng dụng (activity, service, broadcast receiver, content provider), quyền, và yêu cầu tương thích thiết bị; kèm bảng tra toàn bộ phần tử XML hợp lệ.',
+  'res-android-data-storage':
+    'Trang "Data and file storage overview". Chia bốn lựa chọn: lưu trữ riêng của ứng dụng, lưu trữ dùng chung, preferences và cơ sở dữ liệu; kèm bảng so sánh quyền, khả năng truy cập và tính bền vững, cùng phần Scoped Storage từ Android 10.',
+  'res-android-keystore':
+    'Trang "Android Keystore system". Nêu bốn tính chất: chống trích xuất khoá, gắn khoá vào TEE hoặc Secure Element, hỗ trợ StrongBox KeyMint, và ràng buộc điều kiện sử dụng khoá.',
+  'res-android-network-security-config':
+    'Cho phép đổi cấu hình tin cậy chứng chỉ bằng tệp XML mà không sửa mã. Gồm trust anchor tuỳ chỉnh, ghi đè chỉ dùng khi gỡ lỗi, bật/tắt lưu lượng không mã hoá, ghim chứng chỉ, và cấu hình theo từng tên miền.',
+  'res-android-security':
+    'Trang "Android Security" của Android Open Source Project: tổng quan bảo mật, tính năng bảo mật, kho bản tin bảo mật hằng tháng từ 2015 tới nay cho nhiều dòng thiết bị, phần kiểm thử và thực hành tốt.',
+  'res-nmap-reference':
+    'Chương 15 "Nmap Reference Guide" trong sách Nmap Network Scanning — bản tham chiếu đầy đủ các tuỳ chọn dòng lệnh kèm ví dụ.',
+  'res-nmap-host-discovery':
+    'Chương "Host Discovery". Bao phủ TCP SYN/ACK ping, probe UDP, các phương pháp ICMP và SCTP ping; mở đầu bằng nhận định rằng bước đầu của mọi cuộc trinh sát là thu hẹp dải IP lớn về danh sách máy đang hoạt động.',
+  'res-openapi-security-scheme':
+    'Neo vào mục Security Scheme Object trong đặc tả OpenAPI 3.2.0 — mục khai báo cơ chế bảo mật mà API công bố, nằm trong phần components của tài liệu.',
   'res-semgrep-docs':
     'Giới thiệu cách viết luật quét mã riêng: luật cho phép so khớp mẫu và phân tích luồng dữ liệu để bắt lỗi bảo mật. Dẫn tới bài hướng dẫn tương tác, tài liệu cú pháp mẫu và tài liệu cú pháp luật.',
   'res-gh-security-lab-research':

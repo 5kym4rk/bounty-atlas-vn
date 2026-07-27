@@ -18,17 +18,17 @@ function doc(input: DocInput): LearningResource {
 export const foundationsStudyResources: LearningResource[] = [
   // ── Hệ điều hành ─────────────────────────────────────────────────────────
   doc({
-    id: 'res-linux-journey',
-    title: 'Linux Journey',
-    url: 'https://linuxjourney.com/',
-    provider: 'Linux Journey',
+    id: 'res-linuxcommand',
+    title: 'LinuxCommand.org',
+    url: 'https://linuxcommand.org/',
+    provider: 'William Shotts',
     descriptionVi:
-      'Khoá tự học Linux chia thành các bài ngắn theo chủ đề: hệ thống tệp, quyền, tiến trình, dịch vụ và mạng.',
+      'Tài liệu tự học dòng lệnh Linux và shell script, dạy từ thao tác cơ bản tới viết script. Đọc trực tuyến miễn phí; có sách "The Linux Command Line" đi kèm.',
     resourceType: 'course',
     domainIds: ['dom-foundations'],
     sourceClass: 'community',
     sourceOriginNoteVi:
-      'Nguồn cộng đồng, chọn vì cấu trúc bài ngắn phù hợp người mới và hoàn toàn miễn phí.',
+      'Nguồn cộng đồng miễn phí, giấy phép cho phép sao chép nguyên văn. Chọn thay cho Linux Journey vì tên miền linuxjourney.com nay chuyển hướng sang một nền tảng thương mại khác.',
     handsOn: true,
   }),
   doc({

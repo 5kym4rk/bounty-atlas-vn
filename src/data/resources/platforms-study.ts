@@ -512,7 +512,7 @@ export const platformsStudyResources: LearningResource[] = [
   doc({
     id: 'res-gcp-iam-overview',
     title: 'Google Cloud — IAM overview',
-    url: 'https://cloud.google.com/iam/docs/overview',
+    url: 'https://docs.cloud.google.com/iam/docs/overview',
     provider: 'Google Cloud',
     descriptionVi:
       'Mô hình IAM của Google Cloud: principal, vai trò, chính sách và kế thừa theo phân cấp tài nguyên.',
@@ -523,7 +523,7 @@ export const platformsStudyResources: LearningResource[] = [
   doc({
     id: 'res-gcp-workload-identity',
     title: 'Google Cloud — Workload Identity Federation',
-    url: 'https://cloud.google.com/iam/docs/workload-identity-federation',
+    url: 'https://docs.cloud.google.com/iam/docs/workload-identity-federation',
     provider: 'Google Cloud',
     descriptionVi:
       'Cho phép workload bên ngoài nhận danh tính Google Cloud mà không cần khoá dài hạn.',

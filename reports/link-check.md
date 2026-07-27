@@ -9,14 +9,14 @@ Tổng số liên kết: 462
 
 | Trạng thái | Số lượng | Ý nghĩa |
 | --- | --- | --- |
-| active | 394 | Truy cập được bình thường |
-| redirected | 48 | Có chuyển hướng, URL đích khác URL khai báo |
+| active | 401 | Truy cập được bình thường |
+| redirected | 45 | Có chuyển hướng, URL đích khác URL khai báo |
 | login-required | 0 | Cần đăng nhập |
-| blocked | 5 | Bị chặn tự động, nhiều khả năng do chống bot |
-| rate-limited | 2 | Bị giới hạn tốc độ |
+| blocked | 7 | Bị chặn tự động, nhiều khả năng do chống bot |
+| rate-limited | 0 | Bị giới hạn tốc độ |
 | timeout | 0 | Hết thời gian chờ |
 | unavailable | 0 | **Cần xử lý** |
-| unknown | 13 | Chưa phân loại được |
+| unknown | 9 | Chưa phân loại được |
 
 ## Liên kết cần xử lý
 
@@ -47,7 +47,7 @@ Tổng số liên kết: 462
 | lab | `lab-k8s-local-rbac` | active | 200 | https://kubernetes.io/docs/concepts/security/security-checklist/ |
 | lab | `lab-mastg-apps` | active | 200 | https://mas.owasp.org/MASTG/apps/ |
 | lab | `lab-mobile-android-storage` | active | 200 | https://mas.owasp.org/MASTG/tests/ |
-| lab | `lab-network-local` | unknown | - | https://nmap.org/book/ |
+| lab | `lab-network-local` | active | 200 | https://nmap.org/book/ |
 | lab | `lab-policy-reading` | active | 200 | https://docs.hackerone.com/en/articles/8494552-defining-scope |
 | lab | `lab-privacy-evidence` | active | 200 | https://owasp.org/www-project-application-security-verification-standard/ |
 | lab | `lab-proxy-setup` | active | 200 | https://portswigger.net/burp/documentation |
@@ -82,7 +82,7 @@ Tổng số liên kết: 462
 | resource | `res-aflplusplus` | active | 200 | https://aflplus.plus/ |
 | resource | `res-android-app-components` | unknown | - | https://developer.android.com/guide/topics/manifest/manifest-intro |
 | resource | `res-android-data-storage` | unknown | - | https://developer.android.com/training/data-storage |
-| resource | `res-android-dev-security` | unknown | - | https://developer.android.com/privacy-and-security/security |
+| resource | `res-android-dev-security` | unknown | - | https://developer.android.com/privacy-and-security/security-best-practices |
 | resource | `res-android-keystore` | unknown | - | https://developer.android.com/privacy-and-security/keystore |
 | resource | `res-android-network-security-config` | unknown | - | https://developer.android.com/privacy-and-security/security-config |
 | resource | `res-android-security` | unknown | - | https://source.android.com/docs/security |
@@ -136,7 +136,7 @@ Tổng số liên kết: 462
 | resource | `res-cisa-ics` | active | 200 | https://www.cisa.gov/topics/industrial-control-systems |
 | resource | `res-cisa-ics-advisories` | active | 200 | https://www.cisa.gov/news-events/cybersecurity-advisories?f%5B0%5D=advisory_type%3A95 |
 | resource | `res-cisa-vdp-guidance` | active | 200 | https://www.cisa.gov/vulnerability-disclosure-policy-template |
-| resource | `res-cloudflare-learning-dns` | active | 200 | https://www.cloudflare.com/learning/dns/what-is-dns/ |
+| resource | `res-cloudflare-learning-dns` | blocked | 403 | https://www.cloudflare.com/learning/dns/what-is-dns/ |
 | resource | `res-cloudflare-workers-security` | active | 200 | https://developers.cloudflare.com/workers/reference/security-model/ |
 | resource | `res-cloudgoat` | active | 200 | https://github.com/RhinoSecurityLabs/cloudgoat |
 | resource | `res-codeql` | active | 200 | https://codeql.github.com/docs/ |
@@ -233,19 +233,19 @@ Tổng số liên kết: 462
 | resource | `res-first-psirt-framework` | active | 200 | https://www.first.org/standards/frameworks/psirts/psirt_services_framework_v1.1 |
 | resource | `res-foundry-book` | redirected | 200 | https://book.getfoundry.sh/ |
 | resource | `res-foundry-fuzz` | redirected | 200 | https://getfoundry.sh/forge/fuzz-testing |
-| resource | `res-frida-docs` | active | 200 | https://frida.re/docs/ |
-| resource | `res-gcp-iam-overview` | redirected | 200 | https://cloud.google.com/iam/docs/overview |
+| resource | `res-frida-docs` | active | 200 | https://frida.re/docs/home/ |
+| resource | `res-gcp-iam-overview` | active | 200 | https://docs.cloud.google.com/iam/docs/overview |
 | resource | `res-gcp-vrp` | redirected | 200 | https://bughunters.google.com/about/rules/google-friends/6625378258649088/google-cloud-vulnerability-reward-program-rules |
 | resource | `res-gcp-well-architected-security` | redirected | 200 | https://cloud.google.com/architecture/framework/security |
-| resource | `res-gcp-workload-identity` | redirected | 200 | https://cloud.google.com/iam/docs/workload-identity-federation |
+| resource | `res-gcp-workload-identity` | active | 200 | https://docs.cloud.google.com/iam/docs/workload-identity-federation |
 | resource | `res-gdpr-text` | active | 202 | https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng |
 | resource | `res-gh-actions-hardening` | active | 200 | https://docs.github.com/en/actions/how-tos/secure-your-work/security-harden-deployments |
 | resource | `res-gh-actions-security` | redirected | 200 | https://docs.github.com/en/actions/security-for-github-actions |
 | resource | `res-gh-coordinated-disclosure` | redirected | 200 | https://docs.github.com/en/code-security/concepts/vulnerability-reporting-and-management/about-coordinated-disclosure-of-security-vulnerabilities |
 | resource | `res-gh-oidc` | active | 200 | https://docs.github.com/en/actions/concepts/security/openid-connect |
 | resource | `res-gh-private-vuln-reporting` | redirected | 200 | https://docs.github.com/en/code-security/security-advisories/working-with-repository-security-advisories/configuring-private-vulnerability-reporting-for-a-repository |
-| resource | `res-gh-security-lab-research` | active | 200 | https://securitylab.github.com/research/ |
-| resource | `res-ghidra` | redirected | 200 | https://ghidra-sre.org/ |
+| resource | `res-gh-security-lab-research` | active | 200 | https://github.blog/tag/github-security-lab/ |
+| resource | `res-ghidra` | active | 200 | https://github.com/NationalSecurityAgency/ghidra |
 | resource | `res-gitleaks` | active | 200 | https://github.com/gitleaks/gitleaks |
 | resource | `res-google-bughunters-rules` | redirected | 200 | https://bughunters.google.com/about/rules |
 | resource | `res-google-workspace-security` | redirected | 200 | https://support.google.com/a/answer/7587183 |
@@ -265,8 +265,8 @@ Tổng số liên kết: 462
 | resource | `res-immunefi-severity` | active | 200 | https://immunefi.com/immunefi-vulnerability-severity-classification-system-v2-3/ |
 | resource | `res-intigriti-hackademy` | active | 200 | https://www.intigriti.com/researchers/hackademy |
 | resource | `res-iotgoat` | active | 200 | https://github.com/OWASP/IoTGoat |
-| resource | `res-iso-21434` | active | 200 | https://www.iso.org/standard/70918.html |
-| resource | `res-iso-29147` | active | 200 | https://www.iso.org/standard/72311.html |
+| resource | `res-iso-21434` | blocked | 403 | https://www.iso.org/standard/70918.html |
+| resource | `res-iso-29147` | blocked | 403 | https://www.iso.org/standard/72311.html |
 | resource | `res-juice-shop` | active | 200 | https://owasp.org/www-project-juice-shop/ |
 | resource | `res-juice-shop-repo` | active | 200 | https://github.com/juice-shop/juice-shop |
 | resource | `res-k8s-admission-controllers` | active | 200 | https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/ |
@@ -280,8 +280,8 @@ Tổng số liên kết: 462
 | resource | `res-k8s-security-checklist` | active | 200 | https://kubernetes.io/docs/concepts/security/security-checklist/ |
 | resource | `res-k8s-service-accounts` | active | 200 | https://kubernetes.io/docs/concepts/security/service-accounts/ |
 | resource | `res-libfuzzer` | active | 200 | https://llvm.org/docs/LibFuzzer.html |
-| resource | `res-linux-journey` | blocked | 403 | https://linuxjourney.com/ |
 | resource | `res-linux-man-pages` | active | 200 | https://www.kernel.org/doc/man-pages/ |
+| resource | `res-linuxcommand` | active | 200 | https://linuxcommand.org/ |
 | resource | `res-llvm-sanitizers` | active | 200 | https://clang.llvm.org/docs/UndefinedBehaviorSanitizer.html |
 | resource | `res-mastg-apps` | active | 200 | https://mas.owasp.org/MASTG/apps/ |
 | resource | `res-mastg-tests` | active | 200 | https://mas.owasp.org/MASTG/tests/ |
@@ -316,9 +316,9 @@ Tổng số liên kết: 462
 | resource | `res-nist-privacy-framework` | active | 200 | https://www.nist.gov/privacy-framework |
 | resource | `res-nist-ssdf` | active | 200 | https://csrc.nist.gov/pubs/sp/800/218/final |
 | resource | `res-nmap-book` | unknown | - | https://nmap.org/book/ |
-| resource | `res-nmap-host-discovery` | unknown | - | https://nmap.org/book/man-host-discovery.html |
-| resource | `res-nmap-reference` | unknown | - | https://nmap.org/book/man.html |
-| resource | `res-nmap-service-detection` | unknown | - | https://nmap.org/book/vscan.html |
+| resource | `res-nmap-host-discovery` | active | 200 | https://nmap.org/book/man-host-discovery.html |
+| resource | `res-nmap-reference` | active | 200 | https://nmap.org/book/man.html |
+| resource | `res-nmap-service-detection` | active | 200 | https://nmap.org/book/vscan.html |
 | resource | `res-nordic-ble-gatt` | blocked | 403 | https://docs.nordicsemi.com/bundle/ncs-latest/page/nrf/protocols/bt/index.html |
 | resource | `res-npm-provenance` | redirected | 200 | https://docs.npmjs.com/generating-provenance-statements |
 | resource | `res-oauth-security-topics` | active | 200 | https://oauth.net/2/oauth-best-practice/ |
@@ -422,13 +422,13 @@ Tổng số liên kết: 462
 | resource | `res-scim-rfc7644` | redirected | 200 | https://www.rfc-editor.org/rfc/rfc7644 |
 | resource | `res-scstg-tests` | active | 200 | https://scs.owasp.org/SCSTG/tests/ |
 | resource | `res-scvs-site` | active | 200 | https://scvs.owasp.org/ |
-| resource | `res-semgrep-docs` | redirected | 200 | https://semgrep.dev/docs/writing-rules/overview |
+| resource | `res-semgrep-docs` | active | 200 | https://docs.semgrep.dev/writing-rules/overview |
 | resource | `res-sigstore` | active | 200 | https://docs.sigstore.dev/ |
 | resource | `res-slack-app-security` | redirected | 200 | https://docs.slack.dev/authentication/best-practices-for-security |
 | resource | `res-slsa` | active | 200 | https://slsa.dev/ |
 | resource | `res-slsa-levels` | active | 200 | https://slsa.dev/spec/v1.0/levels |
-| resource | `res-solidity-docs` | rate-limited | 429 | https://docs.soliditylang.org/ |
-| resource | `res-solidity-security` | rate-limited | 429 | https://docs.soliditylang.org/en/latest/security-considerations.html |
+| resource | `res-solidity-docs` | redirected | 200 | https://docs.soliditylang.org/ |
+| resource | `res-solidity-security` | active | 200 | https://docs.soliditylang.org/en/latest/security-considerations.html |
 | resource | `res-spdx-spec` | active | 200 | https://spdx.dev/use/specifications/ |
 | resource | `res-sysinternals` | active | 200 | https://learn.microsoft.com/en-us/sysinternals/ |
 | resource | `res-testssl` | active | 200 | https://testssl.sh/ |

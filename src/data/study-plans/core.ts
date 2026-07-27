@@ -83,7 +83,7 @@ export const corePlans: PlanMap = {
 
   // ── B. Nền tảng ──────────────────────────────────────────────────────────
   'mod-found-linux': [
-    core('res-linux-journey', 'Khoá tự học chia bài ngắn, đủ để dùng được dòng lệnh Linux.'),
+    core('res-linuxcommand', 'Tự học dòng lệnh và shell script, đủ để dùng được Linux hằng ngày.'),
     core('res-linux-man-pages', 'Tài liệu tham chiếu gốc cho lời gọi hệ thống và tệp cấu hình.'),
     extra('res-docker-security', 'Quyền và namespace của Linux là nền của cách ly container.'),
   ],

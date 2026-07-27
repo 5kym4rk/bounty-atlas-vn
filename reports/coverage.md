@@ -3,7 +3,7 @@
 > Tệp này được sinh tự động bởi `npm run coverage:report`. Đừng sửa tay.
 > Mọi con số đều tính trực tiếp từ dữ liệu trong `src/data/`.
 
-Phiên bản sản phẩm: 0.3.0
+Phiên bản sản phẩm: 0.4.0
 Ngày rà soát nội dung ở mức sản phẩm: 2026-07-26
 
 *Tệp này cố ý không chứa dấu thời gian sinh, để CI có thể phát hiện khi nội dung
@@ -35,9 +35,9 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | standard | 24 |
 | skill | 16 |
 | learningPath | 9 |
-| officialResource | 308 |
+| officialResource | 309 |
 | communityResource | 10 |
-| verifiedResource | 11 |
+| verifiedResource | 228 |
 
 ## 3. Tỷ lệ bao phủ
 
@@ -47,8 +47,8 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | moduleWithReportExercisePercent | 59.7% |
 | moduleWithQuizPercent | 23.6% |
 | moduleWithRemediationPercent | 100% |
-| officialResourcePercent | 83.9% |
-| verifiedResourcePercent | 3% |
+| officialResourcePercent | 84.2% |
+| verifiedResourcePercent | 62.1% |
 
 ## 4. Ma trận theo lĩnh vực
 
@@ -60,7 +60,7 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | D | Web application | core | 10 | 31 | 21/31 | 13/31 | 4/31 | 19 | 4 | 29 | 108 | 103 |
 | E | API | core | 5 | 10 | 7/10 | 5/10 | 2/10 | 5 | 1 | 7 | 30 | 26 |
 | F | Identity, SSO và enterprise access | core | 2 | 5 | 2/5 | 5/5 | 1/5 | 2 | 1 | 6 | 19 | 17 |
-| G | Mobile | core | 5 | 7 | 4/7 | 5/7 | 1/7 | 2 | 1 | 3 | 20 | 17 |
+| G | Mobile | core | 5 | 7 | 4/7 | 5/7 | 1/7 | 2 | 1 | 3 | 20 | 18 |
 | H | Cloud | core | 5 | 8 | 2/8 | 7/8 | 1/8 | 2 | 1 | 4 | 25 | 22 |
 | I | Container, Kubernetes và cloud-native | advanced | 2 | 3 | 3/3 | 3/3 | 1/3 | 2 | 1 | 3 | 15 | 8 |
 | J | Network và infrastructure | core | 4 | 5 | 3/5 | 2/5 | 1/5 | 2 | 1 | 3 | 16 | 9 |
@@ -88,12 +88,11 @@ báo cáo lệch với dữ liệu. Dấu thời gian nằm trong `reports/cover
 | MODULE_NO_REPORT_EXERCISE | 58 |
 | TRACK_NO_PREREQ | 9 |
 
-## 6. Nguồn chưa xác minh nội dung (356)
+## 6. Nguồn chưa xác minh nội dung (139)
 
 Những nguồn dưới đây **chưa** được người biên tập mở và đối chiếu. Chúng không mang
 nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện tại.
 
-- `res-h1-defining-scope` — Defining Scope
 - `res-h1-scope-best-practices` — Scope Best Practices
 - `res-hacker101` — Hacker101
 - `res-hacker101-ctf` — Hacker101 CTF
@@ -105,39 +104,21 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-cvss4-calculator` — CVSS v4.0 Calculator
 - `res-owasp-asvs` — OWASP Application Security Verification Standard
 - `res-owasp-cheatsheets` — OWASP Cheat Sheet Series
-- `res-nist-ssdf` — NIST SP 800-218 Secure Software Development Framework
-- `res-nist-800-115` — NIST SP 800-115 Technical Guide to Information Security Testing and Assessment
 - `res-portswigger-academy` — Web Security Academy
 - `res-portswigger-all-labs` — Web Security Academy — All Labs
-- `res-portswigger-learning-paths` — Web Security Academy — Learning Paths
 - `res-burp-docs` — Burp Suite Documentation
-- `res-owasp-wstg` — OWASP Web Security Testing Guide
 - `res-juice-shop` — OWASP Juice Shop
 - `res-juice-shop-repo` — juice-shop (repository)
 - `res-webgoat` — OWASP WebGoat
 - `res-webgoat-repo` — WebGoat (repository)
 - `res-crapi` — OWASP crAPI
 - `res-crapi-repo` — crAPI (repository)
-- `res-portswigger-api-testing` — API Testing
-- `res-portswigger-graphql` — GraphQL API Vulnerabilities
-- `res-openapi-spec` — OpenAPI Specification
 - `res-graphql-spec` — GraphQL Specification
-- `res-rfc9700` — RFC 9700 — OAuth 2.0 Security Best Current Practice
-- `res-oidc-core` — OpenID Connect Core 1.0
 - `res-webauthn` — Web Authentication (WebAuthn) Level 3
-- `res-portswigger-oauth` — OAuth 2.0 Authentication Vulnerabilities
-- `res-portswigger-jwt` — JWT Attacks
 - `res-owasp-mas` — OWASP Mobile Application Security
-- `res-owasp-masvs` — OWASP MASVS
-- `res-mastg-tests` — MASTG Tests
-- `res-mastg-tools` — MASTG Tools
-- `res-mastg-apps` — MASTG Apps
-- `res-android-security` — Android Platform Security
 - `res-android-dev-security` — Android — Improve your app’s security
 - `res-apple-platform-security` — Apple Platform Security
-- `res-frida-docs` — Frida Documentation
 - `res-aws-security-docs` — AWS Security Documentation
-- `res-aws-iam-best-practices` — AWS IAM Security Best Practices
 - `res-aws-well-architected-security` — AWS Well-Architected — Security Pillar
 - `res-azure-security-docs` — Azure Security Documentation
 - `res-azure-best-practices` — Azure Security Best Practices and Patterns
@@ -145,45 +126,27 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-cloudgoat` — CloudGoat
 - `res-wrongsecrets` — OWASP WrongSecrets
 - `res-wrongsecrets-repo` — wrongsecrets (repository)
-- `res-docker-security` — Docker Engine Security
-- `res-k8s-security` — Kubernetes Security Concepts
 - `res-k8s-app-security-checklist` — Kubernetes Application Security Checklist
 - `res-k8s-disclosure` — Kubernetes Security and Disclosure Information
 - `res-nmap-book` — Nmap Network Scanning
-- `res-nmap-reference` — Nmap Reference Guide
-- `res-wireshark-guide` — Wireshark User's Guide
 - `res-openssl-docs` — OpenSSL Documentation
 - `res-owasp-wifi-testing` — OWASP Wi-Fi Security Testing Guide
-- `res-owasp-tcasvs` — OWASP Thick Client Application Security Verification Standard
-- `res-owasp-thick-client-top10` — OWASP Thick Client Top 10
-- `res-electron-security` — Electron Security
 - `res-microsoft-sdl` — Microsoft Security Development Lifecycle
-- `res-ghidra` — Ghidra
 - `res-pwn-college` — pwn.college
 - `res-pwn-college-binary` — pwn.college — Binary Exploitation
-- `res-pwn-college-software-exploitation` — pwn.college — Software Exploitation
-- `res-address-sanitizer` — AddressSanitizer
 - `res-aflplusplus` — AFL++
-- `res-owasp-code-review-cheatsheet` — Secure Code Review Cheat Sheet
-- `res-owasp-code-review-guide` — OWASP Code Review Guide
 - `res-owasp-scvs` — OWASP Software Component Verification Standard
 - `res-scvs-site` — SCVS
-- `res-openssf-scorecard` — OpenSSF Scorecard
 - `res-openssf-baseline` — OpenSSF Security Baseline
-- `res-sigstore` — Sigstore Documentation
 - `res-codeql` — CodeQL Documentation
-- `res-gh-actions-security` — Security for GitHub Actions
 - `res-gh-private-vuln-reporting` — Configuring Private Vulnerability Reporting
 - `res-owasp-iot-testing-guide` — OWASP IoT Security Testing Guide
-- `res-owasp-istg` — OWASP ISTG
 - `res-owasp-iot-project` — OWASP Internet of Things Project
 - `res-iotgoat` — OWASP IoTGoat
-- `res-nist-800-82` — NIST SP 800-82 Rev. 3 — Guide to Operational Technology Security
 - `res-attack-ics` — MITRE ATT&CK for ICS
 - `res-cisa-ics` — CISA — Industrial Control Systems
 - `res-owasp-scsvs` — OWASP Smart Contract Security Verification Standard
 - `res-owasp-scstg` — OWASP SCSTG
-- `res-scstg-tests` — SCSTG Tests
 - `res-solidity-docs` — Solidity Documentation
 - `res-foundry-book` — Foundry Book
 - `res-openzeppelin-docs` — OpenZeppelin Documentation
@@ -197,211 +160,40 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-nist-ai-rmf` — NIST AI Risk Management Framework
 - `res-chrome-extension-security` — Chrome Extensions — Stay Secure
 - `res-mozilla-secure-extension` — Build a Secure Extension
-- `res-linux-journey` — Linux Journey
-- `res-linux-man-pages` — The Linux man-pages project
-- `res-ms-windows-security-docs` — Windows security documentation
-- `res-ms-access-tokens` — Access tokens
-- `res-sysinternals` — Sysinternals
-- `res-rfc1122` — RFC 1122 — Requirements for Internet Hosts
 - `res-cloudflare-learning-dns` — What is DNS?
-- `res-rfc1035` — RFC 1035 — Domain Names: Implementation and Specification
-- `res-rfc8446` — RFC 8446 — TLS 1.3
 - `res-mozilla-tls-config` — Mozilla SSL Configuration Generator
-- `res-exercism` — Exercism
 - `res-unicode-tr36` — Unicode Technical Report #36 — Security Considerations
-- `res-rfc8259` — RFC 8259 — The JavaScript Object Notation (JSON)
 - `res-cryptopals` — The Cryptopals Crypto Challenges
-- `res-cs-crypto-storage` — Cryptographic Storage Cheat Sheet
-- `res-cs-key-management` — Key Management Cheat Sheet
-- `res-pro-git` — Pro Git
-- `res-cs-cicd` — CI/CD Security Cheat Sheet
-- `res-cs-vulnerable-deps` — Vulnerable Dependency Management Cheat Sheet
-- `res-cs-threat-modeling` — Threat Modeling Cheat Sheet
-- `res-cs-attack-surface` — Attack Surface Analysis Cheat Sheet
-- `res-owasp-threat-model-project` — OWASP Threat Modeling Project
-- `res-cs-logging` — Logging Cheat Sheet
-- `res-wstg-methodology` — WSTG — Testing methodology
-- `res-wstg-info-gathering` — WSTG — Information Gathering
-- `res-burp-getting-started` — Burp Suite — Getting started
-- `res-chrome-devtools` — Chrome DevTools documentation
 - `res-mitmproxy-docs` — mitmproxy documentation
 - `res-cisa-vdp-guidance` — CISA — Vulnerability Disclosure Policy template
 - `res-iso-29147` — ISO/IEC 29147 — Vulnerability disclosure
-- `res-cert-cvd-guide` — The CERT Guide to Coordinated Vulnerability Disclosure
-- `res-disclose-io` — disclose.io — Safe harbor terms
-- `res-cvss31-spec` — CVSS v3.1 Specification Document
-- `res-cvss31-calculator` — CVSS v3.1 Calculator
-- `res-cwe-top25` — CWE Top 25 Most Dangerous Software Weaknesses
-- `res-h1-report-quality` — HackerOne — Submitting reports
-- `res-h1-report-states` — HackerOne — Report states
 - `res-google-bughunters-rules` — Google Bug Hunters — Program rules
-- `res-msrc-bounty-terms` — Microsoft Bug Bounty — Terms and conditions
-- `res-mdn-http` — HTTP — tài liệu tham chiếu
-- `res-mdn-security` — Web security — mục lục
-- `res-mdn-sop` — Same-origin policy
-- `res-mdn-cors` — CORS
-- `res-mdn-csp` — Content Security Policy
-- `res-mdn-cookies` — HTTP cookie
-- `res-mdn-postmessage` — Window.postMessage()
-- `res-mdn-websockets` — WebSockets API
-- `res-mdn-serviceworker` — Service Worker API
-- `res-mdn-storage` — Web Storage API
-- `res-mdn-wasm` — WebAssembly
-- `res-rfc9110` — RFC 9110 — HTTP Semantics
-- `res-rfc6265` — RFC 6265 — HTTP State Management Mechanism
-- `res-ps-authentication` — Authentication vulnerabilities
-- `res-cs-authentication` — Authentication Cheat Sheet
-- `res-cs-session` — Session Management Cheat Sheet
-- `res-cs-forgot-password` — Forgot Password Cheat Sheet
-- `res-cs-password-storage` — Password Storage Cheat Sheet
-- `res-cs-mfa` — Multifactor Authentication Cheat Sheet
 - `res-cs-credential-stuffing` — Credential Stuffing Prevention Cheat Sheet
-- `res-cwe-384` — CWE-384: Session Fixation
-- `res-cwe-287` — CWE-287: Improper Authentication
-- `res-ps-access-control` — Access control vulnerabilities
-- `res-ps-idor` — Insecure direct object references
-- `res-cs-authorization` — Authorization Cheat Sheet
-- `res-cs-idor` — IDOR Prevention Cheat Sheet
-- `res-cwe-639` — CWE-639: Authorization Bypass Through User-Controlled Key
-- `res-cwe-862` — CWE-862: Missing Authorization
-- `res-cwe-863` — CWE-863: Incorrect Authorization
-- `res-ps-sqli` — SQL injection
-- `res-ps-nosqli` — NoSQL injection
-- `res-ps-command-injection` — OS command injection
-- `res-ps-ssti` — Server-side template injection
-- `res-ps-xxe` — XML external entity injection
-- `res-cs-sqli` — SQL Injection Prevention Cheat Sheet
-- `res-cs-command-injection` — OS Command Injection Defense Cheat Sheet
 - `res-cs-injection` — Injection Prevention Cheat Sheet
-- `res-cs-xxe` — XXE Prevention Cheat Sheet
-- `res-cs-input-validation` — Input Validation Cheat Sheet
-- `res-cwe-89` — CWE-89: SQL Injection
-- `res-cwe-78` — CWE-78: OS Command Injection
-- `res-cwe-611` — CWE-611: Improper Restriction of XML External Entity Reference
-- `res-cwe-1336` — CWE-1336: Server-Side Template Injection
-- `res-ps-xss` — Cross-site scripting
-- `res-ps-dom-based` — DOM-based vulnerabilities
-- `res-ps-prototype-pollution` — Prototype pollution
-- `res-ps-clickjacking` — Clickjacking
-- `res-ps-websockets` — WebSocket vulnerabilities
-- `res-cs-xss` — XSS Prevention Cheat Sheet
-- `res-cs-dom-xss` — DOM-based XSS Prevention Cheat Sheet
-- `res-cs-csp` — Content Security Policy Cheat Sheet
-- `res-cs-prototype-pollution` — Prototype Pollution Prevention Cheat Sheet
 - `res-cs-clickjacking` — Clickjacking Defense Cheat Sheet
 - `res-cs-third-party-js` — Third Party JavaScript Management Cheat Sheet
-- `res-cs-html5` — HTML5 Security Cheat Sheet
-- `res-cwe-79` — CWE-79: Cross-site Scripting
-- `res-cwe-1321` — CWE-1321: Prototype Pollution
 - `res-trusted-types` — Trusted Types
-- `res-ps-csrf` — Cross-site request forgery
-- `res-ps-cors` — CORS
-- `res-ps-ssrf` — Server-side request forgery
-- `res-ps-cache-poisoning` — Web cache poisoning
-- `res-ps-cache-deception` — Web cache deception
-- `res-ps-host-header` — HTTP Host header attacks
-- `res-ps-request-smuggling` — HTTP request smuggling
-- `res-cs-csrf` — CSRF Prevention Cheat Sheet
-- `res-cs-ssrf` — SSRF Prevention Cheat Sheet
 - `res-cs-redirects` — Unvalidated Redirects and Forwards Cheat Sheet
-- `res-cwe-352` — CWE-352: Cross-Site Request Forgery
-- `res-cwe-918` — CWE-918: Server-Side Request Forgery
-- `res-cwe-601` — CWE-601: Open Redirect
-- `res-ps-file-upload` — File upload vulnerabilities
-- `res-ps-path-traversal` — Path traversal
-- `res-ps-info-disclosure` — Information disclosure
-- `res-cs-file-upload` — File Upload Cheat Sheet
-- `res-cs-error-handling` — Error Handling Cheat Sheet
-- `res-cwe-22` — CWE-22: Path Traversal
-- `res-cwe-434` — CWE-434: Unrestricted Upload of File with Dangerous Type
-- `res-cwe-200` — CWE-200: Exposure of Sensitive Information
-- `res-ps-deserialization` — Insecure deserialization
-- `res-ps-race-conditions` — Race conditions
-- `res-ps-business-logic` — Business logic vulnerabilities
-- `res-cs-deserialization` — Deserialization Cheat Sheet
-- `res-cwe-502` — CWE-502: Deserialization of Untrusted Data
-- `res-cwe-367` — CWE-367: Time-of-check Time-of-use Race Condition
-- `res-cwe-362` — CWE-362: Concurrent Execution using Shared Resource
-- `res-ps-essential-skills` — Essential skills
 - `res-grpc-web` — gRPC-Web
-- `res-cloudflare-workers-security` — Cloudflare Workers — Security model
-- `res-api1-bola` — API1:2023 — Broken Object Level Authorization
-- `res-api2-broken-authn` — API2:2023 — Broken Authentication
-- `res-api3-bopla` — API3:2023 — Broken Object Property Level Authorization
-- `res-api4-resource-consumption` — API4:2023 — Unrestricted Resource Consumption
-- `res-api5-bfla` — API5:2023 — Broken Function Level Authorization
-- `res-api6-business-flows` — API6:2023 — Unrestricted Access to Sensitive Business Flows
-- `res-api7-ssrf` — API7:2023 — Server Side Request Forgery
-- `res-api8-misconfig` — API8:2023 — Security Misconfiguration
-- `res-api9-inventory` — API9:2023 — Improper Inventory Management
-- `res-api10-unsafe-consumption` — API10:2023 — Unsafe Consumption of APIs
-- `res-cs-rest-security` — REST Security Cheat Sheet
-- `res-cs-graphql` — GraphQL Cheat Sheet
-- `res-cs-mass-assignment` — Mass Assignment Cheat Sheet
-- `res-cs-microservices` — Microservices Security Cheat Sheet
 - `res-graphql-security-docs` — GraphQL — Security
-- `res-openapi-security-scheme` — OpenAPI — Security Scheme Object
-- `res-rfc6749` — RFC 6749 — The OAuth 2.0 Authorization Framework
-- `res-rfc6750` — RFC 6750 — Bearer Token Usage
-- `res-rfc7636` — RFC 7636 — PKCE
-- `res-rfc7519` — RFC 7519 — JSON Web Token
-- `res-rfc7517` — RFC 7517 — JSON Web Key
-- `res-rfc8414` — RFC 8414 — OAuth 2.0 Authorization Server Metadata
-- `res-rfc8252` — RFC 8252 — OAuth 2.0 for Native Apps
-- `res-rfc7009` — RFC 7009 — OAuth 2.0 Token Revocation
 - `res-oauth-security-topics` — OAuth 2.0 Security Best Current Practice
 - `res-cs-saml` — SAML Security Cheat Sheet
-- `res-webauthn-guide` — WebAuthn Guide
-- `res-passkeys-dev` — passkeys.dev
-- `res-rfc7208` — RFC 7208 — Sender Policy Framework
-- `res-rfc7489` — RFC 7489 — DMARC
-- `res-android-app-components` — Android — App components and the manifest
-- `res-android-data-storage` — Android — Data and file storage overview
-- `res-android-keystore` — Android Keystore system
-- `res-android-network-security-config` — Android — Network security configuration
 - `res-apple-keychain` — Keychain services
 - `res-apple-universal-links` — Supporting universal links in your app
 - `res-apple-data-protection` — Data Protection
 - `res-cs-mobile-app-security` — Mobile Application Security Cheat Sheet
-- `res-aws-shared-responsibility` — AWS Shared Responsibility Model
-- `res-aws-pentesting-policy` — AWS Customer Support Policy for Penetration Testing
-- `res-aws-sts` — AWS — Temporary security credentials in IAM
-- `res-aws-policy-evaluation` — AWS — Policy evaluation logic
-- `res-aws-s3-block-public-access` — AWS — Blocking public access to your S3 storage
-- `res-aws-presigned-url` — AWS — Working with presigned URLs
-- `res-azure-rbac` — Azure RBAC overview
-- `res-azure-managed-identity` — Azure — Managed identities for Azure resources
 - `res-msrc-cloud-bounty` — Microsoft Azure Bounty Program
-- `res-gcp-iam-overview` — Google Cloud — IAM overview
 - `res-gcp-workload-identity` — Google Cloud — Workload Identity Federation
 - `res-gcp-vrp` — Google Cloud VRP
-- `res-cs-secrets-management` — Secrets Management Cheat Sheet
-- `res-cs-secure-cloud-architecture` — Secure Cloud Architecture Cheat Sheet
-- `res-cs-docker` — Docker Security Cheat Sheet
-- `res-cs-kubernetes` — Kubernetes Security Cheat Sheet
-- `res-k8s-rbac` — Kubernetes — Using RBAC Authorization
-- `res-k8s-service-accounts` — Kubernetes — Service Accounts
-- `res-k8s-pod-security-standards` — Kubernetes — Pod Security Standards
-- `res-k8s-network-policies` — Kubernetes — Network Policies
-- `res-k8s-secrets` — Kubernetes — Secrets
-- `res-k8s-admission-controllers` — Kubernetes — Admission Controllers Reference
 - `res-oci-image-spec` — OCI Image Format Specification
-- `res-nmap-host-discovery` — Nmap — Host Discovery
-- `res-nmap-service-detection` — Nmap — Service and Version Detection
 - `res-testssl` — testssl.sh
-- `res-cs-tls` — Transport Layer Security Cheat Sheet
-- `res-owasp-subdomain-takeover` — WSTG — Test for Subdomain Takeover
 - `res-electron-checklist` — Electron — Security checklist
 - `res-electron-context-isolation` — Electron — Context Isolation
 - `res-ms-dll-search-order` — Dynamic-link library search order
-- `res-cs-abuse-case` — Abuse Case Cheat Sheet
 - `res-nightmare-fuzzing` — Nightmare — Intro to binary exploitation
 - `res-llvm-sanitizers` — UndefinedBehaviorSanitizer
 - `res-libfuzzer` — libFuzzer — a library for coverage-guided fuzz testing
 - `res-oss-fuzz` — OSS-Fuzz documentation
-- `res-codeql-query-help` — CodeQL — Writing queries
-- `res-semgrep-docs` — Semgrep — Writing rules
-- `res-gh-security-lab-research` — GitHub Security Lab — Research
 - `res-gh-coordinated-disclosure` — GitHub — Coordinated disclosure of security vulnerabilities
 - `res-cve-program` — CVE Program — Reporting a vulnerability
 - `res-slsa-levels` — SLSA — Security levels
@@ -409,9 +201,7 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-spdx-spec` — SPDX Specification
 - `res-gh-actions-hardening` — GitHub Actions — Security hardening
 - `res-gh-oidc` — GitHub Actions — OpenID Connect
-- `res-osv-dev` — OSV — Open Source Vulnerabilities
 - `res-npm-provenance` — npm — Generating provenance statements
-- `res-gitleaks` — Gitleaks
 - `res-etsi-en-303-645` — ETSI EN 303 645 — Cyber Security for Consumer IoT
 - `res-binwalk` — Binwalk
 - `res-firmware-analysis-toolkit` — OWASP Firmware Security Testing Methodology
@@ -429,26 +219,19 @@ nhãn `verified`. Đây là tuyên bố trung thực về trạng thái hiện t
 - `res-ethereum-evm` — Ethereum — Ethereum Virtual Machine
 - `res-chainlink-oracle-security` — Chainlink — Data Feeds API Reference
 - `res-immunefi-severity` — Immunefi Vulnerability Severity Classification System
-- `res-owasp-llm01` — OWASP LLM01:2025 — Prompt Injection
 - `res-owasp-llm06` — OWASP LLM06:2025 — Excessive Agency
 - `res-owasp-llm08` — OWASP LLM08:2025 — Vector and Embedding Weaknesses
 - `res-mitre-atlas` — MITRE ATLAS
 - `res-nist-ai-600-1` — NIST AI 600-1 — Generative AI Profile
 - `res-mcp-security` — Model Context Protocol — Security Best Practices
-- `res-chrome-mv3-overview` — Chrome Extensions — Manifest V3 overview
 - `res-chrome-permissions` — Chrome Extensions — Declare permissions
 - `res-chrome-message-passing` — Chrome Extensions — Message passing
 - `res-chrome-content-scripts` — Chrome Extensions — Content scripts
 - `res-google-workspace-security` — Google Workspace — Security best practices
-- `res-slack-app-security` — Slack — App security best practices
-- `res-atlassian-domain-verification` — Atlassian — Verify a domain
-- `res-scim-rfc7644` — RFC 7644 — SCIM Protocol
 - `res-gdpr-text` — General Data Protection Regulation — full text
-- `res-nist-privacy-framework` — NIST Privacy Framework
 - `res-cs-user-privacy` — User Privacy Protection Cheat Sheet
 - `res-vn-pdpd` — Nghị định 13/2023/NĐ-CP về bảo vệ dữ liệu cá nhân
 - `res-attack-enterprise` — MITRE ATT&CK — Enterprise Matrix
-- `res-first-psirt-framework` — FIRST — PSIRT Services Framework
 
 ## 7. Nguồn quá hạn rà soát (0)
 
@@ -460,14 +243,14 @@ Chạy `npm run check:links` để cập nhật.
 
 (không có)
 
-## 9. Nội dung còn ở trạng thái bản nháp (586)
+## 9. Nội dung còn ở trạng thái bản nháp (275)
 
 | Thực thể | Số mục |
 | --- | --- |
 | domain | 24 |
-| module | 144 |
+| module | 50 |
 | weakness | 62 |
-| resource | 356 |
+| resource | 139 |
 
 ## 10. Lĩnh vực còn thiếu nội dung
 
