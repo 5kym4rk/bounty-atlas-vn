@@ -15,3 +15,7 @@ reports/link-check.json
 
 # Cau hinh chay server local (khong dung nua - du an chay tren GitHub Pages)
 .claude/
+
+# Tep tam khi ra soat du lieu
+*.tmp.txt
+*.tmp.ts
