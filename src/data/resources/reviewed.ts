@@ -58,6 +58,168 @@ export const CONTENT_REVIEWED: Record<string, string> = {
     'Sách hướng dẫn cho Wireshark 4.7.3, 13 chương từ giới thiệu, cài đặt, giao diện, bắt gói tin, lọc và phân tích, tới thống kê, telephony, wireless và MATE.',
   'res-owasp-tcasvs':
     'Tiêu chuẩn xác minh bảo mật cho ứng dụng thick client — phần mềm desktop và ứng dụng gốc chạy ngoài trình duyệt. Trang dự án cho tải bản đầy đủ ở các định dạng PDF, DOCX, CSV, JSON và CycloneDX.',
+  'res-semgrep-docs':
+    'Giới thiệu cách viết luật quét mã riêng: luật cho phép so khớp mẫu và phân tích luồng dữ liệu để bắt lỗi bảo mật. Dẫn tới bài hướng dẫn tương tác, tài liệu cú pháp mẫu và tài liệu cú pháp luật.',
+  'res-gh-security-lab-research':
+    'Các bài về nghiên cứu lỗ hổng, bảo mật chuỗi cung ứng và thực hành tốt, ví dụ "6 security settings every GitHub maintainer should enable", xu hướng lỗ hổng, kỹ thuật fuzzing và tài trợ cho bảo mật nguồn mở.',
+  'res-owasp-istg':
+    'Phương pháp kiểm thử xâm nhập cho lĩnh vực IoT, đồng thời thống nhất thuật ngữ giữa nhà sản xuất, đơn vị vận hành và đội bảo mật. Ba phần: giới thiệu, khung kiểm thử (mô hình thiết bị và mô hình kẻ tấn công), và danh mục ca kiểm thử chia theo thành phần: đơn vị xử lý, bộ nhớ, firmware, dịch vụ trao đổi dữ liệu, giao diện nội bộ và vật lý, kết nối vô tuyến và giao diện người dùng.',
+  'res-gcp-iam-overview':
+    'Ba yếu tố cốt lõi: principal (danh tính người hoặc hệ thống được cấp quyền), role (tập quyền) và resource (tài nguyên được phép chạm tới). Ba loại vai trò: predefined do Google quản lý, custom do người dùng tự tạo, và basic vốn quá rộng nên không phù hợp cho môi trường thật.',
+  'res-aws-sts':
+    'Thông tin xác thực tạm thời do AWS STS sinh, sống từ vài phút tới vài giờ, không lưu cùng người dùng mà cấp động khi có yêu cầu. Là nền của IAM role và của liên kết danh tính. Ưu điểm nêu rõ: không phải phân phát khoá dài hạn kèm ứng dụng, và hết hạn là tự mất hiệu lực nên không cần thu hồi.',
+  'res-atlassian-domain-verification':
+    'Xác nhận quyền sở hữu tên miền để chuyển các tài khoản thuộc tên miền đó thành tài khoản do tổ chức quản lý. Ba cách: tải tệp HTML lên gốc tên miền qua HTTPS, thêm bản ghi DNS TXT, hoặc liên kết với nhà cung cấp danh tính như Google Workspace và Microsoft Entra ID.',
+  'res-slack-app-security':
+    'Bao phủ cả vòng đời ứng dụng: giữ thông tin xác thực trong biến môi trường hoặc trình quản lý bí mật, cấp quyền tối thiểu, xác minh tính xác thực của request, giới hạn dải IP, xoay token, quy trình phê duyệt của tổ chức, rà soát scope định kỳ, và giảm rủi ro riêng của AI như prompt injection bằng cách kiểm nguồn thông điệp và tắt mặc định việc bung nội dung liên kết.',
+  'res-chrome-mv3-overview':
+    'MV3 chuyển ngữ cảnh nền sang service worker chỉ chạy khi cần thay cho trang nền thường trực, bỏ hẳn việc thực thi mã tải từ xa vì lý do bảo mật, thay webRequest dạng chặn bằng declarativeNetRequest, và chuyển API sang dạng promise.',
+  'res-azure-rbac':
+    'Một role assignment gồm ba phần: security principal, role definition và scope. Scope có bốn cấp lồng nhau: management group, subscription, resource group và resource. Quyền hiệu lực là phép cộng của các assignment, nhưng deny assignment chặn trước; công thức quyền là Actions trừ NotActions.',
+  'res-aws-shared-responsibility':
+    'Chia theo hai vế: AWS lo "an ninh của đám mây" (phần cứng, phần mềm, mạng và cơ sở vật chất chạy dịch vụ), khách hàng lo "an ninh trong đám mây" (hệ điều hành khách, ứng dụng, mã hoá dữ liệu, cấu hình tường lửa). Tỷ lệ này đổi theo loại dịch vụ: EC2 đòi khách hàng nhiều hơn hẳn S3.',
+  'res-sysinternals':
+    'Bộ tiện ích do Mark Russinovich lập từ 1996, nay thuộc Microsoft, dùng để quản lý và chẩn đoán hệ thống Windows và Linux. Gồm Autoruns, ProcDump, Sysmon, DebugView và nhiều công cụ khác; có dịch vụ Sysinternals Live chạy trực tiếp từ web.',
+  'res-first-psirt-framework':
+    'Bản 1.1 định nghĩa năm nhóm dịch vụ: quản lý hệ sinh thái các bên liên quan, phát hiện lỗ hổng, phân tích và định đoạt lỗ hổng, khắc phục lỗ hổng, và hoạt động sau sự cố.',
+  'res-nist-privacy-framework':
+    'Công cụ tự nguyện xây dựng cùng các bên liên quan, giúp tổ chức nhận diện và quản lý rủi ro quyền riêng tư mà vẫn đổi mới được; áp dụng cho tổ chức thuộc mọi loại hình và quy mô.',
+  'res-wstg-info-gathering':
+    'Mục 4.1 gồm mười bài kiểm thử: trinh sát qua công cụ tìm kiếm, nhận dạng máy chủ web, xem xét metafile, xác định bề mặt tấn công, phân tích nội dung trang, lập bản đồ điểm vào và đường thực thi, nhận dạng framework và ứng dụng, và ghi lại thành phần kiến trúc.',
+  'res-owasp-subdomain-takeover':
+    'Bài kiểm thử nêu cách xác minh an toàn: liệt kê tên miền phụ, chạy nhận dạng dấu hiệu dịch vụ chưa được nhận, rồi kiểm tra thủ công bản ghi DNS bằng dig và xác nhận tài nguyên vẫn chưa có chủ trên nền tảng nhà cung cấp. Tài liệu nói thẳng: không được nhận (claim) tên miền đó.',
+  'res-nmap-service-detection':
+    'Giải thích Nmap kết nối tới cổng mở rồi hỏi bằng các probe mà dịch vụ đó hiểu. Cảnh báo rõ không nên tin số phiên bản: bản vá bảo mật thường được lùi về phiên bản cũ, và quản trị viên có thể cố tình sửa chuỗi phiên bản — nên có cả dương tính giả lẫn âm tính giả.',
+  'res-h1-report-quality':
+    'Một báo cáo cần ba phần bắt buộc: lỗ hổng là gì, các bước tái hiện, và kẻ tấn công gây được tác động gì nếu khai thác. Ảnh chụp màn hình hoặc video minh hoạ là tuỳ chọn.',
+  'res-pro-git':
+    'Bản 2, gồm 10 chương từ Getting Started, Git Basics, Branching, Distributed Git tới Git Tools và Git Internals, cộng ba phụ lục. Tác giả Scott Chacon và Ben Straub, giấy phép Creative Commons BY-NC-SA 3.0.',
+  'res-gitleaks':
+    'Quét mã ở hiện tại lẫn trong lịch sử để tìm bí mật như mật khẩu, API key và token; chạy được trên repo git, thư mục hoặc stdin. Cấu hình bằng TOML với luật dạng biểu thức chính quy, ngưỡng entropy và danh sách loại trừ, nạp qua cờ dòng lệnh, biến môi trường hoặc tệp .gitleaks.toml.',
+  'res-osv-dev':
+    'Cơ sở dữ liệu lỗ hổng nguồn mở phân tán, dùng định dạng OSV của OpenSSF. Bao phủ hàng chục hệ sinh thái: npm, Debian, PyPI, Go, Maven và nhiều registry cùng bản phân phối Linux khác, tra cứu theo đúng phiên bản gói.',
+  'res-cert-cvd-guide':
+    'Định nghĩa CVD là quá trình thu thập thông tin từ người phát hiện, điều phối việc chia sẻ giữa các bên liên quan, rồi công bố lỗ hổng cùng biện pháp giảm thiểu. Nêu các vai trò người phát hiện, nhà cung cấp và bên điều phối, cùng các giai đoạn phối hợp và nguyên tắc xây dựng năng lực CVD.',
+  'res-aws-pentesting-policy':
+    'Cho phép khách hàng tự kiểm thử một số dịch vụ như EC2, RDS, CloudFront và Lambda mà không cần xin phép trước. Cấm rõ: dò vùng DNS qua Route 53, tấn công từ chối dịch vụ, chiếm bucket S3 và chiếm tên miền phụ. Hoạt động kiểu red team hoặc dựng hạ tầng điều khiển phải xin phép trước ít nhất hai tuần.',
+  'res-owasp-code-review-guide':
+    'Sách kỹ thuật cho người chịu trách nhiệm rà soát mã (quản lý, lập trình viên, chuyên gia bảo mật), bàn cả phương pháp tiến hành rà soát lẫn cách nhận diện lỗ hổng theo OWASP Top 10, kèm ví dụ mã an toàn và không an toàn ở nhiều ngôn ngữ.',
+  'res-aws-policy-evaluation':
+    'Ba bước: xác thực chủ thể, xử lý ngữ cảnh request để xác định chính sách nào áp dụng, rồi đánh giá. Nêu rõ quy tắc kết hợp: chính sách theo danh tính và theo tài nguyên là phép hợp, permissions boundary là phép giao, SCP/RCP cũng là phép giao — và một lệnh từ chối tường minh ở bất kỳ đâu đều thắng mọi lệnh cho phép.',
+  'res-codeql-query-help':
+    'Ba phần: truy vấn CodeQL là gì và cách nó tìm lỗ hổng, học nền tảng ngôn ngữ QL qua các bài hướng dẫn tương tác, và cách chạy truy vấn khi tự viết phân tích của mình.',
+  'res-cwe-362':
+    'Tên: "Concurrent Execution using Shared Resource with Improper Synchronization (Race Condition)". Mô tả cửa sổ thời gian trong đó tài nguyên dùng chung có thể bị một luồng khác sửa, phá vỡ tính độc quyền và tính nguyên tử cần có.',
+  'res-cwe-367':
+    'Tên: "Time-of-check Time-of-use (TOCTOU) Race Condition". Mô tả: sản phẩm kiểm tra trạng thái tài nguyên trước khi dùng, nhưng trạng thái đó có thể đổi giữa lúc kiểm và lúc dùng theo cách làm kết quả kiểm tra không còn đúng.',
+  'res-cwe-601':
+    'Tên: "URL Redirection to Untrusted Site (Open Redirect)". Mô tả: ứng dụng nhận đầu vào do người dùng kiểm soát chỉ định liên kết tới trang ngoài rồi dùng chính liên kết đó để chuyển hướng.',
+  'res-cwe-1336':
+    'Tên: "Improper Neutralization of Special Elements Used in a Template Engine". Mô tả engine khuôn mẫu không làm sạch đầu vào chịu ảnh hưởng từ bên ngoài, cho phép kẻ tấn công gọi biểu thức tuỳ ý. Nêu ví dụ Twig và Jinja2.',
+  'res-cwe-top25':
+    'Bản 2025 dựng trên phân tích 39.080 bản ghi CVE. Là danh sách do cộng đồng xây dựng, xếp hạng các điểm yếu phổ biến và có tác động lớn nhất, dẫn đầu là nhóm an toàn bộ nhớ và nhóm injection.',
+  'res-cwe-287':
+    'Tên: "Improper Authentication". Mô tả: một chủ thể tuyên bố mình là ai đó, còn sản phẩm không chứng minh, hoặc chứng minh không đủ, rằng tuyên bố đó đúng.',
+  'res-cwe-384':
+    'Tên: "Session Fixation". Mô tả: xác thực người dùng hoặc tạo phiên mới mà không vô hiệu hoá định danh phiên đang tồn tại, cho kẻ tấn công cơ hội chiếm phiên đã xác thực.',
+  'res-cwe-434':
+    'Tên: "Unrestricted Upload of File with Dangerous Type". Mô tả: sản phẩm cho phép tải lên loại tệp nguy hiểm được tự động xử lý trong chính môi trường của nó.',
+  'res-cwe-200':
+    'Tên: "Exposure of Sensitive Information to an Unauthorized Actor". Trang ghi rõ mất tính bí mật là tác động kỹ thuật chứ không phải nguyên nhân gốc, nên mã này hay bị dùng quá tay khi phân loại lỗ hổng.',
+  'res-cwe-1321':
+    'Tên: "Improperly Controlled Modification of Object Prototype Attributes (Prototype Pollution)". Mô tả: sản phẩm nhận đầu vào chỉ định thuộc tính đối tượng nhưng không hạn chế đủ các thay đổi trỏ tới prototype, khai thác qua thuộc tính đặc biệt như __proto__ hoặc constructor.',
+  'res-cwe-22':
+    'Tên đầy đủ: "Improper Limitation of a Pathname to a Restricted Directory". Mô tả việc không giới hạn đúng đường dẫn dựng từ đầu vào người dùng, cho phép thoát khỏi thư mục dự kiến bằng chuỗi ../ hoặc đường dẫn tuyệt đối.',
+  'res-cwe-78':
+    'Tên: "Improper Neutralization of Special Elements used in an OS Command". Mô tả việc dựng lệnh hệ điều hành từ đầu vào bên ngoài mà không trung hoà, hoặc trung hoà sai, các ký tự có thể đổi ý nghĩa của lệnh.',
+  'res-cwe-611':
+    'Tên: "Improper Restriction of XML External Entity Reference". Xảy ra khi phần mềm xử lý tài liệu XML chứa entity có URI trỏ tới tài nguyên ngoài ngoài dự kiến, dẫn tới đọc tệp trái phép, vượt tường lửa hoặc từ chối dịch vụ.',
+  'res-cwe-862':
+    'Tên: "Missing Authorization". Mô tả: sản phẩm hoàn toàn không kiểm tra quyền khi một chủ thể cố truy cập tài nguyên hoặc thực hiện hành động.',
+  'res-cwe-863':
+    'Tên: "Incorrect Authorization". Mô tả: sản phẩm có kiểm tra quyền, nhưng thực hiện việc kiểm tra đó không đúng. Khác hẳn CWE-862 là thiếu hẳn kiểm tra.',
+  'res-cwe-89':
+    'Tên đầy đủ: "Improper Neutralization of Special Elements used in an SQL Command (SQL Injection)". Mô tả việc dựng câu lệnh SQL từ dữ liệu bên ngoài mà không trung hoà ký tự đặc biệt, cho phép sửa logic truy vấn.',
+  'res-cwe-639':
+    'Tên: "Authorization Bypass Through User-Controlled Key". Mô tả: chức năng phân quyền không ngăn được người dùng này chạm tới dữ liệu của người dùng khác bằng cách sửa giá trị khoá định danh bản ghi — trong tham số URL, trường ẩn của biểu mẫu hoặc cookie.',
+  'res-cwe-918':
+    'Tên: "Server-Side Request Forgery (SSRF)". Mô tả: máy chủ nhận URL từ thành phần phía trước và tải nội dung của URL đó, nhưng không bảo đảm đủ rằng request được gửi tới đúng đích dự kiến.',
+  'res-cwe-352':
+    'Tên: "Cross-Site Request Forgery (CSRF)". Mô tả: ứng dụng không, hoặc không thể, xác minh đủ rằng request có đúng là do chính người gửi chủ ý tạo ra hay không.',
+  'res-cwe-502':
+    'Tên: "Deserialization of Untrusted Data". Mô tả: sản phẩm deserialize dữ liệu không tin cậy mà không bảo đảm đủ rằng dữ liệu kết quả là hợp lệ, mở đường cho chuỗi gadget tự thực thi trong quá trình deserialize.',
+  'res-rfc7489':
+    'Cho tổ chức gửi thư công bố chính sách ở mức tên miền và cách xử lý khi xác thực thất bại. Ba chính sách: none (không yêu cầu hành động), quarantine (đánh dấu nghi ngờ) và reject (từ chối ngay trong phiên SMTP).',
+  'res-scim-rfc7644':
+    'Giao thức trên nền HTTP để quản lý danh tính giữa nhiều miền: chuẩn hoá endpoint, phương thức HTTP và định dạng thông điệp JSON để tạo, đọc, sửa và xoá tài nguyên người dùng và nhóm.',
+  'res-rfc1122':
+    'Quy định yêu cầu với phần mềm máy chủ Internet ở ba tầng: tầng liên kết, tầng IP và tầng giao vận; đặt chuẩn cho cách hiện thực IP, ICMP, TCP và UDP để bảo đảm tương thích.',
+  'res-rfc8259':
+    'Định nghĩa JSON là định dạng trao đổi dữ liệu nhẹ, dạng văn bản, độc lập ngôn ngữ. Nêu rõ các chỗ gây lệch giữa các hiện thực: tên thành viên trùng nhau cho hành vi khó đoán, độ chính xác số khác nhau, và cặp surrogate Unicode sai có thể gây lỗi nặng. Khuyến nghị dùng UTF-8 khi truyền qua mạng.',
+  'res-cwe-79':
+    'Tên đầy đủ: "Improper Neutralization of Input During Web Page Generation (Cross-site Scripting)". Mô tả: sản phẩm không trung hoà, hoặc trung hoà sai, dữ liệu do người dùng kiểm soát trước khi đưa vào trang web phục vụ cho người dùng khác.',
+  'res-rfc7009':
+    'Định nghĩa cơ chế để client báo cho máy chủ uỷ quyền rằng token đã cấp không còn cần nữa. Yêu cầu thu hồi làm vô hiệu chính token đó và, nếu áp dụng được, cả các token khác cùng một lần cấp quyền.',
+  'res-rfc8252':
+    'Khuyến nghị ứng dụng gốc chỉ thực hiện yêu cầu uỷ quyền OAuth qua user-agent bên ngoài, chủ yếu là trình duyệt của người dùng, thay vì nhúng luồng đăng nhập trong ứng dụng. Phản hồi nhận lại qua URI scheme riêng, HTTPS URI đã xác nhận sở hữu, hoặc redirect về loopback.',
+  'res-rfc8446':
+    'TLS 1.3 bỏ các thuật toán cũ, mã hoá gần như toàn bộ thông điệp bắt tay, thay trao khoá tĩnh bằng phương pháp có forward secrecy, dùng HKDF để dẫn xuất khoá, thêm 0-RTT, và thống nhất cơ chế nối lại phiên bằng PSK.',
+  'res-rfc1035':
+    'Đặc tả chi tiết hệ thống tên miền và giao thức của nó: định dạng thông điệp, định nghĩa bản ghi tài nguyên, hoạt động của máy chủ tên và cách hiện thực bộ phân giải.',
+  'res-rfc7208':
+    'Cho quản trị tên miền công bố máy chủ nào được phép gửi thư cho tên miền đó, qua bản ghi DNS TXT với các cơ chế mx, a, ip4, ip6, include và all.',
+  'res-rfc6749':
+    'Định nghĩa bốn vai trò: resource owner, resource server, client và authorization server; cùng bốn loại cấp quyền: authorization code, implicit, resource owner password credentials và client credentials.',
+  'res-rfc7636':
+    'Giải quyết trường hợp kẻ tấn công chặn được mã uỷ quyền trên đường truyền không được TLS bảo vệ. Vì code verifier sinh động và chỉ đi qua kênh TLS, kẻ chặn được mã cũng không đổi được nó lấy access token.',
+  'res-rfc6750':
+    'Quy định ba cách gửi bearer token: header Authorization, tham số trong thân dạng form, hoặc tham số truy vấn trên URI. Nhấn mạnh bất kỳ ai cầm được token đều dùng được nó mà không phải chứng minh sở hữu khoá, nên bắt buộc phải có TLS.',
+  'res-rfc7517':
+    'Định nghĩa JWK là cấu trúc dữ liệu JSON biểu diễn một khoá mật mã, và JWK Set là tập hợp các khoá đó — nền của cơ chế công bố khoá công khai.',
+  'res-rfc8414':
+    'Định nghĩa định dạng metadata JSON để client OAuth 2.0 khám phá thông tin của máy chủ uỷ quyền, gồm vị trí endpoint và năng lực hỗ trợ. Công bố tại đường dẫn /.well-known/oauth-authorization-server dẫn xuất từ issuer.',
+  'res-mdn-websockets':
+    'Mô tả kênh hai chiều không cần hỏi vòng, và quá trình bắt tay dùng các header Sec-WebSocket-Key, -Accept, -Version, -Protocol và -Extensions: client gửi một nonce, máy chủ tính giá trị accept từ nonce đó để nâng cấp từ HTTP lên kết nối WebSocket.',
+  'res-mdn-wasm':
+    'Ngôn ngữ mức thấp dạng nhị phân gọn, chạy trong trình duyệt với tốc độ gần bản địa, là đích biên dịch cho C/C++, C# và Rust. Thiết kế để chạy song song với JavaScript: dùng WebAssembly JavaScript API để nạp module và chia sẻ chức năng giữa hai bên.',
+  'res-rfc9110':
+    'Định nghĩa kiến trúc tổng thể của HTTP, thuật ngữ chung và các khía cạnh dùng chung cho mọi phiên bản. Thay thế chín RFC cũ: 2818, 7231, 7232, 7233, 7235, 7538, 7615, 7694 và một phần của 7230.',
+  'res-rfc6265':
+    'Định nghĩa hai trường header Cookie và Set-Cookie, cho phép máy chủ lưu trạng thái ở phía trình duyệt để duy trì phiên trên nền HTTP vốn không có trạng thái.',
+  'res-rfc7519':
+    'Định nghĩa JWT là cách biểu diễn claim gọn và an toàn với URL để truyền giữa hai bên. Đăng ký bảy claim chuẩn: iss, sub, aud, exp, nbf, iat và jti.',
+  'res-mdn-csp':
+    'Bốn nhóm công dụng: kiểm soát nạp tài nguyên bằng các fetch directive (script-src, style-src, img-src, default-src) với nguồn dạng "self", tên host, nonce hoặc hash; chống clickjacking bằng frame-ancestors; nâng cấp request bằng upgrade-insecure-requests; và bắt buộc Trusted Types. Có phần về strict CSP, chặn eval(), từ khoá strict-dynamic và chế độ report-only.',
+  'res-mdn-storage':
+    'localStorage phân vùng theo origin và sống qua cả lần đóng mở trình duyệt; sessionStorage phân vùng theo cả tab lẫn origin và bị xoá khi đóng tab.',
+  'res-mdn-http':
+    'Tham chiếu đầy đủ về header (Content-Type, Accept, Authorization…), phương thức (GET, POST, PUT, DELETE…) và mã trạng thái từ 1xx tới 5xx, kèm hướng dẫn về caching, xác thực, cookie, nén, CORS và CSP.',
+  'res-mdn-security':
+    'Bốn mục chính: Attacks (clickjacking, CSRF, XSS, MITM, lừa đảo), Defenses (HTTPS, CSP, kiểm tra đầu vào, same-origin policy), Authentication (mật khẩu, passkey, danh tính liên kết, quản lý phiên) và Threat modeling.',
+  'res-mdn-serviceworker':
+    'Service worker là tệp JavaScript đóng vai proxy giữa ứng dụng, trình duyệt và mạng, chặn được request và cache tài nguyên. Ràng buộc bảo mật: chỉ chạy trong ngữ cảnh an toàn (HTTPS, riêng http://localhost được coi là an toàn), không truy cập DOM, không dùng API đồng bộ, và không import module động.',
+  'res-ps-essential-skills':
+    'Dạy cách thích ứng kỹ thuật đã học khi gặp trở ngại trên trang thật: làm rối payload bằng nhiều cách mã hoá để vượt bộ lọc, dùng Burp Scanner cho phần lặp lại bên cạnh kiểm thử tay, và luyện nhận diện lỗ hổng khi chưa biết trước bằng nhóm lab bí ẩn.',
+  'res-mdn-sop':
+    'Origin được định nghĩa bằng bộ ba scheme, host và port; phải khớp cả ba mới là cùng nguồn. Nêu các ngoại lệ: about:blank và javascript: kế thừa origin của tài liệu chứa nó, file:/// bị coi là origin mờ, document.domain (đã lỗi thời), và các thao tác cross-origin vẫn được phép là ghi, nhúng và giao tiếp qua postMessage.',
+  'res-mdn-cors':
+    'Với request đơn giản, trình duyệt gửi header Origin và máy chủ trả Access-Control-Allow-Origin. Với request phức tạp, trình duyệt gửi preflight OPTIONS kèm Access-Control-Request-Method và -Headers. Nêu rõ với request có credential thì máy chủ phải trả Access-Control-Allow-Credentials: true và không được dùng ký tự đại diện * cho Allow-Origin.',
+  'res-mdn-cookies':
+    'Mô tả các thuộc tính Expires, Max-Age, Secure, HttpOnly, Domain, Path, SameSite (Strict/Lax/None) và các tiền tố tên cookie __Secure- và __Host- vốn áp ràng buộc lên chính các thuộc tính đó.',
+  'res-mdn-postmessage':
+    'Nói thẳng hai điều: luôn chỉ định targetOrigin cụ thể chứ không dùng *, và luôn kiểm tra event.origin khi nhận. Bỏ qua điều thứ nhất cho phép trang độc chặn dữ liệu bằng cách đổi vị trí cửa sổ; bỏ qua điều thứ hai mở đường cho tấn công chèn script.',
+  'res-ps-xxe':
+    'Bao phủ cách XXE phát sinh khi ứng dụng xử lý XML, kỹ thuật đọc tệp và SSRF qua XML, biến thể mù khi phản hồi không trả dữ liệu về, bề mặt ẩn qua XInclude và tệp tải lên, và phòng ngừa bằng cách tắt các tính năng phân tích XML nguy hiểm.',
+  'res-ps-ssti':
+    'Định nghĩa SSTI là việc kẻ tấn công dùng chính cú pháp khuôn mẫu để chèn payload rồi được thực thi ở phía máy chủ. Bao phủ cách phát hiện theo từng ngữ cảnh, cách xác định engine đang dùng, kỹ thuật khai thác, và phòng ngừa bằng engine không có logic hoặc chạy trong sandbox.',
+  'res-ps-nosqli':
+    'Hai nhóm: injection cú pháp (phá được cú pháp truy vấn để chèn payload) và injection toán tử (thao túng truy vấn qua các toán tử). Ví dụ chủ yếu dùng MongoDB.',
+  'res-ps-websockets':
+    'Bao phủ cách chặn, phát lại và sửa thông điệp WebSocket cùng quá trình bắt tay bằng Burp Suite, các lớp lỗi hay gặp như injection và CSRF trên WebSocket, và khuyến nghị dùng kết nối mã hoá cùng coi mọi dữ liệu nhận được là không tin cậy.',
+  'res-ps-clickjacking':
+    'Giải thích kỹ thuật phủ iframe trong suốt lên trang mồi, các biến thể như biểu mẫu điền sẵn, kết hợp với DOM XSS và tấn công nhiều bước. Phòng thủ: script chống đóng khung ở phía client, header X-Frame-Options, và directive frame-ancestors của CSP.',
+  'res-ps-cache-deception':
+    'Giải thích lỗi phát sinh từ khác biệt cách hiểu giữa cache và máy chủ gốc. Ba hướng tấn công: quy tắc cache theo phần mở rộng tĩnh, theo thư mục tĩnh, và theo tên tệp; kèm cách phát hiện và phòng ngừa.',
   'res-ps-business-logic':
     'Trang có tiêu đề "Business logic vulnerabilities", định nghĩa đây là sai sót trong thiết kế và hiện thực cho phép gây ra hành vi ngoài dự kiến, thường bắt nguồn từ giả định sai của đội thiết kế và phát triển về cách người dùng tương tác. Có lab đi kèm. Lưu ý đường dẫn là /logic-flaws, không phải /business-logic.',
   'res-ps-dom-based':

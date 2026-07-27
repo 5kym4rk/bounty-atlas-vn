@@ -12,6 +12,7 @@ import { modules as rawModules } from './modules';
 import { concepts } from './concepts';
 import { weaknesses } from './weaknesses';
 import { resources } from './resources';
+import { CONTENT_REVIEW_DATE } from './resources/reviewed';
 import { labs } from './labs';
 import { tools } from './tools';
 import { checklists } from './checklists';
@@ -41,12 +42,30 @@ function linkModules(): LearningModule[] {
     }
   }
 
+  const verifiedResources = new Set(
+    resources.filter((r) => r.contentStatus === 'verified').map((r) => r.id),
+  );
+
   return rawModules.map((module) => {
     const links = MODULE_LINKS[module.id] ?? {};
+    const studyPlan = STUDY_PLANS[module.id] ?? module.studyPlan;
+
+    /*
+     * Module chỉ hết trạng thái nháp khi MỌI nguồn "cần học" của nó đã được
+     * người biên tập mở và đọc thật (xem resources/reviewed.ts).
+     *
+     * Suy ra thay vì đặt tay là có chủ đích: nếu sau này thêm một nguồn chưa
+     * rà soát vào lộ trình, module tự quay về nháp. Một nhãn "đã rà soát" đặt
+     * tay thì không có tính chất đó — nó đứng yên trong khi dữ liệu đổi.
+     */
+    const coreIds = studyPlan.filter((s) => s.necessity === 'core').map((s) => s.resourceId);
+    const allCoreReviewed = coreIds.length > 0 && coreIds.every((id) => verifiedResources.has(id));
 
     return {
       ...module,
-      studyPlan: STUDY_PLANS[module.id] ?? module.studyPlan,
+      studyPlan,
+      contentStatus: allCoreReviewed ? ('verified' as const) : module.contentStatus,
+      lastReviewed: allCoreReviewed ? CONTENT_REVIEW_DATE : module.lastReviewed,
       conceptIds: unique([...module.conceptIds, ...(links.conceptIds ?? [])]),
       weaknessIds: unique([...module.weaknessIds, ...(links.weaknessIds ?? [])]),
       checklistIds: unique([...module.checklistIds, ...(links.checklistIds ?? [])]),

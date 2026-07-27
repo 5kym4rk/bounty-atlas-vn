@@ -34,7 +34,7 @@ export const advancedStudyResources: LearningResource[] = [
   doc({
     id: 'res-semgrep-docs',
     title: 'Semgrep — Writing rules',
-    url: 'https://semgrep.dev/docs/writing-rules/overview',
+    url: 'https://docs.semgrep.dev/writing-rules/overview',
     provider: 'Semgrep',
     descriptionVi:
       'Viết luật tìm mẫu mã theo cú pháp, nhẹ hơn CodeQL và đủ cho phần lớn việc tìm mẫu lặp lại.',
@@ -47,7 +47,7 @@ export const advancedStudyResources: LearningResource[] = [
   doc({
     id: 'res-gh-security-lab-research',
     title: 'GitHub Security Lab — Research',
-    url: 'https://securitylab.github.com/research/',
+    url: 'https://github.blog/tag/github-security-lab/',
     provider: 'GitHub',
     descriptionVi:
       'Các bài phân tích lỗ hổng nguồn mở có ghi rõ cách tìm ra. Đọc để học cách lập luận, không phải để sao chép truy vấn.',
